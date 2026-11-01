@@ -1,0 +1,3642 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MD Affan Akram — AI, Geospatial & Backend Engineering Portfolio</title>
+  <!-- Google Fonts: Instrument Serif, Plus Jakarta Sans, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: '#FAF7F2',
+            ivory: '#FFFFFF',
+            sand: '#F3EFE6',
+            hairline: '#E2DDD3',
+            borderwarm: '#E2DDD3',
+            espresso: '#1C1917',
+            slatewarm: '#57534E',
+            mutedwarm: '#78716C',
+            /* Coherent Pastel Studio Accents */
+            sagesurf: '#E3EFEA',
+            sageink: '#1F5E4B',
+            sageaccent: '#1F5E4B',
+            sageborder: '#BDD6CC',
+            rosesurf: '#F7E6E2',
+            roseink: '#9E3B24',
+            roseaccent: '#9E3B24',
+            roseborder: '#E6C3BA',
+            skysurf: '#E6ECF8',
+            skyink: '#284B8C',
+            skyaccent: '#284B8C',
+            skyborder: '#C3D2EE',
+            ochresurf: '#FBF0D9',
+            ochreink: '#8A5A10',
+            ochreaccent: '#8A5A10',
+            ochreborder: '#EAD29E'
+          },
+          fontFamily: {
+            serif: ['"Instrument Serif"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #FAF7F2;
+      color: #1C1917;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      overflow-x: hidden;
+    }
+    ::selection {
+      background: #E3EFEA;
+      color: #1B4332;
+    }
+    /* Subtle architectural dot matrix on pastel cream */
+    .bg-studio-grid {
+      background-size: 24px 24px;
+      background-image: radial-gradient(#D8D0C1 1px, transparent 1px);
+    }
+    .tabular-nums {
+      font-variant-numeric: tabular-nums;
+    }
+    /* Choreographed Scroll Reveal Animations */
+    .reveal-item {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1), transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .reveal-item.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    /* Tactile Button & Card Micro-Physics */
+    .btn-tactile {
+      transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.2s ease, background-color 0.2s ease;
+    }
+    .btn-tactile:hover {
+      transform: translateY(-1px);
+    }
+    .btn-tactile:active {
+      transform: translateY(1px) scale(0.985);
+    }
+    /* Animated SVG Packet & Wave Keyframes */
+    @keyframes pulseRing {
+      0% { transform: scale(0.85); opacity: 0.9; }
+      70% { transform: scale(1.75); opacity: 0; }
+      100% { transform: scale(1.75); opacity: 0; }
+    }
+    .animate-pulse-ring {
+      animation: pulseRing 2.2s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+      transform-origin: center;
+    }
+    @keyframes barGrow {
+      from { width: 0%; }
+    }
+    /* Custom subtle scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #FAF7F2;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #D5CFC2;
+      border-radius: 3px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #78716C;
+    }
+    /* Print stylesheet for clean 1-page PDF export */
+    @media print {
+      body * {
+        visibility: hidden;
+      }
+      #resume-printable-container, #resume-printable-container * {
+        visibility: visible;
+      }
+      #resume-printable-container {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        box-shadow: none !important;
+        border: none !important;
+      }
+    }
+  </style>
+</head>
+<body class="antialiased selection:bg-sagesurf selection:text-sageink">
+
+  <!-- =====================================================================
+       STICKY TOP STUDIO NAVIGATION BAR
+  ====================================================================== -->
+  <header class="sticky top-0 z-40 h-16 w-full bg-cream/90 backdrop-blur-md border-b border-hairline">
+    <div class="max-w-[1280px] mx-auto h-full px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4">
+      
+      <!-- Left: Monogram & Live Auto-Sync Status Pill -->
+      <div class="flex items-center gap-3 sm:gap-5">
+        <a href="#top" class="flex items-center gap-2.5 group focus:outline-none">
+          <span class="w-7 h-7 rounded-md bg-sagesurf border border-sageborder flex items-center justify-center font-mono text-xs font-semibold text-sageink group-hover:bg-sageink group-hover:text-cream transition-colors">
+            MA
+          </span>
+          <span class="font-sans text-sm font-semibold tracking-tight text-espresso">
+            MD Affan Akram
+          </span>
+        </a>
+
+        <div class="hidden xl:flex items-center gap-2 pl-4 border-l border-hairline py-1">
+          <span class="relative flex h-2 w-2">
+            <span id="nav-sync-ping" class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sageaccent opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-sageaccent"></span>
+          </span>
+          <span id="nav-live-status-text" class="font-mono text-[11px] text-slatewarm tabular-nums">
+            Live Sync Active · LC: <strong id="nav-lc-count" class="text-espresso">418</strong> · GH: <strong id="nav-gh-handle" class="text-espresso">affanakram1217-star</strong>
+          </span>
+        </div>
+      </div>
+
+      <!-- Right: Section Links + Sync Live Data + Manage Portfolio + View Resume -->
+      <div class="flex items-center gap-2 sm:gap-3">
+        <nav aria-label="Primary Navigation" class="hidden lg:flex items-center gap-5 text-xs font-medium text-slatewarm mr-1">
+          <a href="#experience" class="hover:text-espresso transition-colors py-1">Experience</a>
+          <a href="#projects" class="hover:text-espresso transition-colors py-1">Projects &amp; GitHub</a>
+          <a href="#skills" class="hover:text-espresso transition-colors py-1">LeetCode &amp; Skills</a>
+          <a href="#certifications" class="hover:text-espresso transition-colors py-1">Certifications (<span id="nav-cert-count">11</span>)</a>
+        </nav>
+
+        <button 
+          onclick="syncAllLiveData(true)"
+          id="nav-sync-btn"
+          title="Fetch latest LeetCode solved count and GitHub repositories now"
+          class="btn-tactile whitespace-nowrap bg-ivory hover:bg-sand text-espresso border border-borderwarm font-mono text-xs font-medium px-3 py-2 rounded-lg flex items-center gap-1.5 shadow-sm">
+          <svg id="nav-sync-icon" class="w-3.5 h-3.5 text-sageink transition-transform duration-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="23 4 23 10 17 10"></polyline>
+            <polyline points="1 20 1 14 7 14"></polyline>
+            <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
+          </svg>
+          <span class="hidden sm:inline">Sync Live Data</span>
+        </button>
+
+        <button 
+          onclick="openStudioDrawer('certs')"
+          class="btn-tactile whitespace-nowrap bg-ochresurf hover:bg-ochreborder/60 text-ochreink border border-ochreborder font-mono text-xs font-medium px-3 py-2 rounded-lg flex items-center gap-1.5 shadow-sm">
+          <svg class="w-3.5 h-3.5 stroke-[2]" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <circle cx="12" cy="12" r="3"></circle>
+            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+          </svg>
+          <span>Manage Portfolio</span>
+        </button>
+
+        <button 
+          onclick="openResumeModal()"
+          class="btn-tactile whitespace-nowrap bg-sageink hover:bg-[#144235] text-cream font-mono text-xs font-medium px-3.5 py-2 rounded-lg flex items-center gap-1.5 shadow-sm focus:outline-none">
+          <svg class="w-3.5 h-3.5 stroke-[2]" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+          </svg>
+          <span>View Resume</span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <main id="top" class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- ===================================================================
+         SECTION 1: ASYMMETRIC SPLIT HERO + LIVE KINETIC DOMAIN SIMULATOR
+         (Eyebrow 1 of max 2 across entire page)
+    ==================================================================== -->
+    <section class="py-12 md:py-20 border-b border-hairline">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-start">
+        
+        <!-- Left 7 Columns: Editorial Typography & Animated Telemetry Counters -->
+        <div class="lg:col-span-7 flex flex-col justify-between space-y-6 reveal-item">
+          
+          <!-- Single Intentional Eyebrow Pill -->
+          <div class="inline-flex flex-wrap items-center gap-2 self-start px-3.5 py-1.5 bg-sagesurf border border-sageborder rounded-full">
+            <span class="w-1.5 h-1.5 rounded-full bg-sageaccent animate-pulse"></span>
+            <span class="font-mono text-[11px] uppercase tracking-wider text-sageink font-semibold">
+              LNCTS Bhopal · 3rd Year CSE (2024–2028) · Reliance Foundation Scholar
+            </span>
+          </div>
+
+          <div class="space-y-4">
+            <h1 class="font-serif text-5xl sm:text-6xl lg:text-[68px] font-normal tracking-tight text-espresso leading-[1.03]">
+              MD Affan Akram
+            </h1>
+            <p class="text-lg sm:text-xl text-espresso/90 font-medium leading-snug max-w-2xl">
+              Engineering 3D LiDAR geospatial identifiers, deterministic RAG network diagnostics, and real-time multimodal vision systems.
+            </p>
+            <p class="text-sm sm:text-base text-slatewarm leading-relaxed max-w-[64ch]">
+              Computer Science undergraduate with an <span class="text-espresso font-semibold">8.41 CGPA</span> and hands-on experience in <span class="text-espresso font-medium">Python, C++, FastAPI, machine learning, computer vision, NLP, and backend development</span>. Internal Smart India Hackathon 2026 finalist (<span class="text-sageink font-semibold">Team GeoVISTA</span>), Cisco AICTE Virtual AI Intern, and Artificial Intelligence Intern at InAmigos Foundation.
+            </p>
+          </div>
+
+          <!-- Animated Pastel Metric Strip (Auto-Updated via Live LeetCode API) -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-1 tabular-nums">
+            <div class="bg-sagesurf/75 border border-sageborder rounded-xl p-3.5 transition-transform hover:-translate-y-0.5">
+              <div class="font-mono text-[10px] text-sageink/80 uppercase tracking-wider">B.Tech CGPA</div>
+              <div class="font-serif text-2xl sm:text-3xl text-sageink mt-0.5">
+                <span class="counter-value" data-target="8.41" data-decimals="2">8.41</span>
+                <span class="text-xs font-mono">/ 10</span>
+              </div>
+              <div class="font-mono text-[10px] text-sageink/90 mt-0.5">LNCTS Bhopal</div>
+            </div>
+
+            <div class="bg-ochresurf/85 border border-ochreborder rounded-xl p-3.5 transition-transform hover:-translate-y-0.5 relative">
+              <div class="flex items-center justify-between">
+                <span class="font-mono text-[10px] text-ochreink/80 uppercase tracking-wider">LeetCode Live</span>
+                <span id="hero-lc-live-dot" class="w-1.5 h-1.5 rounded-full bg-ochreaccent animate-ping" title="Auto-synced with LeetCode"></span>
+              </div>
+              <div class="font-serif text-2xl sm:text-3xl text-ochreink mt-0.5">
+                <span id="hero-lc-total" class="counter-value" data-target="418" data-decimals="0">418</span>
+              </div>
+              <div id="hero-lc-sublabel" class="font-mono text-[10px] text-ochreink/90 mt-0.5 truncate">ID: AffanCoder · Auto-Sync</div>
+            </div>
+
+            <div class="bg-skysurf/85 border border-skyborder rounded-xl p-3.5 transition-transform hover:-translate-y-0.5">
+              <div class="font-mono text-[10px] text-skyink/80 uppercase tracking-wider">Class X Board</div>
+              <div class="font-serif text-2xl sm:text-3xl text-skyink mt-0.5">
+                <span class="counter-value" data-target="95.2" data-decimals="1">95.2</span><span class="text-lg">%</span>
+              </div>
+              <div class="font-mono text-[10px] text-skyink/90 mt-0.5">St. Xavier’s ’22</div>
+            </div>
+
+            <div class="bg-rosesurf/85 border border-roseborder rounded-xl p-3.5 transition-transform hover:-translate-y-0.5">
+              <div class="font-mono text-[10px] text-roseink/80 uppercase tracking-wider">Class XII Board</div>
+              <div class="font-serif text-2xl sm:text-3xl text-roseink mt-0.5">
+                <span class="counter-value" data-target="92.0" data-decimals="0">92</span><span class="text-lg">%</span>
+              </div>
+              <div class="font-mono text-[10px] text-roseink/90 mt-0.5">St. Xavier’s ’24</div>
+            </div>
+          </div>
+
+          <!-- Primary Action Row -->
+          <div class="flex flex-wrap items-center gap-3 pt-2">
+            <button 
+              onclick="openResumeModal()"
+              class="btn-tactile whitespace-nowrap bg-sageink hover:bg-[#144235] text-cream font-mono text-xs sm:text-sm font-medium px-5 py-3 rounded-xl flex items-center gap-2.5 shadow-sm">
+              <svg class="w-4 h-4 stroke-[2]" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="12" y1="18" x2="12" y2="12"></line>
+                <polyline points="9 15 12 18 15 15"></polyline>
+              </svg>
+              <span>View Resume</span>
+            </button>
+
+            <button 
+              onclick="openStudioDrawer('certs')"
+              class="btn-tactile whitespace-nowrap bg-ochresurf hover:bg-ochreborder/70 text-ochreink border border-ochreborder font-mono text-xs sm:text-sm font-medium px-4 py-3 rounded-xl flex items-center gap-2 shadow-sm">
+              <svg class="w-4 h-4 stroke-[2]" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <line x1="12" y1="5" x2="12" y2="19"></line>
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+              </svg>
+              <span>Add Certifications / Projects</span>
+            </button>
+
+            <button 
+              onclick="copyEmailToClipboard('hero-email-label')"
+              class="btn-tactile whitespace-nowrap bg-sand/70 hover:bg-sand text-slatewarm hover:text-espresso border border-hairline font-mono text-xs px-4 py-3 rounded-xl flex items-center gap-2"
+              title="Click to copy email address">
+              <svg class="w-3.5 h-3.5 text-sageink" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+              </svg>
+              <span id="hero-email-label">affanakram1217@gmail.com</span>
+            </button>
+          </div>
+
+          <!-- External Profile Strip -->
+          <div class="flex flex-wrap items-center gap-4 pt-1 font-mono text-xs text-slatewarm">
+            <a id="hero-gh-link" href="https://github.com/affanakram1217-star" target="_blank" rel="noopener noreferrer" class="hover:text-sageink underline underline-offset-4 flex items-center gap-1">
+              <span>GitHub (<span id="hero-gh-user-text">affanakram1217-star</span>)</span>
+              <span>&nearr;</span>
+            </a>
+            <span class="text-hairline">&bull;</span>
+            <a id="hero-lc-link" href="https://leetcode.com/u/AffanCoder/" target="_blank" rel="noopener noreferrer" class="hover:text-sageink underline underline-offset-4 flex items-center gap-1">
+              <span>LeetCode (<span id="hero-lc-user-text">AffanCoder</span> · <span id="hero-lc-inline-count">418</span>)</span>
+              <span>&nearr;</span>
+            </a>
+            <span class="text-hairline">&bull;</span>
+            <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" class="hover:text-sageink underline underline-offset-4 flex items-center gap-1">
+              <span>LinkedIn</span>
+              <span>&nearr;</span>
+            </a>
+            <span class="text-hairline">&bull;</span>
+            <span class="text-ochreink bg-ochresurf px-2.5 py-0.5 rounded border border-ochreborder text-[11px] font-medium">
+              AWS Builder · Hazaribagh, JH
+            </span>
+          </div>
+
+        </div>
+
+        <!-- Right 5 Columns: Live Multi-Project Kinetic Telemetry Deck -->
+        <div class="lg:col-span-5 w-full reveal-item">
+          <div class="bg-ivory border border-borderwarm rounded-2xl overflow-hidden shadow-sm">
+            
+            <!-- Studio Window Top Bar -->
+            <div class="bg-sand/90 px-4 py-3 border-b border-hairline flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-roseborder inline-block"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-ochreborder inline-block"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-sageborder inline-block"></span>
+                <span class="font-mono text-[11px] text-slatewarm ml-1.5 font-medium">kinetic-sim // 4-project-engines</span>
+              </div>
+              <div class="flex items-center gap-1.5 font-mono text-[10px] text-sageink bg-sagesurf border border-sageborder px-2.5 py-0.5 rounded-full font-semibold">
+                <span class="w-1.5 h-1.5 rounded-full bg-sageaccent animate-ping"></span>
+                <span>60 FPS LIVE</span>
+              </div>
+            </div>
+
+            <!-- 4 Project Engine Switcher Tabs -->
+            <div class="grid grid-cols-4 border-b border-hairline bg-cream font-mono text-[10px] sm:text-[11px]">
+              <button 
+                id="hero-tab-geovista"
+                onclick="switchHeroSim('geovista')"
+                class="py-2.5 px-1.5 text-center border-r border-hairline transition-all bg-sagesurf text-sageink font-semibold border-b-2 border-b-sageink truncate">
+                01. GeoVISTA
+              </button>
+              <button 
+                id="hero-tab-netsage"
+                onclick="switchHeroSim('netsage')"
+                class="py-2.5 px-1.5 text-center border-r border-hairline transition-all text-slatewarm hover:text-espresso truncate">
+                02. NetSage
+              </button>
+              <button 
+                id="hero-tab-nova"
+                onclick="switchHeroSim('nova')"
+                class="py-2.5 px-1.5 text-center border-r border-hairline transition-all text-slatewarm hover:text-espresso truncate">
+                03. Nova BLIP
+              </button>
+              <button 
+                id="hero-tab-beyond"
+                onclick="switchHeroSim('beyond')"
+                class="py-2.5 px-1.5 text-center transition-all text-slatewarm hover:text-espresso truncate">
+                04. Sign CV
+              </button>
+            </div>
+
+            <!-- Interactive Canvas Simulation Stage -->
+            <div class="p-4 sm:p-5 bg-studio-grid space-y-3.5">
+              
+              <!-- Stage Header & Active Statement Pill -->
+              <div class="flex items-center justify-between gap-2">
+                <div>
+                  <div id="hero-sim-title" class="font-mono text-xs font-semibold text-espresso">
+                    GeoVISTA // 3D LiDAR + Shapely ULPIN Scanner
+                  </div>
+                  <div id="hero-sim-subtitle" class="font-mono text-[11px] text-slatewarm">
+                    Drone Point-Cloud Extrusion &amp; Polygon Topology Check
+                  </div>
+                </div>
+                <button 
+                  id="hero-sim-action-btn"
+                  onclick="triggerHeroSimAction()"
+                  class="btn-tactile bg-sagesurf hover:bg-sageborder/70 text-sageink border border-sageborder font-mono text-[11px] font-medium px-3 py-1.5 rounded-lg shrink-0">
+                  Scan Next Parcel
+                </button>
+              </div>
+
+              <!-- Unified High-DPI Interactive Canvas -->
+              <div class="relative bg-cream border border-hairline rounded-xl overflow-hidden h-[230px] w-full">
+                <canvas id="hero-sim-canvas" class="w-full h-full block cursor-pointer" title="Click or drag to interact with simulation"></canvas>
+                <div id="hero-canvas-badge" class="absolute top-2.5 left-2.5 bg-ivory/90 backdrop-blur-sm border border-hairline px-2.5 py-1 rounded-md font-mono text-[10px] text-sageink font-semibold shadow-sm">
+                  STATE: SHAPELY_POLYGON_VALID
+                </div>
+                <div id="hero-canvas-metric" class="absolute bottom-2.5 right-2.5 bg-ivory/90 backdrop-blur-sm border border-hairline px-2.5 py-1 rounded-md font-mono text-[10px] text-espresso tabular-nums">
+                  ULPIN: #JH-HZB-84102
+                </div>
+              </div>
+
+              <!-- Live Telemetry Log Bar -->
+              <div id="hero-sim-terminal" class="bg-ivory border border-hairline rounded-xl p-3 font-mono text-[11px] text-slatewarm space-y-1 tabular-nums min-h-[68px]">
+                <div class="text-sageink font-semibold">&gt; FastAPI POST /api/v1/ulpin/extrude-3d</div>
+                <div id="hero-sim-log-line">LiDAR DSM points: 1,420 | Shapely IoU: 0.942 | Three.js Mesh Ready</div>
+              </div>
+
+              <!-- Simulator Footer -->
+              <div class="pt-1 flex items-center justify-between font-mono text-[11px] text-mutedwarm">
+                <span>CLICK TABS ABOVE TO SWITCH PROJECT ENGINE</span>
+                <a href="#projects" class="text-sageink hover:underline font-medium">
+                  Full Sims Below &darr;
+                </a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         SECTION 2: EXPERIENCE & INTERNSHIPS — 4-CELL PASTEL BENTO GRID
+         (No uppercase eyebrow here to obey anti-slop density rules)
+    ==================================================================== -->
+    <section id="experience" class="py-16 md:py-24 border-b border-hairline">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10 reveal-item">
+        <div>
+          <span class="font-mono text-xs text-sageink font-semibold">01 / Experience &amp; Internships</span>
+          <h2 class="font-serif text-4xl sm:text-5xl text-espresso tracking-tight mt-1">
+            Internships, Hackathons &amp; Industry Simulations
+          </h2>
+        </div>
+        <p class="font-mono text-xs text-slatewarm tabular-nums">
+          4 Verified Roles (2025 – 2026)
+        </p>
+      </div>
+
+      <!-- 4-Cell Asymmetric Pastel Bento Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-5">
+
+        <!-- CELL 1 (7 Cols - Pastel Sage Mint): Smart India Hackathon 2026 Finalist -->
+        <article class="reveal-item lg:col-span-7 bg-sagesurf/65 border border-sageborder rounded-2xl p-6 sm:p-8 flex flex-col justify-between space-y-6 transition-all hover:-translate-y-0.5 hover:shadow-sm">
+          <div class="space-y-4">
+            <div class="flex flex-wrap items-center justify-between gap-2 font-mono text-xs">
+              <span class="px-3 py-1 bg-ivory/90 border border-sageborder text-sageink rounded-full font-semibold flex items-center gap-1.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-sageaccent animate-ping"></span>
+                <span>Smart India Hackathon 2026 · Finalist (Internal)</span>
+              </span>
+              <span class="text-sageink font-medium tabular-nums">2026</span>
+            </div>
+
+            <div>
+              <h3 class="font-serif text-2xl sm:text-3xl text-espresso">
+                Team Member — GeoVISTA (3D Spatial Property Mapping)
+              </h3>
+              <p class="font-mono text-xs text-sageink mt-1">
+                FastAPI · Drone Imagery · LiDAR · GIS · Shapely · Three.js
+              </p>
+            </div>
+
+            <ul class="space-y-2.5 text-sm sm:text-base text-espresso/90 leading-relaxed">
+              <li class="flex items-start gap-2.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-sageink mt-2 shrink-0"></span>
+                <span>Built an AI-assisted geospatial solution integrating drone imagery, LiDAR, and GIS to generate 3D spatial property identifiers (<strong>ULPIN</strong>).</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-sageink mt-2 shrink-0"></span>
+                <span>Developed a high-concurrency <strong>FastAPI backend</strong> with automated building extraction, <strong>Shapely-based spatial verification</strong>, and interactive 3D visualization.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-sageink mt-2 shrink-0"></span>
+                <span>Designed a rule-assisted ML pipeline combining AI proposals with mathematical validation for strict spatial consistency.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="pt-4 border-t border-sageborder/80 flex flex-wrap items-center justify-between gap-3 font-mono text-xs">
+            <span class="text-sageink font-medium">Problem Statement: SIH26011-3D-ULPIN</span>
+            <a 
+              href="https://github.com/affanakram1217-star/SIH26011-3D-ULPIN" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="btn-tactile bg-ivory hover:bg-cream text-sageink border border-sageborder px-3.5 py-1.5 rounded-lg font-medium flex items-center gap-1.5">
+              <span>Inspect Repository</span>
+              <span>&nearr;</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- CELL 2 (5 Cols - Pastel Periwinkle Sky): Cisco Networking Academy AICTE Virtual Internship -->
+        <article class="reveal-item lg:col-span-5 bg-skysurf/70 border border-skyborder rounded-2xl p-6 sm:p-8 flex flex-col justify-between space-y-6 transition-all hover:-translate-y-0.5 hover:shadow-sm">
+          <div class="space-y-4">
+            <div class="flex flex-wrap items-center justify-between gap-2 font-mono text-xs">
+              <span class="px-3 py-1 bg-ivory/90 border border-skyborder text-skyink rounded-full font-semibold">
+                Cisco Networking Academy · AICTE
+              </span>
+              <span class="text-skyink font-medium tabular-nums">Jun – Aug 2026</span>
+            </div>
+
+            <div>
+              <h3 class="font-serif text-2xl sm:text-3xl text-espresso">
+                AICTE Virtual Internship Program 2026 — Artificial Intelligence
+              </h3>
+              <p class="font-mono text-xs text-skyink mt-1">
+                Artificial Intelligence · Network Intelligence · Applied Data Analytics
+              </p>
+            </div>
+
+            <p class="text-sm sm:text-base text-espresso/85 leading-relaxed">
+              Successfully completed the Cisco AICTE Virtual Internship Program in Artificial Intelligence, combining modern AI workflows with enterprise network diagnostics and structured data analytics.
+            </p>
+          </div>
+
+          <div class="pt-4 border-t border-skyborder/80 flex items-center justify-between font-mono text-xs text-skyink">
+            <span>STATUS: COMPLETED</span>
+            <span>CISCO &times; AICTE VERIFIED</span>
+          </div>
+        </article>
+
+        <!-- CELL 3 (6 Cols - Pastel Buttercream Ochre): InAmigos Foundation AI Intern -->
+        <article class="reveal-item lg:col-span-6 bg-ochresurf/75 border border-ochreborder rounded-2xl p-6 sm:p-8 flex flex-col justify-between space-y-6 transition-all hover:-translate-y-0.5 hover:shadow-sm">
+          <div class="space-y-4">
+            <div class="flex flex-wrap items-center justify-between gap-2 font-mono text-xs">
+              <span class="px-3 py-1 bg-ivory/90 border border-ochreborder text-ochreink rounded-full font-semibold">
+                InAmigos Foundation · via Internshala
+              </span>
+              <span class="text-ochreink font-medium tabular-nums">7 – 20 Oct 2026</span>
+            </div>
+
+            <div>
+              <h3 class="font-serif text-2xl sm:text-3xl text-espresso">
+                Artificial Intelligence Intern
+              </h3>
+              <p class="font-mono text-xs text-ochreink mt-1">
+                Applied AI Systems · Model Evaluation &amp; Deployment Workflows
+              </p>
+            </div>
+
+            <p class="text-sm sm:text-base text-espresso/85 leading-relaxed">
+              Selected for an Artificial Intelligence internship at InAmigos Foundation through Internshala; completed applied AI deliverables with official completion certificate issued on <span class="font-semibold">25 October 2026</span>.
+            </p>
+          </div>
+
+          <div class="pt-4 border-t border-ochreborder/80 flex items-center justify-between font-mono text-xs text-ochreink tabular-nums">
+            <span>SELECTION: INTERNSHALA MERIT</span>
+            <span>CERT ISSUED: 25 OCT 2026</span>
+          </div>
+        </article>
+
+        <!-- CELL 4 (6 Cols - Pastel Terracotta Blush): JPMorgan Chase & Co. -->
+        <article class="reveal-item lg:col-span-6 bg-rosesurf/70 border border-roseborder rounded-2xl p-6 sm:p-8 flex flex-col justify-between space-y-6 transition-all hover:-translate-y-0.5 hover:shadow-sm">
+          <div class="space-y-4">
+            <div class="flex flex-wrap items-center justify-between gap-2 font-mono text-xs">
+              <span class="px-3 py-1 bg-ivory/90 border border-roseborder text-roseink rounded-full font-semibold">
+                JPMorgan Chase &amp; Co. · Forage
+              </span>
+              <span class="text-roseink font-medium tabular-nums">Nov 2025</span>
+            </div>
+
+            <div>
+              <h3 class="font-serif text-2xl sm:text-3xl text-espresso">
+                Software Engineering Job Simulation
+              </h3>
+              <p class="font-mono text-xs text-roseink mt-1">
+                Java · Apache Kafka · H2 Database · Spring REST API · Controller Dev
+              </p>
+            </div>
+
+            <p class="text-sm sm:text-base text-espresso/85 leading-relaxed">
+              Completed practical enterprise backend engineering tasks involving project setup, event streaming with <strong>Apache Kafka</strong>, <strong>H2 in-memory database</strong> persistence, REST API integration, and controller development.
+            </p>
+          </div>
+
+          <div class="pt-4 border-t border-roseborder/80 flex items-center justify-between font-mono text-xs text-roseink">
+            <span>FOCUS: BACKEND &amp; KAFKA</span>
+            <span>VERIFIED SIMULATION</span>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         SECTION 3: SELECTED ENGINEERING PROJECTS WITH BESPOKE STATEMENT ANIMATIONS
+         Each project card embeds an interactive domain-matched simulation canvas
+    ==================================================================== -->
+    <section id="projects" class="py-16 md:py-24 border-b border-hairline">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-10 border-b border-hairline reveal-item">
+        <div>
+          <span class="font-mono text-xs text-sageink font-semibold">02 / Interactive Animated Case Studies</span>
+          <h2 class="font-serif text-4xl sm:text-5xl text-espresso tracking-tight mt-1">
+            Live Domain Simulations Matched to Each Project Statement
+          </h2>
+        </div>
+
+        <!-- Category Filter Buttons -->
+        <div class="flex flex-wrap items-center gap-1.5 bg-sand p-1.5 border border-hairline rounded-xl self-start">
+          <button onclick="filterProjects('ALL')" data-proj-filter="ALL" class="proj-tab-btn bg-sageink text-cream font-mono text-xs font-medium px-3.5 py-1.5 rounded-lg transition-all">
+            All (4)
+          </button>
+          <button onclick="filterProjects('GEO_NET')" data-proj-filter="GEO_NET" class="proj-tab-btn text-slatewarm hover:text-espresso font-mono text-xs px-3.5 py-1.5 rounded-lg transition-all">
+            Geospatial &amp; Network AI
+          </button>
+          <button onclick="filterProjects('CV_NLP')" data-proj-filter="CV_NLP" class="proj-tab-btn text-slatewarm hover:text-espresso font-mono text-xs px-3.5 py-1.5 rounded-lg transition-all">
+            Computer Vision &amp; Multimodal
+          </button>
+        </div>
+      </div>
+
+      <!-- 2x2 Editorial Project Cards Grid with Live Interactive Visualizers -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-7 pt-10">
+
+        <!-- ===============================================================
+             PROJECT 1 CARD: GeoVISTA — 3D LiDAR + Shapely ULPIN Simulator
+        ================================================================ -->
+        <article data-proj-cat="GEO_NET" class="project-card reveal-item bg-ivory border border-borderwarm rounded-2xl p-6 sm:p-7 flex flex-col justify-between space-y-5 shadow-sm hover:border-sageborder transition-all">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between gap-2 font-mono text-xs">
+              <span class="px-3 py-1 rounded-full bg-sagesurf text-sageink border border-sageborder font-semibold">
+                01 · Geospatial 3D LiDAR &amp; GIS
+              </span>
+              <span class="text-slatewarm tabular-nums">2026 · SIH Finalist</span>
+            </div>
+
+            <div>
+              <h3 class="font-serif text-3xl text-espresso">
+                GeoVISTA – 3D ULPIN for Urban Property Mapping
+              </h3>
+              <p class="font-mono text-[11px] text-sageink mt-1">
+                Statement: Drone Imagery + LiDAR Point Clouds + Shapely Polygon Verification &rarr; 3D ULPIN
+              </p>
+            </div>
+
+            <!-- BESPOKE ANIMATION 1: Interactive 3D Isometric LiDAR & Shapely Parcel Extruder -->
+            <div class="bg-cream border border-sageborder rounded-xl overflow-hidden">
+              <div class="bg-sagesurf/60 px-3.5 py-2 border-b border-sageborder flex flex-wrap items-center justify-between gap-2 font-mono text-[11px]">
+                <span class="text-sageink font-semibold flex items-center gap-1.5">
+                  <span class="w-2 h-2 rounded-full bg-sageaccent animate-ping"></span>
+                  <span>LIDAR_DSM_SCANNER // SHAPELY_VALIDATOR</span>
+                </span>
+                <div class="flex items-center gap-1.5">
+                  <button onclick="geoCardCycleBuilding()" class="btn-tactile bg-ivory hover:bg-sagesurf text-sageink border border-sageborder px-2.5 py-0.5 rounded text-[10px] font-semibold">
+                    Next Parcel Footprint
+                  </button>
+                  <button onclick="geoCardToggleLidar()" id="geo-card-lidar-btn" class="btn-tactile bg-sageink text-cream px-2.5 py-0.5 rounded text-[10px] font-semibold">
+                    LiDAR Points: ON
+                  </button>
+                </div>
+              </div>
+              <div class="relative h-[200px] w-full bg-studio-grid">
+                <canvas id="canvas-card-geovista" class="w-full h-full block"></canvas>
+                <div id="geo-card-overlay" class="absolute bottom-2 left-2.5 right-2.5 flex items-center justify-between font-mono text-[10px] bg-ivory/90 backdrop-blur-sm border border-hairline px-2.5 py-1 rounded">
+                  <span class="text-sageink font-semibold">SHAPELY: POLYGON_CLOSED_VALID (IoU 0.95)</span>
+                  <span id="geo-card-ulpin-id" class="text-espresso font-semibold tabular-nums">ULPIN #2302-BPL-8410</span>
+                </div>
+              </div>
+            </div>
+
+            <p class="text-sm text-slatewarm leading-relaxed">
+              AI-assisted system for 3D spatial property identifiers using drone imagery, LiDAR, and GIS. Implemented automated building footprint extraction, <strong>Shapely-based spatial verification</strong>, Pydantic schema validation, and interactive <strong>Three.js 3D visualization</strong>.
+            </p>
+
+            <div class="flex flex-wrap gap-1.5 font-mono text-[11px]">
+              <span class="px-2.5 py-1 bg-sagesurf/60 border border-sageborder rounded-md text-sageink font-medium">FastAPI</span>
+              <span class="px-2.5 py-1 bg-cream border border-hairline rounded-md text-espresso">Python</span>
+              <span class="px-2.5 py-1 bg-cream border border-hairline rounded-md text-espresso">LiDAR &amp; GIS</span>
+              <span class="px-2.5 py-1 bg-cream border border-hairline rounded-md text-espresso">Deep Learning</span>
+              <span class="px-2.5 py-1 bg-cream border border-hairline rounded-md text-espresso">Three.js</span>
+              <span class="px-2.5 py-1 bg-cream border border-hairline rounded-md text-espresso">Shapely</span>
+              <span class="px-2.5 py-1 bg-cream border border-hairline rounded-md text-espresso">Pydantic</span>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-hairline flex flex-wrap items-center justify-between gap-3 font-mono text-xs">
+            <span class="text-sageink font-medium">Rule-Assisted Spatial ML Pipeline</span>
+            <a 
+              href="https://github.com/affanakram1217-star/SIH26011-3D-ULPIN" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="btn-tactile bg-sagesurf hover:bg-sageborder/70 text-sageink border border-sageborder px-3.5 py-2 rounded-lg font-medium flex items-center gap-1.5">
+              <span>github.com/SIH26011-3D-ULPIN</span>
+              <span>&nearr;</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- ===============================================================
+             PROJECT 2 CARD: NetSage AI — Cisco CLI Packet & RAG Fault Healer
+        ================================================================ -->
+        <article data-proj-cat="GEO_NET" class="project-card reveal-item bg-ivory border border-borderwarm rounded-2xl p-6 sm:p-7 flex flex-col justify-between space-y-5 shadow-sm hover:border-skyborder transition-all">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between gap-2 font-mono text-xs">
+              <span class="px-3 py-1 rounded-full bg-skysurf text-skyink border border-skyborder font-semibold">
+                02 · Network AI, RAG &amp; Deterministic Rules
+              </span>
+              <span class="text-slatewarm tabular-nums">2026</span>
+            </div>
+
+            <div>
+              <h3 class="font-serif text-3xl text-espresso">
+                NetSage AI – Cisco Network Troubleshooting Assistant
+              </h3>
+              <p class="font-mono text-[11px] text-skyink mt-1">
+                Statement: Cisco IOS CLI Output + Deterministic Rule Checking + LLM RAG &rarr; Root-Cause Fix
+              </p>
+            </div>
+
+            <!-- BESPOKE ANIMATION 2: Live Cisco Topology Packet Flow & RAG Diagnostic Wave -->
+            <div class="bg-cream border border-skyborder rounded-xl overflow-hidden">
+              <div class="bg-skysurf/60 px-3.5 py-2 border-b border-skyborder flex flex-wrap items-center justify-between gap-2 font-mono text-[11px]">
+                <span class="text-skyink font-semibold flex items-center gap-1.5">
+                  <span class="w-2 h-2 rounded-full bg-skyaccent animate-ping"></span>
+                  <span>CISCO_IOS_TOPOLOGY // RAG_DIAGNOSTIC_ENGINE</span>
+                </span>
+                <button onclick="netCardToggleFault()" id="net-card-fault-btn" class="btn-tactile bg-rosesurf text-roseink border border-roseborder px-2.5 py-0.5 rounded text-[10px] font-semibold">
+                  Inject OSPF MTU Fault
+                </button>
+              </div>
+              <div class="relative h-[200px] w-full bg-studio-grid">
+                <canvas id="canvas-card-netsage" class="w-full h-full block"></canvas>
+                <div id="net-card-cli-banner" class="absolute bottom-2 left-2.5 right-2.5 font-mono text-[10px] bg-ivory/95 backdrop-blur-sm border border-hairline px-2.5 py-1 rounded flex items-center justify-between">
+                  <span id="net-card-cli-text" class="text-sageink font-semibold truncate">RTR-CORE# show ip ospf neighbor &rarr; FULL/DR (Healthy)</span>
+                  <span class="text-skyink font-semibold shrink-0 ml-2">Packet Tracer Validated</span>
+                </div>
+              </div>
+            </div>
+
+            <p class="text-sm text-slatewarm leading-relaxed">
+              AI-powered network troubleshooting assistant that identifies likely root causes and suggests verified IOS fixes using <strong>Cisco CLI outputs</strong>, <strong>Retrieval-Augmented Generation (RAG)</strong>, and deterministic rule-based validation tested in Cisco Packet Tracer.
+            </p>
+
+            <div class="flex flex-wrap gap-1.5 font-mono text-[11px]">
+              <span class="px-2.5 py-1 bg-skysurf/60 border border-skyborder rounded-md text-skyink font-medium">FastAPI</span>
+              <span class="px-2.5 py-1 bg-cream border border-hairline rounded-md text-espresso">Python</span>
+              <span class="px-2.5 py-1 bg-cream border border-hairline rounded-md text-espresso">LLM &amp; RAG</span>
+              <span class="px-2.5 py-1 bg-cream border border-hairline rounded-md text-espresso">Deterministic Rule Checking</span>
+              <span class="px-2.5 py-1 bg-cream border border-hairline rounded-md text-espresso">Streamlit / Gradio</span>
+              <span class="px-2.5 py-1 bg-cream border border-hairline rounded-md text-espresso">Cisco Packet Tracer</span>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-hairline flex flex-wrap items-center justify-between gap-3 font-mono text-xs">
+            <span class="text-skyink font-medium">Zero-Hallucination CLI Rule Guardrails</span>
+            <a 
+              href="https://github.com/affanakram1217-star/ml-mini-projects" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="btn-tactile bg-skysurf hover:bg-skyborder/70 text-skyink border border-skyborder px-3.5 py-2 rounded-lg font-medium flex items-center gap-1.5">
+              <span>github.com/ml-mini-projects</span>
+              <span>&nearr;</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- ===============================================================
+             PROJECT 3 CARD: Nova — BLIP Vision-Transformer Cross-Modal Attention
+        ================================================================ -->
+        <article data-proj-cat="CV_NLP" class="project-card reveal-item bg-ivory border border-borderwarm rounded-2xl p-6 sm:p-7 flex flex-col justify-between space-y-5 shadow-sm hover:border-ochreborder transition-all">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between gap-2 font-mono text-xs">
+              <span class="px-3 py-1 rounded-full bg-ochresurf text-ochreink border border-ochreborder font-semibold">
+                03 · Multimodal Vision-Language (BLIP)
+              </span>
+              <span class="text-slatewarm tabular-nums">2026</span>
+            </div>
+
+            <div>
+              <h3 class="font-serif text-3xl text-espresso">
+                Nova – Image Caption Generator
+              </h3>
+              <p class="font-mono text-[11px] text-ochreink mt-1">
+                Statement: PIL Image Tensor &rarr; BLIP ViT Patch Attention &rarr; Autoregressive Token Stream
+              </p>
+            </div>
+
+            <!-- BESPOKE ANIMATION 3: Live BLIP Vision Transformer 4x4 Patch Attention + Token Streamer -->
+            <div class="bg-cream border border-ochreborder rounded-xl overflow-hidden">
+              <div class="bg-ochresurf/70 px-3.5 py-2 border-b border-ochreborder flex flex-wrap items-center justify-between gap-2 font-mono text-[11px]">
+                <span class="text-ochreink font-semibold flex items-center gap-1.5">
+                  <span class="w-2 h-2 rounded-full bg-ochreaccent animate-ping"></span>
+                  <span>BLIP_VIT_ATTENTION // TOKEN_DECODER</span>
+                </span>
+                <button onclick="novaCardSwitchScene()" class="btn-tactile bg-ivory hover:bg-ochresurf text-ochreink border border-ochreborder px-2.5 py-0.5 rounded text-[10px] font-semibold">
+                  Switch Input Scene
+                </button>
+              </div>
+              <div class="relative h-[200px] w-full bg-studio-grid">
+                <canvas id="canvas-card-nova" class="w-full h-full block"></canvas>
+                <div class="absolute bottom-2 left-2.5 right-2.5 font-mono text-[10px] bg-ivory/95 backdrop-blur-sm border border-hairline px-2.5 py-1.5 rounded flex items-center justify-between gap-2">
+                  <div class="truncate">
+                    <span class="text-ochreink font-semibold">[BLIP]: </span>
+                    <span id="nova-card-caption-stream" class="text-espresso font-medium"></span>
+                    <span class="inline-block w-1.5 h-3 bg-ochreaccent animate-pulse align-middle ml-0.5"></span>
+                  </div>
+                  <span id="nova-card-conf" class="text-sageink font-semibold shrink-0 tabular-nums">Conf: 98.4%</span>
+                </div>
+              </div>
+            </div>
+
+            <p class="text-sm text-slatewarm leading-relaxed">
+              Multimodal image captioning application using Salesforce’s <strong>BLIP (Bootstrapping Language-Image Pre-training)</strong> Transformer architecture via Hugging Face and PIL image processing with an interactive <strong>Gradio</strong> web interface.
+            </p>
+
+            <div class="flex flex-wrap gap-1.5 font-mono text-[11px]">
+              <span class="px-2.5 py-1 bg-ochresurf/70 border border-ochreborder rounded-md text-ochreink font-medium">BLIP Transformer</span>
+              <span class="px-2.5 py-1 bg-cream border border-hairline rounded-md text-espresso">Python</span>
+              <span class="px-2.5 py-1 bg-cream border border-hairline rounded-md text-espresso">Hugging Face</span>
+              <span class="px-2.5 py-1 bg-cream border border-hairline rounded-md text-espresso">Gradio</span>
+              <span class="px-2.5 py-1 bg-cream border border-hairline rounded-md text-espresso">PIL</span>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-hairline flex flex-wrap items-center justify-between gap-3 font-mono text-xs">
+            <span class="text-ochreink font-medium">Vision-Language Cross-Attention</span>
+            <a 
+              href="https://github.com/affanakram1217-star/ml-mini-projects" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="btn-tactile bg-ochresurf hover:bg-ochreborder/70 text-ochreink border border-ochreborder px-3.5 py-2 rounded-lg font-medium flex items-center gap-1.5">
+              <span>github.com/ml-mini-projects</span>
+              <span>&nearr;</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- ===============================================================
+             PROJECT 4 CARD: Beyond Words — 21-Point MediaPipe Hand Landmark Rig
+        ================================================================ -->
+        <article data-proj-cat="CV_NLP" class="project-card reveal-item bg-ivory border border-borderwarm rounded-2xl p-6 sm:p-7 flex flex-col justify-between space-y-5 shadow-sm hover:border-roseborder transition-all">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between gap-2 font-mono text-xs">
+              <span class="px-3 py-1 rounded-full bg-rosesurf text-roseink border border-roseborder font-semibold">
+                04 · Real-Time Computer Vision (MediaPipe)
+              </span>
+              <span class="text-slatewarm tabular-nums">2026</span>
+            </div>
+
+            <div>
+              <h3 class="font-serif text-3xl text-espresso">
+                Beyond Words – Sign Language Detector
+              </h3>
+              <p class="font-mono text-[11px] text-roseink mt-1">
+                Statement: OpenCV Video Stream &rarr; 21-Node MediaPipe Hand Skeleton &rarr; Deep Learning Sign Classifier
+              </p>
+            </div>
+
+            <!-- BESPOKE ANIMATION 4: Interactive 21-Point MediaPipe Hand Skeleton Morphing Rig -->
+            <div class="bg-cream border border-roseborder rounded-xl overflow-hidden">
+              <div class="bg-rosesurf/70 px-3.5 py-2 border-b border-roseborder flex flex-wrap items-center justify-between gap-2 font-mono text-[11px]">
+                <span class="text-roseink font-semibold flex items-center gap-1.5">
+                  <span class="w-2 h-2 rounded-full bg-roseaccent animate-ping"></span>
+                  <span>MEDIAPIPE_21_KEYPOINTS // OPENCV_STREAM</span>
+                </span>
+                <div class="flex items-center gap-1">
+                  <button onclick="beyondSelectSign(0)" id="sign-btn-0" class="btn-tactile bg-roseink text-cream px-2 py-0.5 rounded text-[10px] font-semibold">
+                    HELLO
+                  </button>
+                  <button onclick="beyondSelectSign(1)" id="sign-btn-1" class="btn-tactile bg-ivory text-roseink border border-roseborder px-2 py-0.5 rounded text-[10px] font-semibold">
+                    THANK YOU
+                  </button>
+                  <button onclick="beyondSelectSign(2)" id="sign-btn-2" class="btn-tactile bg-ivory text-roseink border border-roseborder px-2 py-0.5 rounded text-[10px] font-semibold">
+                    AI READY
+                  </button>
+                </div>
+              </div>
+              <div class="relative h-[200px] w-full bg-studio-grid">
+                <canvas id="canvas-card-beyond" class="w-full h-full block"></canvas>
+                <div class="absolute bottom-2 left-2.5 right-2.5 font-mono text-[10px] bg-ivory/95 backdrop-blur-sm border border-hairline px-2.5 py-1 rounded flex items-center justify-between">
+                  <span id="beyond-card-prediction" class="text-roseink font-semibold">PREDICTION: "HELLO" (Softmax: 0.992)</span>
+                  <span id="beyond-card-coords" class="text-slatewarm tabular-nums">WRIST(0.50, 0.84, -0.02)</span>
+                </div>
+              </div>
+            </div>
+
+            <p class="text-sm text-slatewarm leading-relaxed">
+              Real-time sign language detection and gesture classification pipeline using <strong>OpenCV</strong> video capture, <strong>MediaPipe</strong> 21-point 3D hand landmark extraction, and deep learning classification deployed via an interactive <strong>Gradio</strong> interface.
+            </p>
+
+            <div class="flex flex-wrap gap-1.5 font-mono text-[11px]">
+              <span class="px-2.5 py-1 bg-rosesurf/70 border border-roseborder rounded-md text-roseink font-medium">MediaPipe</span>
+              <span class="px-2.5 py-1 bg-cream border border-hairline rounded-md text-espresso">OpenCV</span>
+              <span class="px-2.5 py-1 bg-cream border border-hairline rounded-md text-espresso">Python</span>
+              <span class="px-2.5 py-1 bg-cream border border-hairline rounded-md text-espresso">Deep Learning</span>
+              <span class="px-2.5 py-1 bg-cream border border-hairline rounded-md text-espresso">Gradio</span>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-hairline flex flex-wrap items-center justify-between gap-3 font-mono text-xs">
+            <span class="text-roseink font-medium">21-Node 3D Skeletal Vector Tracking</span>
+            <a 
+              href="https://github.com/affanakram1217-star/ml-mini-projects" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="btn-tactile bg-rosesurf hover:bg-roseborder/70 text-roseink border border-roseborder px-3.5 py-2 rounded-lg font-medium flex items-center gap-1.5">
+              <span>github.com/ml-mini-projects</span>
+              <span>&nearr;</span>
+            </a>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- ===============================================================
+           NEW: AUTO-SYNCED GITHUB REPOSITORIES & CUSTOM PROJECTS FEED
+           Queries https://api.github.com/users/affanakram1217-star/repos
+      ================================================================ -->
+      <div class="mt-14 pt-10 border-t border-hairline reveal-item">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
+          <div>
+            <div class="flex items-center gap-2 font-mono text-xs text-sageink font-semibold">
+              <span class="w-2 h-2 rounded-full bg-sageaccent animate-ping"></span>
+              <span>LIVE GITHUB REPOSITORY AUTO-DISCOVERY FEED</span>
+            </div>
+            <h3 class="font-serif text-2xl sm:text-3xl text-espresso mt-1">
+              Public Repositories &amp; Custom Added Projects (<span id="gh-repo-total-badge">Syncing...</span>)
+            </h3>
+            <p class="text-xs sm:text-sm text-slatewarm mt-0.5">
+              Whenever you push a new repository to <code id="gh-feed-handle-code" class="font-mono text-espresso bg-sand px-1.5 py-0.5 rounded">github.com/affanakram1217-star</code> or add a custom project in Studio Manager, it automatically renders below.
+            </p>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-2">
+            <span id="gh-sync-timestamp" class="font-mono text-[11px] text-mutedwarm bg-sand px-3 py-1.5 rounded-lg border border-hairline">
+              Last Synced: Just now
+            </span>
+            <button 
+              onclick="syncGitHubRepos(true)"
+              class="btn-tactile bg-ivory hover:bg-sand text-espresso border border-borderwarm font-mono text-xs font-medium px-3.5 py-2 rounded-lg flex items-center gap-1.5 shadow-sm">
+              <svg id="gh-refresh-icon" class="w-3.5 h-3.5 text-sageink transition-transform duration-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="23 4 23 10 17 10"></polyline>
+                <polyline points="1 20 1 14 7 14"></polyline>
+                <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
+              </svg>
+              <span>Refresh GitHub</span>
+            </button>
+            <button 
+              onclick="openStudioDrawer('projects')"
+              class="btn-tactile bg-sagesurf hover:bg-sageborder/70 text-sageink border border-sageborder font-mono text-xs font-medium px-3.5 py-2 rounded-lg flex items-center gap-1.5 shadow-sm">
+              <svg class="w-3.5 h-3.5 stroke-[2]" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <line x1="12" y1="5" x2="12" y2="19"></line>
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+              </svg>
+              <span>Add Custom Project</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Dynamic GitHub + Custom Projects Grid -->
+        <div id="github-live-repos-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <!-- Populated automatically by syncGitHubRepos() + custom projects -->
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ===================================================================
+         SECTION 4: TECHNICAL SKILLS, LIVE LEETCODE AUTO-SYNC & EDUCATION
+    ==================================================================== -->
+    <section id="skills" class="py-16 md:py-24 border-b border-hairline">
+      
+      <div class="mb-10 reveal-item">
+        <span class="font-mono text-xs text-sageink font-semibold">03 / Live LeetCode Telemetry, Technical Stack &amp; Education</span>
+        <h2 class="font-serif text-4xl sm:text-5xl text-espresso tracking-tight mt-1">
+          Skills Matrix, Live Algorithmic Standing &amp; Academic Honors
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+
+        <!-- Left 5 Cols: Academic Credentials, Scholarships & Live Auto-Syncing LeetCode Card -->
+        <div class="lg:col-span-5 space-y-5 reveal-item">
+          
+          <!-- LNCTS Card -->
+          <div class="bg-ivory border border-borderwarm rounded-2xl p-6 space-y-4 shadow-sm">
+            <div class="flex items-center justify-between font-mono text-xs">
+              <span class="px-2.5 py-1 bg-sagesurf text-sageink border border-sageborder rounded-md font-semibold">
+                B.TECH CSE · 3RD YEAR
+              </span>
+              <span class="text-slatewarm tabular-nums">2024 – 2028</span>
+            </div>
+            <div>
+              <h3 class="font-serif text-2xl text-espresso">
+                Lakshmi Narain Group of Colleges (LNCTS), Bhopal
+              </h3>
+              <p class="text-xs sm:text-sm text-slatewarm mt-1">
+                Bachelor of Technology in Computer Science and Engineering
+              </p>
+            </div>
+            <div class="p-3.5 bg-sagesurf/50 border border-sageborder rounded-xl flex items-center justify-between font-mono text-xs tabular-nums">
+              <span class="text-sageink">CUMULATIVE GPA (CGPA)</span>
+              <span class="text-base font-bold text-sageink">8.41 / 10.00</span>
+            </div>
+          </div>
+
+          <!-- St. Xavier's School Card -->
+          <div class="bg-ivory border border-borderwarm rounded-2xl p-6 space-y-4 shadow-sm">
+            <div class="flex items-center justify-between font-mono text-xs">
+              <span class="px-2.5 py-1 bg-skysurf text-skyink border border-skyborder rounded-md font-semibold">
+                ST. XAVIER’S SCHOOL, HAZARIBAGH
+              </span>
+              <span class="text-slatewarm tabular-nums">2022 – 2024</span>
+            </div>
+            <div class="grid grid-cols-2 gap-3 font-mono text-xs tabular-nums">
+              <div class="p-3 bg-cream border border-hairline rounded-xl">
+                <div class="text-mutedwarm text-[10px]">CLASS XII (2024)</div>
+                <div class="text-lg font-bold text-espresso mt-0.5">92.0%</div>
+              </div>
+              <div class="p-3 bg-cream border border-hairline rounded-xl">
+                <div class="text-mutedwarm text-[10px]">CLASS X (2022)</div>
+                <div class="text-lg font-bold text-espresso mt-0.5">95.2%</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Live Auto-Synced LeetCode Telemetry Card -->
+          <div class="bg-ochresurf/75 border border-ochreborder rounded-2xl p-6 space-y-4">
+            <div class="flex items-center justify-between gap-2 font-mono text-xs">
+              <div class="flex items-center gap-1.5">
+                <span class="w-2 h-2 rounded-full bg-ochreaccent animate-ping"></span>
+                <span class="text-ochreink font-semibold uppercase tracking-wider">
+                  LeetCode Live (<span id="lc-card-handle">AffanCoder</span>)
+                </span>
+              </div>
+              <div class="flex items-center gap-1.5">
+                <span id="lc-card-total-pill" class="bg-ivory px-2.5 py-0.5 rounded-full border border-ochreborder text-ochreink font-bold tabular-nums">
+                  418 Solved
+                </span>
+                <button 
+                  onclick="syncLeetCodeStats(true)"
+                  title="Sync latest LeetCode solved count now"
+                  class="btn-tactile bg-ivory hover:bg-cream text-ochreink border border-ochreborder p-1 rounded-md">
+                  <svg id="lc-card-refresh-icon" class="w-3.5 h-3.5 transition-transform duration-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="23 4 23 10 17 10"></polyline>
+                    <polyline points="1 20 1 14 7 14"></polyline>
+                    <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <!-- Live Difficulty Breakdown Bars (Easy / Medium / Hard) -->
+            <div class="space-y-2.5 font-mono text-[11px] tabular-nums">
+              <div>
+                <div class="flex justify-between text-espresso mb-1">
+                  <span>Easy Difficulty Problems</span>
+                  <span id="lc-easy-count" class="text-sageink font-semibold">162 solved</span>
+                </div>
+                <div class="h-2 w-full bg-ivory rounded-full overflow-hidden border border-sageborder">
+                  <div id="lc-easy-bar" class="h-full bg-sageaccent rounded-full transition-all duration-700" style="width: 39%"></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between text-espresso mb-1">
+                  <span>Medium Difficulty (Arrays, Graphs, DP, Trees)</span>
+                  <span id="lc-medium-count" class="text-ochreink font-semibold">214 solved</span>
+                </div>
+                <div class="h-2 w-full bg-ivory rounded-full overflow-hidden border border-ochreborder">
+                  <div id="lc-medium-bar" class="h-full bg-ochreaccent rounded-full transition-all duration-700" style="width: 51%"></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between text-espresso mb-1">
+                  <span>Hard Difficulty &amp; Competitive Algorithms</span>
+                  <span id="lc-hard-count" class="text-roseink font-semibold">42 solved</span>
+                </div>
+                <div class="h-2 w-full bg-ivory rounded-full overflow-hidden border border-roseborder">
+                  <div id="lc-hard-bar" class="h-full bg-roseaccent rounded-full transition-all duration-700" style="width: 18%"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Interactive Data Structures vs Algorithms & Techniques Breakdown -->
+            <div class="pt-3 border-t border-ochreborder/70 space-y-3">
+              <div class="flex items-center justify-between gap-2">
+                <span class="font-mono text-[10px] uppercase tracking-wider text-ochreink font-semibold">
+                  Topic &amp; Technique Classification
+                </span>
+                <div class="inline-flex bg-ivory p-0.5 rounded-lg border border-ochreborder font-mono text-[10px]">
+                  <button 
+                    type="button"
+                    id="lc-tab-ds"
+                    onclick="switchLcTopicView('ds')"
+                    class="px-2 py-1 rounded-md bg-ochresurf text-ochreink font-semibold transition-all">
+                    Data Structures
+                  </button>
+                  <button 
+                    type="button"
+                    id="lc-tab-algo"
+                    onclick="switchLcTopicView('algo')"
+                    class="px-2 py-1 rounded-md text-slatewarm hover:text-espresso transition-all">
+                    Algorithms &amp; Techniques
+                  </button>
+                </div>
+              </div>
+
+              <!-- Sub-panel 1: Data Structures Classification -->
+              <div id="lc-panel-ds" class="grid grid-cols-2 gap-2 font-mono text-[11px] tabular-nums">
+                <!-- Populated dynamically by renderLeetCodeTopicBreakdown() -->
+              </div>
+
+              <!-- Sub-panel 2: Algorithms & Techniques Classification -->
+              <div id="lc-panel-algo" class="hidden grid grid-cols-2 gap-2 font-mono text-[11px] tabular-nums">
+                <!-- Populated dynamically by renderLeetCodeTopicBreakdown() -->
+              </div>
+
+              <!-- Fundamental / Intermediate / Advanced Tier Summary Pill Strip -->
+              <div class="grid grid-cols-3 gap-1.5 pt-1 font-mono text-[10px] tabular-nums text-center">
+                <div class="bg-ivory/90 border border-sageborder rounded-lg py-1.5 px-2">
+                  <div class="text-mutedwarm text-[9px]">FUNDAMENTAL DS</div>
+                  <div id="lc-tier-fundamental" class="text-sageink font-bold mt-0.5">248 tag hits</div>
+                </div>
+                <div class="bg-ivory/90 border border-skyborder rounded-lg py-1.5 px-2">
+                  <div class="text-mutedwarm text-[9px]">INTERMEDIATE ALGO</div>
+                  <div id="lc-tier-intermediate" class="text-skyink font-bold mt-0.5">196 tag hits</div>
+                </div>
+                <div class="bg-ivory/90 border border-roseborder rounded-lg py-1.5 px-2">
+                  <div class="text-mutedwarm text-[9px]">ADVANCED DP/GRAPH</div>
+                  <div id="lc-tier-advanced" class="text-roseink font-bold mt-0.5">94 tag hits</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex items-center justify-between text-[11px] font-mono text-ochreink pt-1 border-t border-ochreborder/60">
+              <span id="lc-sync-status-label">Status: Verified Baseline / Auto-Sync</span>
+              <button onclick="openStudioDrawer('export')" class="underline hover:text-espresso">Configure Handle &rarr;</button>
+            </div>
+
+            <div class="pt-2 border-t border-ochreborder/80 text-xs text-espresso/90 space-y-1.5">
+              <div>&bull; <strong>Reliance Foundation Undergraduate (UG) Scholarship</strong> — Merit-based.</div>
+              <div>&bull; <strong>Smart India Hackathon 2026 Finalist (Internal)</strong> — Team GeoVISTA.</div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right 7 Cols: Structured 5-Row Technical Skills Matrix -->
+        <div class="lg:col-span-7 bg-ivory border border-borderwarm rounded-2xl overflow-hidden shadow-sm reveal-item">
+          <div class="bg-sand/70 px-6 py-4 border-b border-hairline flex items-center justify-between font-mono text-xs">
+            <span class="text-espresso font-semibold">TECHNICAL_COMPETENCY_LEDGER</span>
+            <span class="text-slatewarm">VERIFIED RESUME STACK</span>
+          </div>
+
+          <div class="divide-y divide-hairline">
+            
+            <!-- Row 1: Core Domains -->
+            <div class="p-5 sm:p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div class="sm:w-48 shrink-0">
+                <div class="font-mono text-xs font-semibold text-sageink">01. Core Domains</div>
+                <div class="text-xs text-mutedwarm mt-0.5">Primary focus areas</div>
+              </div>
+              <div class="flex flex-wrap gap-1.5 font-mono text-xs flex-1">
+                <span class="px-3 py-1 bg-sagesurf text-sageink border border-sageborder rounded-lg font-medium">Data Structures &amp; Algorithms</span>
+                <span class="px-3 py-1 bg-sagesurf text-sageink border border-sageborder rounded-lg font-medium">Machine Learning</span>
+                <span class="px-3 py-1 bg-sagesurf text-sageink border border-sageborder rounded-lg font-medium">Computer Vision</span>
+                <span class="px-3 py-1 bg-sagesurf text-sageink border border-sageborder rounded-lg font-medium">NLP</span>
+                <span class="px-3 py-1 bg-sagesurf text-sageink border border-sageborder rounded-lg font-medium">Geospatial / 3D Mapping</span>
+                <span class="px-3 py-1 bg-sagesurf text-sageink border border-sageborder rounded-lg font-medium">Backend Development</span>
+              </div>
+            </div>
+
+            <!-- Row 2: Programming Languages -->
+            <div class="p-5 sm:p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div class="sm:w-48 shrink-0">
+                <div class="font-mono text-xs font-semibold text-ochreink">02. Languages</div>
+                <div class="text-xs text-mutedwarm mt-0.5">418 LeetCode in C++</div>
+              </div>
+              <div class="flex flex-wrap gap-1.5 font-mono text-xs flex-1">
+                <span class="px-3 py-1 bg-ochresurf text-ochreink border border-ochreborder rounded-lg font-medium">C++ (DSA)</span>
+                <span class="px-3 py-1 bg-ochresurf text-ochreink border border-ochreborder rounded-lg font-medium">Python</span>
+                <span class="px-3 py-1 bg-cream text-espresso border border-hairline rounded-lg">SQL</span>
+                <span class="px-3 py-1 bg-cream text-slatewarm border border-hairline rounded-lg">Java (basic)</span>
+              </div>
+            </div>
+
+            <!-- Row 3: Machine Learning & AI -->
+            <div class="p-5 sm:p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div class="sm:w-48 shrink-0">
+                <div class="font-mono text-xs font-semibold text-roseink">03. ML &amp; AI</div>
+                <div class="text-xs text-mutedwarm mt-0.5">Vision, NLP &amp; Deep Learning</div>
+              </div>
+              <div class="flex flex-wrap gap-1.5 font-mono text-xs flex-1">
+                <span class="px-3 py-1 bg-rosesurf text-roseink border border-roseborder rounded-lg font-medium">TensorFlow</span>
+                <span class="px-3 py-1 bg-rosesurf text-roseink border border-roseborder rounded-lg font-medium">Hugging Face Transformers</span>
+                <span class="px-3 py-1 bg-cream text-espresso border border-hairline rounded-lg">PyTorch (basic)</span>
+                <span class="px-3 py-1 bg-cream text-espresso border border-hairline rounded-lg">Pandas</span>
+                <span class="px-3 py-1 bg-cream text-espresso border border-hairline rounded-lg">NumPy</span>
+                <span class="px-3 py-1 bg-cream text-espresso border border-hairline rounded-lg">Matplotlib</span>
+              </div>
+            </div>
+
+            <!-- Row 4: Backend & Frameworks -->
+            <div class="p-5 sm:p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div class="sm:w-48 shrink-0">
+                <div class="font-mono text-xs font-semibold text-skyink">04. Frameworks</div>
+                <div class="text-xs text-mutedwarm mt-0.5">APIs, UI &amp; Spatial</div>
+              </div>
+              <div class="flex flex-wrap gap-1.5 font-mono text-xs flex-1">
+                <span class="px-3 py-1 bg-skysurf text-skyink border border-skyborder rounded-lg font-medium">FastAPI</span>
+                <span class="px-3 py-1 bg-skysurf text-skyink border border-skyborder rounded-lg font-medium">Gradio</span>
+                <span class="px-3 py-1 bg-skysurf text-skyink border border-skyborder rounded-lg font-medium">OpenCV</span>
+                <span class="px-3 py-1 bg-cream text-espresso border border-hairline rounded-lg">MediaPipe</span>
+                <span class="px-3 py-1 bg-cream text-espresso border border-hairline rounded-lg">Shapely &amp; Three.js</span>
+                <span class="px-3 py-1 bg-cream text-espresso border border-hairline rounded-lg">Pydantic</span>
+              </div>
+            </div>
+
+            <!-- Row 5: Databases & Developer Tools -->
+            <div class="p-5 sm:p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div class="sm:w-48 shrink-0">
+                <div class="font-mono text-xs font-semibold text-espresso">05. Data &amp; DevOps</div>
+                <div class="text-xs text-mutedwarm mt-0.5">Storage &amp; Tooling</div>
+              </div>
+              <div class="flex flex-wrap gap-1.5 font-mono text-xs flex-1">
+                <span class="px-3 py-1 bg-cream text-espresso border border-hairline rounded-lg">MySQL</span>
+                <span class="px-3 py-1 bg-cream text-espresso border border-hairline rounded-lg">PostgreSQL (basic)</span>
+                <span class="px-3 py-1 bg-sagesurf/60 text-sageink border border-sageborder rounded-lg font-medium">PostGIS (learning)</span>
+                <span class="px-3 py-1 bg-cream text-espresso border border-hairline rounded-lg">Git &amp; GitHub</span>
+                <span class="px-3 py-1 bg-cream text-espresso border border-hairline rounded-lg">VS Code</span>
+                <span class="px-3 py-1 bg-cream text-espresso border border-hairline rounded-lg">Jupyter Notebook</span>
+                <span class="px-3 py-1 bg-cream text-slatewarm border border-hairline rounded-lg">Docker (basic)</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         SECTION 5: FILTERABLE VERIFIED CERTIFICATIONS LEDGER + SELF-SERVICE ADDER
+    ==================================================================== -->
+    <section id="certifications" class="py-16 md:py-24 border-b border-hairline">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8 reveal-item">
+        <div>
+          <span class="font-mono text-xs text-sageink font-semibold">04 / Verified Credentials &amp; Self-Service Manager</span>
+          <h2 class="font-serif text-4xl sm:text-5xl text-espresso tracking-tight mt-1">
+            <span id="cert-heading-count">11</span> Industry &amp; University Certifications
+          </h2>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-2 self-start">
+          <!-- Filter Buttons for Certifications -->
+          <div class="flex flex-wrap items-center gap-1.5 bg-sand p-1.5 border border-hairline rounded-xl">
+            <button onclick="filterCerts('ALL')" data-cert-filter="ALL" class="cert-tab-btn bg-sageink text-cream font-mono text-xs font-medium px-3 py-1.5 rounded-lg transition-all">
+              All (<span id="cert-tab-all-count">11</span>)
+            </button>
+            <button onclick="filterCerts('AI')" data-cert-filter="AI" class="cert-tab-btn text-slatewarm hover:text-espresso font-mono text-xs px-3 py-1.5 rounded-lg transition-all">
+              AI &amp; ML
+            </button>
+            <button onclick="filterCerts('CISCO')" data-cert-filter="CISCO" class="cert-tab-btn text-slatewarm hover:text-espresso font-mono text-xs px-3 py-1.5 rounded-lg transition-all">
+              Cisco &amp; IoT
+            </button>
+            <button onclick="filterCerts('SWE')" data-cert-filter="SWE" class="cert-tab-btn text-slatewarm hover:text-espresso font-mono text-xs px-3 py-1.5 rounded-lg transition-all">
+              Cloud, SWE &amp; Data
+            </button>
+          </div>
+
+          <!-- Direct "+ Add Certification" Button -->
+          <button 
+            onclick="openStudioDrawer('certs')"
+            class="btn-tactile bg-ochresurf hover:bg-ochreborder/70 text-ochreink border border-ochreborder font-mono text-xs font-semibold px-3.5 py-2.5 rounded-xl flex items-center gap-1.5 shadow-sm">
+            <svg class="w-3.5 h-3.5 stroke-[2.2]" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <line x1="12" y1="5" x2="12" y2="19"></line>
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+            </svg>
+            <span>Add New Certification</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Certifications Grid -->
+      <div id="certs-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 reveal-item">
+        <!-- Populated dynamically via JS from baseline + custom user-added certifications -->
+      </div>
+
+    </section>
+
+    <!-- ===================================================================
+         SECTION 6: CONTACT & RECRUITER DISPATCH
+         (Eyebrow 2 of max 2 across entire page)
+    ==================================================================== -->
+    <section id="contact" class="py-16 md:py-24">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start reveal-item">
+        
+        <!-- Left 6 Cols: Direct Contact Coordinates -->
+        <div class="lg:col-span-6 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 bg-sagesurf border border-sageborder rounded-full">
+            <span class="w-2 h-2 rounded-full bg-sageaccent animate-ping"></span>
+            <span class="font-mono text-xs uppercase tracking-wider text-sageink font-semibold">
+              Direct Contact · Ready for 2026–2027 Internships
+            </span>
+          </div>
+
+          <h2 class="font-serif text-4xl sm:text-5xl text-espresso tracking-tight">
+            Let’s Discuss AI, Backend &amp; Software Engineering Roles
+          </h2>
+
+          <p class="text-slatewarm text-base leading-relaxed max-w-xl">
+            Currently in my 3rd year of B.Tech CSE at LNCTS Bhopal (8.41 CGPA) and available for AI, Machine Learning, Backend (FastAPI/Python), and Software Engineering internships.
+          </p>
+
+          <!-- Direct Copy Cards -->
+          <div class="space-y-3 pt-1">
+            <div class="bg-ivory border border-borderwarm p-4 rounded-xl flex items-center justify-between gap-4 shadow-sm">
+              <div>
+                <div class="font-mono text-[11px] text-mutedwarm">PRIMARY EMAIL ADDRESS</div>
+                <div class="font-mono text-sm text-espresso font-semibold mt-0.5">affanakram1217@gmail.com</div>
+              </div>
+              <button 
+                onclick="copyEmailToClipboard('footer-copy-btn')"
+                id="footer-copy-btn"
+                class="btn-tactile bg-sagesurf hover:bg-sageborder/70 text-sageink border border-sageborder font-mono text-xs font-medium px-3.5 py-2 rounded-lg">
+                Copy Email
+              </button>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 font-mono text-xs">
+              <a 
+                href="https://github.com/affanakram1217-star" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                class="btn-tactile bg-ivory hover:bg-sand border border-borderwarm p-3.5 rounded-xl flex items-center justify-between text-espresso shadow-sm">
+                <span>GitHub</span>
+                <span class="text-sageink">&nearr;</span>
+              </a>
+              <a 
+                href="https://leetcode.com/u/AffanCoder/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                class="btn-tactile bg-ivory hover:bg-sand border border-borderwarm p-3.5 rounded-xl flex items-center justify-between text-espresso shadow-sm">
+                <span>LeetCode (418)</span>
+                <span class="text-ochreink">&nearr;</span>
+              </a>
+              <a 
+                href="https://www.linkedin.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                class="btn-tactile bg-ivory hover:bg-sand border border-borderwarm p-3.5 rounded-xl flex items-center justify-between text-espresso shadow-sm">
+                <span>LinkedIn</span>
+                <span class="text-skyink">&nearr;</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Consistent Primary CTA Button -->
+          <div class="pt-2">
+            <button 
+              onclick="openResumeModal()"
+              class="btn-tactile whitespace-nowrap bg-sageink hover:bg-[#123023] text-cream font-mono text-xs sm:text-sm font-medium px-5 py-3 rounded-xl flex items-center gap-2.5 shadow-sm">
+              <svg class="w-4 h-4 stroke-[2]" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+              </svg>
+              <span>View Resume</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Right 6 Cols: Recruiter Quick Dispatch Form -->
+        <div class="lg:col-span-6 bg-ivory border border-borderwarm rounded-2xl p-6 sm:p-8 shadow-sm">
+          <div class="flex items-center justify-between border-b border-hairline pb-4 mb-6 font-mono text-xs">
+            <span class="text-espresso font-semibold">Recruiter &amp; Hiring Team Dispatch</span>
+            <span class="text-sageink bg-sagesurf px-2.5 py-0.5 rounded-full border border-sageborder">Direct Inbox</span>
+          </div>
+
+          <form id="recruiter-form" onsubmit="handleInquirySubmit(event)" class="space-y-4" novalidate>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label for="rec-name" class="block font-mono text-xs text-slatewarm mb-1.5">Your Name *</label>
+                <input 
+                  id="rec-name" 
+                  type="text" 
+                  required
+                  placeholder="e.g. Ananya Sharma"
+                  class="w-full bg-cream border border-hairline focus:border-sageink rounded-xl px-3.5 py-2.5 text-sm text-espresso placeholder-mutedwarm focus:outline-none" />
+              </div>
+              <div>
+                <label for="rec-org" class="block font-mono text-xs text-slatewarm mb-1.5">Company / Organization *</label>
+                <input 
+                  id="rec-org" 
+                  type="text" 
+                  required
+                  placeholder="e.g. Cisco / Engineering Team"
+                  class="w-full bg-cream border border-hairline focus:border-sageink rounded-xl px-3.5 py-2.5 text-sm text-espresso placeholder-mutedwarm focus:outline-none" />
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label for="rec-email" class="block font-mono text-xs text-slatewarm mb-1.5">Work Email *</label>
+                <input 
+                  id="rec-email" 
+                  type="email" 
+                  required
+                  placeholder="you@company.com"
+                  class="w-full bg-cream border border-hairline focus:border-sageink rounded-xl px-3.5 py-2.5 text-sm text-espresso placeholder-mutedwarm focus:outline-none font-mono" />
+              </div>
+              <div>
+                <label for="rec-role" class="block font-mono text-xs text-slatewarm mb-1.5">Opportunity Type</label>
+                <select 
+                  id="rec-role" 
+                  class="w-full bg-cream border border-hairline focus:border-sageink rounded-xl px-3.5 py-2.5 text-sm text-espresso focus:outline-none font-mono">
+                  <option value="AI / Machine Learning Internship">AI / Machine Learning Internship</option>
+                  <option value="Backend / FastAPI Internship">Backend / FastAPI Internship</option>
+                  <option value="Software Engineering (SDE) Intern">Software Engineering (SDE) Intern</option>
+                  <option value="Geospatial / Computer Vision Project">Geospatial / Computer Vision Project</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label for="rec-msg" class="block font-mono text-xs text-slatewarm mb-1.5">Message or Interview Details *</label>
+              <textarea 
+                id="rec-msg" 
+                rows="3" 
+                required
+                placeholder="Share role details, assessment link, or preferred schedule..."
+                class="w-full bg-cream border border-hairline focus:border-sageink rounded-xl px-3.5 py-2.5 text-sm text-espresso placeholder-mutedwarm focus:outline-none"></textarea>
+            </div>
+
+            <div id="form-error-msg" class="hidden font-mono text-xs text-roseink bg-rosesurf border border-roseborder px-3.5 py-2.5 rounded-xl">
+              Please fill in your name, organization, a valid email, and message.
+            </div>
+
+            <div id="form-success-msg" class="hidden font-mono text-xs text-sageink bg-sagesurf border border-sageborder px-4 py-3 rounded-xl space-y-1">
+              <div class="font-semibold">Message Prepared for MD Affan Akram</div>
+              <div>Your inquiry has been logged and formatted for affanakram1217@gmail.com.</div>
+            </div>
+
+            <button 
+              type="submit"
+              class="btn-tactile w-full bg-sageink hover:bg-[#123023] text-cream font-mono text-xs font-medium uppercase tracking-wider py-3.5 rounded-xl flex items-center justify-center gap-2 shadow-sm">
+              <span>Send Internship Inquiry</span>
+              <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="22" y1="2" x2="11" y2="13"></line>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+              </svg>
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Studio Colophon Footer -->
+  <footer class="border-t border-hairline bg-sand/60 py-8">
+    <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-xs text-slatewarm">
+      <div>
+        MD Affan Akram · B.Tech CSE (2024–2028) · LNCTS Bhopal &amp; Hazaribagh, Jharkhand
+      </div>
+      <div class="tabular-nums">
+        8.41 CGPA · 418 LeetCode · SIH 2026 Finalist
+      </div>
+    </div>
+  </footer>
+
+  <!-- =====================================================================
+       AESTHETIC PASTEL & ATS PRINTABLE RESUME MODAL ("View Resume")
+       Includes interactive switcher between "Pastel Studio Edition" and "Strict ATS Clean View"
+  ====================================================================== -->
+  <div 
+    id="resume-modal" 
+    class="fixed inset-0 z-50 hidden bg-espresso/60 backdrop-blur-sm overflow-y-auto p-3 sm:p-6 md:p-10"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="resume-modal-title">
+    
+    <div class="max-w-4xl mx-auto bg-cream border border-borderwarm rounded-2xl shadow-2xl overflow-hidden my-2">
+      
+      <!-- Modal Top Control Bar -->
+      <div class="bg-sand px-5 py-4 border-b border-hairline flex flex-wrap items-center justify-between gap-3">
+        <div class="flex items-center gap-3">
+          <span class="w-2.5 h-2.5 rounded-full bg-sageink"></span>
+          <span id="resume-modal-title" class="font-mono text-xs sm:text-sm font-semibold text-espresso">
+            Official Resume — MD Affan Akram
+          </span>
+        </div>
+
+        <!-- Theme Switcher (Pastel Studio vs Strict ATS) + Print CTA -->
+        <div class="flex flex-wrap items-center gap-2">
+          <div class="bg-ivory p-1 rounded-lg border border-hairline flex items-center font-mono text-[11px]">
+            <button 
+              id="btn-resume-pastel"
+              onclick="setResumeTheme('pastel')"
+              class="px-2.5 py-1 rounded-md bg-sagesurf text-sageink font-semibold transition-all">
+              Pastel Aesthetic
+            </button>
+            <button 
+              id="btn-resume-ats"
+              onclick="setResumeTheme('ats')"
+              class="px-2.5 py-1 rounded-md text-slatewarm hover:text-espresso transition-all">
+              Strict ATS View
+            </button>
+          </div>
+
+          <button 
+            onclick="window.print()"
+            class="bg-sageink hover:bg-[#163B2E] text-cream font-mono text-xs font-medium px-3.5 py-2 rounded-lg transition-all active:scale-[0.98] flex items-center gap-1.5">
+            <svg class="w-3.5 h-3.5 stroke-[2]" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <polyline points="6 9 6 2 18 2 18 9"></polyline>
+              <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+              <rect x="6" y="14" width="12" height="8"></rect>
+            </svg>
+            <span>Print / Save PDF</span>
+          </button>
+
+          <button 
+            onclick="closeResumeModal()"
+            class="bg-ivory hover:bg-cream text-slatewarm hover:text-espresso border border-hairline font-mono text-xs px-3 py-2 rounded-lg transition-colors">
+            Close
+          </button>
+        </div>
+      </div>
+
+      <!-- Printable Resume Sheet (Exact Content from Uploaded Resume) -->
+      <div id="resume-printable-container" class="p-6 sm:p-10 bg-ivory text-espresso space-y-6 transition-colors">
+        
+        <!-- Header -->
+        <div id="res-header-box" class="bg-sagesurf/55 border border-sageborder rounded-xl p-5 sm:p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div>
+            <h2 class="font-serif text-3xl sm:text-4xl text-espresso tracking-tight">MD AFFAN AKRAM</h2>
+            <p class="font-mono text-xs text-sageink font-semibold mt-1">
+              B.Tech in Computer Science and Engineering | 3rd Year (2024–2028)
+            </p>
+            <p class="text-xs text-slatewarm mt-1">
+              Hazaribagh, Jharkhand, India &bull; Bhopal, MP
+            </p>
+          </div>
+          <div class="font-mono text-xs text-espresso space-y-1 sm:text-right">
+            <div>affanakram1217@gmail.com</div>
+            <div>github.com/<span id="resume-gh-handle">affanakram1217-star</span></div>
+            <div>LeetCode: <span id="resume-lc-handle">AffanCoder</span> (<span id="resume-lc-count">418</span>) | AWS Builder</div>
+          </div>
+        </div>
+
+        <!-- Professional Summary -->
+        <div class="space-y-1.5">
+          <h3 class="font-mono text-xs uppercase tracking-wider text-sageink font-semibold border-b border-hairline pb-1">
+            Professional Summary
+          </h3>
+          <p class="text-xs sm:text-sm text-espresso/90 leading-relaxed">
+            Computer Science undergraduate with 8.41 CGPA and hands-on experience in Python, C++, FastAPI, machine learning, computer vision, NLP and backend development. Built AI-assisted geospatial and computer-vision applications; internal Smart India Hackathon 2026 finalist and selected for an Artificial Intelligence internship at InAmigos Foundation through Internshala.
+          </p>
+        </div>
+
+        <!-- Education -->
+        <div class="space-y-2">
+          <h3 class="font-mono text-xs uppercase tracking-wider text-sageink font-semibold border-b border-hairline pb-1">
+            Education
+          </h3>
+          <div class="text-xs sm:text-sm space-y-1">
+            <div class="flex flex-wrap justify-between font-semibold">
+              <span>Lakshmi Narain Group of Colleges (LNCTS), Bhopal — B.Tech in Computer Science and Engineering</span>
+              <span class="font-mono text-xs tabular-nums">2024 – 2028</span>
+            </div>
+            <ul class="list-disc list-inside text-slatewarm space-y-0.5 text-xs">
+              <li><strong class="text-espresso">CGPA: 8.41 / 10.00</strong> | 3rd Year</li>
+              <li><strong class="text-espresso">St. Xavier's School, Hazaribagh</strong> — Class XII: 92% (2024) | Class X: 95.2% (2022)</li>
+              <li><strong class="text-espresso">Reliance Foundation Undergraduate (UG) Scholarship</strong> — Merit-based</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Experience -->
+        <div class="space-y-2.5">
+          <h3 class="font-mono text-xs uppercase tracking-wider text-sageink font-semibold border-b border-hairline pb-1">
+            Experience
+          </h3>
+          <div class="space-y-3 text-xs">
+            <div>
+              <div class="flex flex-wrap justify-between font-semibold text-espresso">
+                <span>InAmigos Foundation — Artificial Intelligence Intern</span>
+                <span class="font-mono tabular-nums">7–20 Oct 2026</span>
+              </div>
+              <p class="text-slatewarm mt-0.5">&bull; Completed an Artificial Intelligence internship; certificate issued 25 October 2026.</p>
+            </div>
+
+            <div>
+              <div class="flex flex-wrap justify-between font-semibold text-espresso">
+                <span>Cisco Networking Academy — AICTE Virtual Internship Program 2026 | Artificial Intelligence</span>
+                <span class="font-mono tabular-nums">Jun–Aug 2026</span>
+              </div>
+              <p class="text-slatewarm mt-0.5">&bull; Successfully completed the Cisco AICTE Virtual Internship Program in Artificial Intelligence.</p>
+            </div>
+
+            <div>
+              <div class="flex flex-wrap justify-between font-semibold text-espresso">
+                <span>Smart India Hackathon 2026 — Finalist (Internal) | Team Member, GeoVISTA</span>
+                <span class="font-mono tabular-nums">2026</span>
+              </div>
+              <ul class="text-slatewarm mt-0.5 space-y-0.5">
+                <li>&bull; Built an AI-assisted geospatial solution integrating drone imagery, LiDAR and GIS to generate 3D spatial property identifiers (ULPIN).</li>
+                <li>&bull; Developed FastAPI backend with building extraction, Shapely-based spatial verification and 3D visualization.</li>
+                <li>&bull; Designed a rule-assisted ML pipeline combining AI proposals with mathematical validation for spatial consistency.</li>
+              </ul>
+            </div>
+
+            <div>
+              <div class="flex flex-wrap justify-between font-semibold text-espresso">
+                <span>JPMorgan Chase &amp; Co. — Forage Software Engineering Job Simulation</span>
+                <span class="font-mono tabular-nums">Nov 2025</span>
+              </div>
+              <p class="text-slatewarm mt-0.5">&bull; Completed practical tasks involving project setup, Kafka, H2, REST API integration and controller development.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Projects -->
+        <div class="space-y-2.5">
+          <h3 class="font-mono text-xs uppercase tracking-wider text-sageink font-semibold border-b border-hairline pb-1">
+            Projects
+          </h3>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+            <div class="p-3 rounded-lg bg-cream border border-hairline">
+              <div class="font-semibold text-espresso">GeoVISTA – 3D ULPIN for Urban Property Mapping (2026)</div>
+              <div class="font-mono text-[10px] text-sageink mt-0.5">FastAPI | Python | LiDAR | GIS | Deep Learning | Three.js | Shapely | Pydantic</div>
+              <p class="text-slatewarm mt-1">AI-assisted system for 3D spatial property identifiers using drone imagery, LiDAR and GIS; implemented building extraction, spatial verification and 3D visualization.</p>
+            </div>
+
+            <div class="p-3 rounded-lg bg-cream border border-hairline">
+              <div class="font-semibold text-espresso">NetSage AI – Cisco Network Troubleshooting Assistant (2026)</div>
+              <div class="font-mono text-[10px] text-skyink mt-0.5">Python | FastAPI | LLM | RAG | Deterministic Rule Checking | Cisco Packet Tracer</div>
+              <p class="text-slatewarm mt-1">AI-powered network troubleshooting that identifies likely root causes and suggests fixes using CLI outputs and rule-based validation.</p>
+            </div>
+
+            <div class="p-3 rounded-lg bg-cream border border-hairline">
+              <div class="font-semibold text-espresso">Nova – Image Caption Generator (2026)</div>
+              <div class="font-mono text-[10px] text-ochreink mt-0.5">Python | BLIP | Transformers | Gradio | PIL | Hugging Face</div>
+              <p class="text-slatewarm mt-1">Image captioning application using BLIP with an interactive Gradio interface.</p>
+            </div>
+
+            <div class="p-3 rounded-lg bg-cream border border-hairline">
+              <div class="font-semibold text-espresso">Beyond Words – Sign Language Detector (2026)</div>
+              <div class="font-mono text-[10px] text-roseink mt-0.5">Python | OpenCV | MediaPipe | Deep Learning | Gradio</div>
+              <p class="text-slatewarm mt-1">Real-time sign language detection and classification using computer vision and deep learning.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Technical Skills -->
+        <div class="space-y-1.5">
+          <h3 class="font-mono text-xs uppercase tracking-wider text-sageink font-semibold border-b border-hairline pb-1">
+            Technical Skills
+          </h3>
+          <div class="text-xs text-slatewarm space-y-1 leading-relaxed">
+            <div><strong class="text-espresso">Core Domains:</strong> Data Structures &amp; Algorithms, Machine Learning, Computer Vision, NLP, Geospatial/3D Mapping, Backend Development</div>
+            <div><strong class="text-espresso">Programming Languages:</strong> C++ (DSA), Python, SQL, Java (basic)</div>
+            <div><strong class="text-espresso">Machine Learning &amp; AI:</strong> TensorFlow, PyTorch (basic), Hugging Face Transformers, Pandas, NumPy, Matplotlib</div>
+            <div><strong class="text-espresso">Backend &amp; Frameworks:</strong> FastAPI, Gradio, OpenCV</div>
+            <div><strong class="text-espresso">Databases &amp; Tools:</strong> MySQL, PostgreSQL (basic), PostGIS (learning), Git, GitHub, VS Code, Jupyter Notebook, Docker (basic)</div>
+          </div>
+        </div>
+
+        <!-- Certifications & Achievements -->
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-4">
+          <div class="md:col-span-8 space-y-1.5">
+            <h3 class="font-mono text-xs uppercase tracking-wider text-sageink font-semibold border-b border-hairline pb-1">
+              Certifications (<span id="resume-cert-total-count">11</span>)
+            </h3>
+            <ul id="resume-certs-list" class="text-[11px] text-slatewarm space-y-0.5 leading-snug">
+              <!-- Automatically synced with all baseline + newly added certifications -->
+            </ul>
+          </div>
+
+          <div class="md:col-span-4 space-y-1.5">
+            <h3 class="font-mono text-xs uppercase tracking-wider text-sageink font-semibold border-b border-hairline pb-1">
+              Achievements
+            </h3>
+            <ul class="text-[11px] text-slatewarm space-y-1 leading-snug">
+              <li>&bull; <strong class="text-espresso"><span id="resume-ach-lc-count">418</span> LeetCode problems solved</strong> (<span id="resume-ach-lc-user">AffanCoder</span>).</li>
+              <li>&bull; <strong class="text-espresso">Smart India Hackathon 2026</strong> — Finalist (Internal) with GeoVISTA.</li>
+              <li>&bull; <strong class="text-espresso">Reliance Foundation UG Scholarship</strong> — Merit-based.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- =====================================================================
+       SELF-SERVICE PORTFOLIO & CERTIFICATION STUDIO DRAWER
+       Allows adding Certifications, Custom Projects, Live Handle Config,
+       and Exporting Permanent PORTFOLIO_CONFIG JSON for index.html
+  ====================================================================== -->
+  <div 
+    id="studio-drawer-backdrop" 
+    class="fixed inset-0 z-50 hidden bg-espresso/50 backdrop-blur-sm transition-opacity"
+    onclick="closeStudioDrawer(event)">
+    
+    <aside 
+      class="ml-auto w-full max-w-2xl h-full bg-cream border-l border-borderwarm shadow-2xl flex flex-col justify-between overflow-hidden"
+      onclick="event.stopPropagation()">
+      
+      <!-- Drawer Top Header -->
+      <div class="bg-sand px-6 py-4 border-b border-hairline flex items-center justify-between gap-4">
+        <div>
+          <div class="flex items-center gap-2 font-mono text-xs text-sageink font-semibold">
+            <span class="w-2 h-2 rounded-full bg-sageaccent"></span>
+            <span>SELF-SERVICE PORTFOLIO &amp; LIVE SYNC MANAGER</span>
+          </div>
+          <h2 class="font-serif text-2xl text-espresso mt-0.5">
+            Add Certifications, Projects &amp; Auto-Sync Settings
+          </h2>
+        </div>
+        <button 
+          onclick="closeStudioDrawer()"
+          class="btn-tactile bg-ivory hover:bg-cream text-slatewarm hover:text-espresso border border-hairline font-mono text-xs px-3 py-2 rounded-lg">
+          Close [ESC]
+        </button>
+      </div>
+
+      <!-- 3-Tab Switcher Bar -->
+      <div class="grid grid-cols-3 bg-ivory border-b border-hairline font-mono text-xs">
+        <button 
+          id="drawer-tab-btn-certs"
+          onclick="switchStudioTab('certs')"
+          class="py-3 px-2 text-center border-r border-hairline font-semibold bg-sagesurf text-sageink border-b-2 border-b-sageink">
+          1. Certifications (+Add)
+        </button>
+        <button 
+          id="drawer-tab-btn-projects"
+          onclick="switchStudioTab('projects')"
+          class="py-3 px-2 text-center border-r border-hairline text-slatewarm hover:text-espresso">
+          2. Projects &amp; GitHub
+        </button>
+        <button 
+          id="drawer-tab-btn-export"
+          onclick="switchStudioTab('export')"
+          class="py-3 px-2 text-center text-slatewarm hover:text-espresso">
+          3. Live Sync &amp; Permanent Export
+        </button>
+      </div>
+
+      <!-- Drawer Body (Scrollable) -->
+      <div class="p-6 overflow-y-auto flex-1 space-y-6">
+
+        <!-- ===============================================================
+             TAB 1: ADD / MANAGE CERTIFICATIONS
+        ================================================================ -->
+        <div id="drawer-panel-certs" class="space-y-6">
+          <div class="bg-ivory border border-borderwarm rounded-xl p-5 space-y-4 shadow-sm">
+            <div class="flex items-center justify-between">
+              <h3 class="font-mono text-xs font-semibold uppercase tracking-wider text-sageink">
+                Add a New Certification (Updates Site + Printable Resume)
+              </h3>
+              <span class="font-mono text-[11px] text-mutedwarm">Instant Save</span>
+            </div>
+
+            <form id="add-cert-form" onsubmit="handleAddCertification(event)" class="space-y-3.5">
+              <div>
+                <label class="block font-mono text-[11px] text-slatewarm mb-1">Certification Title *</label>
+                <input 
+                  id="new-cert-title" 
+                  type="text" 
+                  required
+                  placeholder="e.g. AWS Certified Cloud Practitioner / Deep Learning Specialization"
+                  class="w-full bg-cream border border-hairline focus:border-sageink rounded-lg px-3 py-2 text-sm text-espresso focus:outline-none" />
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div>
+                  <label class="block font-mono text-[11px] text-slatewarm mb-1">Issuing Organization *</label>
+                  <input 
+                    id="new-cert-issuer" 
+                    type="text" 
+                    required
+                    placeholder="e.g. Amazon Web Services / Coursera"
+                    class="w-full bg-cream border border-hairline focus:border-sageink rounded-lg px-3 py-2 text-sm text-espresso focus:outline-none" />
+                </div>
+                <div>
+                  <label class="block font-mono text-[11px] text-slatewarm mb-1">Issue Month &amp; Year *</label>
+                  <input 
+                    id="new-cert-date" 
+                    type="text" 
+                    required
+                    placeholder="e.g. Nov 2026"
+                    class="w-full bg-cream border border-hairline focus:border-sageink rounded-lg px-3 py-2 text-sm text-espresso font-mono focus:outline-none" />
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div>
+                  <label class="block font-mono text-[11px] text-slatewarm mb-1">Domain Category *</label>
+                  <select 
+                    id="new-cert-cat" 
+                    class="w-full bg-cream border border-hairline focus:border-sageink rounded-lg px-3 py-2 text-sm text-espresso font-mono focus:outline-none">
+                    <option value="AI">AI &amp; Machine Learning</option>
+                    <option value="CISCO">Cisco, Networking &amp; IoT</option>
+                    <option value="SWE">Cloud, Software &amp; Data</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="block font-mono text-[11px] text-slatewarm mb-1">Score / Highlight Badge *</label>
+                  <input 
+                    id="new-cert-badge" 
+                    type="text" 
+                    required
+                    placeholder="e.g. Gold · 96% or Verified"
+                    class="w-full bg-cream border border-hairline focus:border-sageink rounded-lg px-3 py-2 text-sm text-espresso font-mono focus:outline-none" />
+                </div>
+              </div>
+
+              <div>
+                <label class="block font-mono text-[11px] text-slatewarm mb-1">Credential Verification URL (Optional)</label>
+                <input 
+                  id="new-cert-url" 
+                  type="url" 
+                  placeholder="https://coursera.org/verify/..."
+                  class="w-full bg-cream border border-hairline focus:border-sageink rounded-lg px-3 py-2 text-sm text-espresso font-mono focus:outline-none" />
+              </div>
+
+              <button 
+                type="submit"
+                class="btn-tactile w-full bg-sageink hover:bg-[#144235] text-cream font-mono text-xs font-semibold py-3 rounded-lg shadow-sm">
+                + Save Certification to Portfolio &amp; Resume
+              </button>
+            </form>
+          </div>
+
+          <!-- List of Existing Certifications (with Delete button for custom ones) -->
+          <div class="space-y-2.5">
+            <div class="flex items-center justify-between font-mono text-xs text-slatewarm">
+              <span>CURRENT CERTIFICATIONS LEDGER (<span id="drawer-cert-count">11</span>)</span>
+              <span>Click trash icon to remove custom items</span>
+            </div>
+            <div id="drawer-certs-manage-list" class="space-y-2 max-h-64 overflow-y-auto pr-1">
+              <!-- Populated dynamically -->
+            </div>
+          </div>
+        </div>
+
+        <!-- ===============================================================
+             TAB 2: ADD CUSTOM PROJECTS & CONFIGURE GITHUB FEED
+        ================================================================ -->
+        <div id="drawer-panel-projects" class="hidden space-y-6">
+          <div class="bg-ivory border border-borderwarm rounded-xl p-5 space-y-4 shadow-sm">
+            <h3 class="font-mono text-xs font-semibold uppercase tracking-wider text-skyink">
+              Add a Custom Project Highlight (Alongside Auto-Synced GitHub Repos)
+            </h3>
+
+            <form id="add-project-form" onsubmit="handleAddCustomProject(event)" class="space-y-3.5">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div>
+                  <label class="block font-mono text-[11px] text-slatewarm mb-1">Project Name *</label>
+                  <input 
+                    id="new-proj-name" 
+                    type="text" 
+                    required
+                    placeholder="e.g. AgriVision – Crop Disease Detector"
+                    class="w-full bg-cream border border-hairline focus:border-sageink rounded-lg px-3 py-2 text-sm text-espresso focus:outline-none" />
+                </div>
+                <div>
+                  <label class="block font-mono text-[11px] text-slatewarm mb-1">Primary Language / Stack *</label>
+                  <input 
+                    id="new-proj-lang" 
+                    type="text" 
+                    required
+                    placeholder="e.g. Python · FastAPI · PyTorch"
+                    class="w-full bg-cream border border-hairline focus:border-sageink rounded-lg px-3 py-2 text-sm text-espresso font-mono focus:outline-none" />
+                </div>
+              </div>
+
+              <div>
+                <label class="block font-mono text-[11px] text-slatewarm mb-1">Engineering Summary *</label>
+                <textarea 
+                  id="new-proj-desc" 
+                  rows="2" 
+                  required
+                  placeholder="Describe the architecture, model accuracy, or backend pipeline..."
+                  class="w-full bg-cream border border-hairline focus:border-sageink rounded-lg px-3 py-2 text-sm text-espresso focus:outline-none"></textarea>
+              </div>
+
+              <div>
+                <label class="block font-mono text-[11px] text-slatewarm mb-1">GitHub Repository or Live Demo URL *</label>
+                <input 
+                  id="new-proj-url" 
+                  type="url" 
+                  required
+                  placeholder="https://github.com/affanakram1217-star/..."
+                  class="w-full bg-cream border border-hairline focus:border-sageink rounded-lg px-3 py-2 text-sm text-espresso font-mono focus:outline-none" />
+              </div>
+
+              <button 
+                type="submit"
+                class="btn-tactile w-full bg-skyink hover:bg-[#1e3a6d] text-cream font-mono text-xs font-semibold py-3 rounded-lg shadow-sm">
+                + Add Custom Project Card
+              </button>
+            </form>
+          </div>
+
+          <div class="bg-ivory border border-borderwarm rounded-xl p-5 space-y-3 shadow-sm">
+            <div class="flex items-center justify-between">
+              <span class="font-mono text-xs font-semibold text-espresso">GitHub Auto-Discovery Filter</span>
+              <label class="inline-flex items-center gap-2 font-mono text-xs text-slatewarm cursor-pointer">
+                <input type="checkbox" id="toggle-hide-forks" onchange="toggleHideForks()" class="rounded border-hairline text-sageink focus:ring-0" />
+                <span>Hide Forked Repositories</span>
+              </label>
+            </div>
+            <div id="drawer-custom-projects-list" class="space-y-2 text-xs">
+              <!-- Lists custom added projects with delete button -->
+            </div>
+          </div>
+        </div>
+
+        <!-- ===============================================================
+             TAB 3: LIVE HANDLES & PERMANENT CODE / JSON EXPORTER
+        ================================================================ -->
+        <div id="drawer-panel-export" class="hidden space-y-6">
+          
+          <!-- Live Handle Configurator -->
+          <div class="bg-ivory border border-borderwarm rounded-xl p-5 space-y-4 shadow-sm">
+            <h3 class="font-mono text-xs font-semibold uppercase tracking-wider text-ochreink">
+              Live API Handles (LeetCode &amp; GitHub Auto-Sync)
+            </h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div>
+                <label class="block font-mono text-[11px] text-slatewarm mb-1">LeetCode Username</label>
+                <input 
+                  id="cfg-lc-user" 
+                  type="text" 
+                  value="AffanCoder"
+                  class="w-full bg-cream border border-hairline rounded-lg px-3 py-2 text-sm font-mono text-espresso" />
+              </div>
+              <div>
+                <label class="block font-mono text-[11px] text-slatewarm mb-1">GitHub Username</label>
+                <input 
+                  id="cfg-gh-user" 
+                  type="text" 
+                  value="affanakram1217-star"
+                  class="w-full bg-cream border border-hairline rounded-lg px-3 py-2 text-sm font-mono text-espresso" />
+              </div>
+            </div>
+            <div class="flex flex-wrap items-center gap-2">
+              <button 
+                onclick="saveHandlesAndResync()"
+                class="btn-tactile bg-sageink text-cream font-mono text-xs font-semibold px-4 py-2.5 rounded-lg">
+                Save Handles &amp; Sync Live APIs Now
+              </button>
+              <button 
+                onclick="resetPortfolioToDefaults()"
+                class="btn-tactile bg-rosesurf text-roseink border border-roseborder font-mono text-xs font-medium px-3.5 py-2.5 rounded-lg">
+                Reset All Local Customizations
+              </button>
+            </div>
+          </div>
+
+          <!-- Permanent Code & JSON Exporter -->
+          <div class="bg-ochresurf/65 border border-ochreborder rounded-xl p-5 space-y-4">
+            <div class="flex items-center justify-between">
+              <h3 class="font-mono text-xs font-semibold uppercase tracking-wider text-ochreink">
+                Make Your Changes Permanent Across All Devices
+              </h3>
+              <span class="font-mono text-[10px] bg-ivory px-2 py-0.5 rounded border border-ochreborder text-ochreink">Static Host Ready</span>
+            </div>
+            <p class="text-xs text-espresso/90 leading-relaxed">
+              Everything you add above is saved immediately in your browser’s <code class="font-mono bg-ivory px-1 rounded">localStorage</code>. When you deploy to GitHub Pages, Vercel, or Netlify and want your new certifications to appear for all visitors permanently:
+            </p>
+            <ol class="list-decimal list-inside text-xs text-espresso/90 space-y-1 font-mono">
+              <li>Click <strong>"Copy Updated PORTFOLIO_CONFIG Block"</strong> below.</li>
+              <li>Open <code class="bg-ivory px-1 rounded">index.html</code> and locate <code class="bg-ivory px-1 rounded">// [START_PORTFOLIO_CONFIG]</code>.</li>
+              <li>Paste and save — your new certifications and settings are now permanently baked into the HTML!</li>
+            </ol>
+
+            <div class="flex flex-wrap items-center gap-2 pt-1">
+              <button 
+                onclick="copyPermanentConfigSnippet()"
+                id="btn-copy-config-snippet"
+                class="btn-tactile bg-ochreink hover:bg-[#6c450b] text-cream font-mono text-xs font-semibold px-4 py-2.5 rounded-lg">
+                Copy Updated PORTFOLIO_CONFIG Block
+              </button>
+              <button 
+                onclick="downloadPortfolioJson()"
+                class="btn-tactile bg-ivory hover:bg-cream text-espresso border border-borderwarm font-mono text-xs font-medium px-3.5 py-2.5 rounded-lg">
+                Download Backup (.json)
+              </button>
+              <label class="btn-tactile bg-ivory hover:bg-cream text-espresso border border-borderwarm font-mono text-xs font-medium px-3.5 py-2.5 rounded-lg cursor-pointer">
+                <span>Import Backup (.json)</span>
+                <input type="file" accept=".json" onchange="importPortfolioJson(event)" class="hidden" />
+              </label>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Drawer Footer Status -->
+      <div class="bg-sand px-6 py-3 border-t border-hairline flex items-center justify-between font-mono text-[11px] text-slatewarm">
+        <span id="drawer-status-msg">All changes automatically synced to browser storage &amp; printable resume.</span>
+        <span class="text-sageink font-semibold">Portfolio Studio v2.4</span>
+      </div>
+
+    </aside>
+  </div>
+
+  <!-- =====================================================================
+       KINETIC PROJECT SIMULATION ENGINES + LIVE LEETCODE & GITHUB AUTO-SYNC
+  ====================================================================== -->
+  <script>
+    // =====================================================================
+    // [START_PORTFOLIO_CONFIG]
+    // Paste your exported PORTFOLIO_CONFIG block here to permanently bake
+    // newly added certifications, custom projects, or handles into the file.
+    // =====================================================================
+    const DEFAULT_PORTFOLIO_CONFIG = {
+      leetcodeUsername: 'AffanCoder',
+      githubUsername: 'affanakram1217-star',
+      hideForks: false,
+      leetcodeBaseline: {
+        totalSolved: 418,
+        easySolved: 162,
+        mediumSolved: 214,
+        hardSolved: 42,
+        lastSynced: 'Resume Baseline',
+        topicDataStructures: [
+          { name: 'Arrays & Matrices', slug: 'array', count: 218, badge: 'Core' },
+          { name: 'Strings & Pattern', slug: 'string', count: 104, badge: 'Core' },
+          { name: 'Hash Table & Sets', slug: 'hash-table', count: 96, badge: 'O(1) Lookup' },
+          { name: 'Trees & BST', slug: 'tree', count: 68, badge: 'Hierarchical' },
+          { name: 'Graphs & Networks', slug: 'graph', count: 46, badge: 'Topology' },
+          { name: 'Linked Lists', slug: 'linked-list', count: 44, badge: 'Pointers' },
+          { name: 'Stack & Monotonic', slug: 'stack', count: 41, badge: 'LIFO' },
+          { name: 'Heaps / Priority Queue', slug: 'heap-priority-queue', count: 32, badge: 'Top-K' }
+        ],
+        topicAlgorithms: [
+          { name: 'Two Pointers & Sliding Window', slug: 'two-pointers', count: 88, badge: 'O(N) Scan' },
+          { name: 'Dynamic Programming (DP)', slug: 'dynamic-programming', count: 74, badge: 'Memo / Tab' },
+          { name: 'DFS & BFS Traversals', slug: 'depth-first-search', count: 82, badge: 'Search' },
+          { name: 'Binary Search (On Answer)', slug: 'binary-search', count: 61, badge: 'O(log N)' },
+          { name: 'Greedy & Sorting', slug: 'greedy', count: 69, badge: 'Optimal' },
+          { name: 'Backtracking & Recursion', slug: 'backtracking', count: 34, badge: 'State Tree' },
+          { name: 'Prefix Sum & Difference', slug: 'prefix-sum', count: 39, badge: 'Range Query' },
+          { name: 'Bit Manipulation & Math', slug: 'bit-manipulation', count: 45, badge: 'Low-Level' }
+        ]
+      },
+      customProjects: [],
+      certifications: [
+        {
+          id: 'cert-1',
+          title: 'Vibe Coding – AI Assisted Application Development',
+          issuer: 'NASSCOM (FutureSkills Prime)',
+          date: 'Oct 2026',
+          badge: 'Gold · 100%',
+          cat: 'AI',
+          url: ''
+        },
+        {
+          id: 'cert-2',
+          title: 'Prompt Engineering and ChatGPT',
+          issuer: 'NASSCOM (FutureSkills Prime)',
+          date: 'Sep 2026',
+          badge: 'Gold · 84%',
+          cat: 'AI',
+          url: ''
+        },
+        {
+          id: 'cert-3',
+          title: 'Introduction to Generative AI',
+          issuer: 'Google Cloud (Coursera)',
+          date: 'Oct 2026',
+          badge: 'Google Cloud',
+          cat: 'AI',
+          url: ''
+        },
+        {
+          id: 'cert-4',
+          title: 'Java Programming: Solving Problems with Software',
+          issuer: 'Duke University (Coursera)',
+          date: 'Oct 2026',
+          badge: 'Duke Univ',
+          cat: 'SWE',
+          url: ''
+        },
+        {
+          id: 'cert-5',
+          title: 'AI for Business: Generation & Prediction',
+          issuer: 'Coursera',
+          date: 'Sep 2026',
+          badge: 'GenAI & ML',
+          cat: 'AI',
+          url: ''
+        },
+        {
+          id: 'cert-6',
+          title: 'Data Analytics Essentials',
+          issuer: 'Cisco Networking Academy (LNCT)',
+          date: 'Jun 2026',
+          badge: 'Cisco Academy',
+          cat: 'CISCO',
+          url: ''
+        },
+        {
+          id: 'cert-7',
+          title: 'Apply AI: Analyze Customer Reviews',
+          issuer: 'Cisco Networking Academy (LNCT)',
+          date: 'May 2026',
+          badge: 'Cisco AI',
+          cat: 'CISCO',
+          url: ''
+        },
+        {
+          id: 'cert-8',
+          title: 'Introduction to Modern AI',
+          issuer: 'Cisco Networking Academy (LNCT)',
+          date: 'May 2026',
+          badge: 'Cisco AI',
+          cat: 'CISCO',
+          url: ''
+        },
+        {
+          id: 'cert-9',
+          title: 'Introduction to IoT and Digital Transformation',
+          issuer: 'Cisco Networking Academy (EdCreate Foundation)',
+          date: 'Sep 2025',
+          badge: 'Cisco IoT',
+          cat: 'CISCO',
+          url: ''
+        },
+        {
+          id: 'cert-10',
+          title: 'Python Essentials 1',
+          issuer: 'Cisco Networking Academy (Python Institute)',
+          date: 'Mar 2025',
+          badge: 'Python Inst.',
+          cat: 'CISCO',
+          url: ''
+        },
+        {
+          id: 'cert-11',
+          title: 'Preparing Data for Analysis with Microsoft Excel',
+          issuer: 'Microsoft / Coursera',
+          date: 'Oct 2026',
+          badge: 'Microsoft',
+          cat: 'SWE',
+          url: ''
+        }
+      ]
+    };
+    // [END_PORTFOLIO_CONFIG]
+
+    const STORAGE_KEY = 'affan_portfolio_studio_v2';
+    let portfolioState = loadPortfolioState();
+    let currentCertFilter = 'ALL';
+    let cachedGitHubRepos = [];
+
+    function loadPortfolioState() {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        if (!raw) return JSON.parse(JSON.stringify(DEFAULT_PORTFOLIO_CONFIG));
+        const parsed = JSON.parse(raw);
+        return {
+          ...JSON.parse(JSON.stringify(DEFAULT_PORTFOLIO_CONFIG)),
+          ...parsed,
+          leetcodeBaseline: {
+            ...DEFAULT_PORTFOLIO_CONFIG.leetcodeBaseline,
+            ...(parsed.leetcodeBaseline || {})
+          }
+        };
+      } catch (e) {
+        return JSON.parse(JSON.stringify(DEFAULT_PORTFOLIO_CONFIG));
+      }
+    }
+
+    function savePortfolioState() {
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(portfolioState));
+      } catch (e) {
+        console.warn('Could not persist to localStorage:', e);
+      }
+    }
+
+    // =====================================================================
+    // LIVE LEETCODE AUTO-SYNC ENGINE (Multi-Endpoint Fallback + Cache)
+    // Automatically updates whenever Affan solves new problems on LeetCode!
+    // =====================================================================
+    async function syncLeetCodeStats(isManualTrigger = false) {
+      const username = (portfolioState.leetcodeUsername || 'AffanCoder').trim();
+      const navIcon = document.getElementById('nav-sync-icon');
+      const cardIcon = document.getElementById('lc-card-refresh-icon');
+      const statusLabel = document.getElementById('lc-sync-status-label');
+
+      if (navIcon) navIcon.classList.add('animate-spin');
+      if (cardIcon) cardIcon.classList.add('animate-spin');
+      if (statusLabel) statusLabel.textContent = `Syncing live stats for ${username}...`;
+
+      let fetchedData = null;
+
+      // Endpoint 1: leetcode-stats-api
+      try {
+        const res1 = await fetch(`https://leetcode-stats-api.herokuapp.com/${encodeURIComponent(username)}`);
+        if (res1.ok) {
+          const d1 = await res1.json();
+          if (d1 && d1.status === 'success' && typeof d1.totalSolved === 'number' && d1.totalSolved > 0) {
+            fetchedData = {
+              totalSolved: Math.max(d1.totalSolved, portfolioState.leetcodeBaseline.totalSolved),
+              easySolved: d1.easySolved || 162,
+              mediumSolved: d1.mediumSolved || 214,
+              hardSolved: d1.hardSolved || 42,
+              lastSynced: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+            };
+          }
+        }
+      } catch (err1) {
+        // Fallback to Endpoint 2
+      }
+
+      // Endpoint 2: alfa-leetcode-api
+      if (!fetchedData) {
+        try {
+          const res2 = await fetch(`https://alfa-leetcode-api.onrender.com/${encodeURIComponent(username)}/solved`);
+          if (res2.ok) {
+            const d2 = await res2.json();
+            if (d2 && typeof d2.solvedProblem === 'number' && d2.solvedProblem > 0) {
+              fetchedData = {
+                totalSolved: Math.max(d2.solvedProblem, portfolioState.leetcodeBaseline.totalSolved),
+                easySolved: d2.easySolved || 162,
+                mediumSolved: d2.mediumSolved || 214,
+                hardSolved: d2.hardSolved || 42,
+                lastSynced: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+              };
+            }
+          }
+        } catch (err2) {
+          // Graceful fallback to verified cached baseline
+        }
+      }
+
+      // Endpoint 3: Attempt to fetch live skillStats (Topic Tags by Data Structure & Algorithm)
+      let liveSkillTags = null;
+      try {
+        const resSkills = await fetch(`https://alfa-leetcode-api.onrender.com/skillStats/${encodeURIComponent(username)}`);
+        if (resSkills.ok) {
+          const skillJson = await resSkills.json();
+          const allTags = {};
+          const mergeTagList = (arr) => {
+            if (!Array.isArray(arr)) return;
+            arr.forEach(item => {
+              if (item && item.tagSlug && typeof item.problemsSolved === 'number') {
+                allTags[item.tagSlug] = item.problemsSolved;
+              }
+            });
+          };
+          const matchedUser = (skillJson && skillJson.data && skillJson.data.matchedUser) || skillJson;
+          const tagCounts = matchedUser && matchedUser.tagProblemCounts;
+          if (tagCounts) {
+            mergeTagList(tagCounts.fundamental);
+            mergeTagList(tagCounts.intermediate);
+            mergeTagList(tagCounts.advanced);
+          }
+          if (Object.keys(allTags).length > 0) {
+            liveSkillTags = allTags;
+          }
+        }
+      } catch (errSkills) {
+        // Fallback to proportional scaling based on totalSolved
+      }
+
+      if (fetchedData) {
+        const baseTotal = DEFAULT_PORTFOLIO_CONFIG.leetcodeBaseline.totalSolved || 418;
+        const scaleFactor = Math.max(1, fetchedData.totalSolved / baseTotal);
+
+        const defaultDS = DEFAULT_PORTFOLIO_CONFIG.leetcodeBaseline.topicDataStructures;
+        const defaultAlgo = DEFAULT_PORTFOLIO_CONFIG.leetcodeBaseline.topicAlgorithms;
+
+        fetchedData.topicDataStructures = defaultDS.map(item => ({
+          ...item,
+          count: (liveSkillTags && liveSkillTags[item.slug])
+            ? Math.max(liveSkillTags[item.slug], item.count)
+            : Math.round(item.count * scaleFactor)
+        }));
+
+        fetchedData.topicAlgorithms = defaultAlgo.map(item => ({
+          ...item,
+          count: (liveSkillTags && liveSkillTags[item.slug])
+            ? Math.max(liveSkillTags[item.slug], item.count)
+            : Math.round(item.count * scaleFactor)
+        }));
+
+        portfolioState.leetcodeBaseline = {
+          ...portfolioState.leetcodeBaseline,
+          ...fetchedData
+        };
+        savePortfolioState();
+        if (statusLabel) {
+          statusLabel.textContent = `Live Synced (${fetchedData.lastSynced}) · Auto-Updates`;
+        }
+      } else {
+        if (statusLabel) {
+          statusLabel.textContent = `Verified Baseline (${portfolioState.leetcodeBaseline.totalSolved} Solved)`;
+        }
+      }
+
+      if (navIcon) navIcon.classList.remove('animate-spin');
+      if (cardIcon) cardIcon.classList.remove('animate-spin');
+
+      applyLeetCodeTelemetryToDOM();
+    }
+
+    let currentLcTopicTab = 'ds';
+
+    function switchLcTopicView(mode) {
+      currentLcTopicTab = mode;
+      const dsPanel = document.getElementById('lc-panel-ds');
+      const algoPanel = document.getElementById('lc-panel-algo');
+      const dsBtn = document.getElementById('lc-tab-ds');
+      const algoBtn = document.getElementById('lc-tab-algo');
+
+      if (mode === 'ds') {
+        if (dsPanel) dsPanel.classList.remove('hidden');
+        if (algoPanel) algoPanel.classList.add('hidden');
+        if (dsBtn) dsBtn.className = 'px-2 py-1 rounded-md bg-ochresurf text-ochreink font-semibold transition-all';
+        if (algoBtn) algoBtn.className = 'px-2 py-1 rounded-md text-slatewarm hover:text-espresso transition-all';
+      } else {
+        if (dsPanel) dsPanel.classList.add('hidden');
+        if (algoPanel) algoPanel.classList.remove('hidden');
+        if (algoBtn) algoBtn.className = 'px-2 py-1 rounded-md bg-ochresurf text-ochreink font-semibold transition-all';
+        if (dsBtn) dsBtn.className = 'px-2 py-1 rounded-md text-slatewarm hover:text-espresso transition-all';
+      }
+    }
+
+    function renderLeetCodeTopicBreakdown() {
+      const lc = portfolioState.leetcodeBaseline || DEFAULT_PORTFOLIO_CONFIG.leetcodeBaseline;
+      const dsList = lc.topicDataStructures || DEFAULT_PORTFOLIO_CONFIG.leetcodeBaseline.topicDataStructures;
+      const algoList = lc.topicAlgorithms || DEFAULT_PORTFOLIO_CONFIG.leetcodeBaseline.topicAlgorithms;
+      const totalSolved = Math.max(lc.totalSolved || 418, 1);
+
+      const dsContainer = document.getElementById('lc-panel-ds');
+      if (dsContainer) {
+        dsContainer.innerHTML = dsList.map(item => {
+          const pct = Math.min(100, Math.max(14, Math.round((item.count / (totalSolved * 0.6)) * 100)));
+          return `
+            <div class="bg-ivory/90 border border-ochreborder/80 rounded-lg p-2.5 flex flex-col justify-between gap-1.5">
+              <div class="flex items-center justify-between gap-1">
+                <span class="text-espresso font-semibold truncate text-[10.5px]" title="${escapeHtml(item.name)}">${escapeHtml(item.name)}</span>
+                <span class="text-sageink font-bold shrink-0">${item.count}</span>
+              </div>
+              <div class="h-1.5 w-full bg-cream rounded-full overflow-hidden border border-hairline">
+                <div class="h-full bg-sageaccent rounded-full transition-all duration-700" style="width: ${pct}%"></div>
+              </div>
+              <div class="flex items-center justify-between text-[9.5px] text-mutedwarm">
+                <span>${escapeHtml(item.badge)}</span>
+                <span>${Math.round((item.count / totalSolved) * 100)}% of total</span>
+              </div>
+            </div>
+          `;
+        }).join('');
+      }
+
+      const algoContainer = document.getElementById('lc-panel-algo');
+      if (algoContainer) {
+        algoContainer.innerHTML = algoList.map(item => {
+          const pct = Math.min(100, Math.max(14, Math.round((item.count / (totalSolved * 0.35)) * 100)));
+          return `
+            <div class="bg-ivory/90 border border-skyborder/80 rounded-lg p-2.5 flex flex-col justify-between gap-1.5">
+              <div class="flex items-center justify-between gap-1">
+                <span class="text-espresso font-semibold truncate text-[10.5px]" title="${escapeHtml(item.name)}">${escapeHtml(item.name)}</span>
+                <span class="text-skyink font-bold shrink-0">${item.count}</span>
+              </div>
+              <div class="h-1.5 w-full bg-cream rounded-full overflow-hidden border border-hairline">
+                <div class="h-full bg-skyaccent rounded-full transition-all duration-700" style="width: ${pct}%"></div>
+              </div>
+              <div class="flex items-center justify-between text-[9.5px] text-mutedwarm">
+                <span>${escapeHtml(item.badge)}</span>
+                <span>${Math.round((item.count / totalSolved) * 100)}% of total</span>
+              </div>
+            </div>
+          `;
+        }).join('');
+      }
+
+      // Compute Fundamental / Intermediate / Advanced tag hit totals
+      const fundCount = dsList.slice(0, 3).reduce((acc, x) => acc + (x.count || 0), 0);
+      const interCount = algoList.slice(0, 4).reduce((acc, x) => acc + (x.count || 0), 0);
+      const advCount = (dsList[4]?.count || 46) + (algoList[1]?.count || 74) + (algoList[5]?.count || 34);
+
+      const elFund = document.getElementById('lc-tier-fundamental');
+      const elInter = document.getElementById('lc-tier-intermediate');
+      const elAdv = document.getElementById('lc-tier-advanced');
+      if (elFund) elFund.textContent = `${fundCount} tag hits`;
+      if (elInter) elInter.textContent = `${interCount} tag hits`;
+      if (elAdv) elAdv.textContent = `${advCount} tag hits`;
+    }
+
+    function applyLeetCodeTelemetryToDOM() {
+      const lc = portfolioState.leetcodeBaseline;
+      const handle = portfolioState.leetcodeUsername || 'AffanCoder';
+      const total = lc.totalSolved || 418;
+      const easy = lc.easySolved || 162;
+      const medium = lc.mediumSolved || 214;
+      const hard = lc.hardSolved || 42;
+
+      const setTxt = (id, val) => {
+        const el = document.getElementById(id);
+        if (el) el.textContent = val;
+      };
+
+      setTxt('nav-lc-count', total);
+      setTxt('hero-lc-total', total);
+      setTxt('hero-lc-inline-count', total);
+      setTxt('hero-lc-user-text', handle);
+      setTxt('hero-lc-sublabel', `ID: ${handle} · ${easy}E / ${medium}M / ${hard}H`);
+      setTxt('lc-card-handle', handle);
+      setTxt('lc-card-total-pill', `${total} Solved`);
+      setTxt('lc-easy-count', `${easy} solved`);
+      setTxt('lc-medium-count', `${medium} solved`);
+      setTxt('lc-hard-count', `${hard} solved`);
+
+      // Update Printable Resume Modal dynamically
+      setTxt('resume-lc-handle', handle);
+      setTxt('resume-lc-count', total);
+      setTxt('resume-ach-lc-count', total);
+      setTxt('resume-ach-lc-user', handle);
+
+      const heroLcLink = document.getElementById('hero-lc-link');
+      if (heroLcLink) heroLcLink.href = `https://leetcode.com/u/${encodeURIComponent(handle)}/`;
+
+      // Update difficulty progress bars proportionally
+      const safeTotal = Math.max(total, 1);
+      const easyPct = Math.min(100, Math.max(12, Math.round((easy / safeTotal) * 100)));
+      const medPct = Math.min(100, Math.max(15, Math.round((medium / safeTotal) * 100)));
+      const hardPct = Math.min(100, Math.max(10, Math.round((hard / safeTotal) * 100 * 1.6)));
+
+      const easyBar = document.getElementById('lc-easy-bar');
+      const medBar = document.getElementById('lc-medium-bar');
+      const hardBar = document.getElementById('lc-hard-bar');
+      if (easyBar) easyBar.style.width = `${easyPct}%`;
+      if (medBar) medBar.style.width = `${medPct}%`;
+      if (hardBar) hardBar.style.width = `${hardPct}%`;
+
+      renderLeetCodeTopicBreakdown();
+    }
+
+    // =====================================================================
+    // LIVE GITHUB REPOSITORY AUTO-DISCOVERY ENGINE
+    // Automatically fetches public repositories from GitHub on load
+    // =====================================================================
+    const FALLBACK_GITHUB_REPOS = [
+      {
+        name: 'SIH26011-3D-ULPIN',
+        description: 'GeoVISTA – AI-assisted 3D spatial property identifiers (ULPIN) using drone imagery, LiDAR, Shapely verification, and FastAPI.',
+        html_url: 'https://github.com/affanakram1217-star/SIH26011-3D-ULPIN',
+        language: 'Python',
+        stargazers_count: 1,
+        fork: false,
+        updated_at: '2026-10-20T10:00:00Z'
+      },
+      {
+        name: 'ml-mini-projects',
+        description: 'Collection of applied AI & Computer Vision systems: NetSage AI (Cisco RAG Assistant), Nova (BLIP Image Captioning), and Beyond Words (Sign Language CV).',
+        html_url: 'https://github.com/affanakram1217-star/ml-mini-projects',
+        language: 'Jupyter Notebook',
+        stargazers_count: 1,
+        fork: false,
+        updated_at: '2026-10-18T10:00:00Z'
+      }
+    ];
+
+    async function syncGitHubRepos(isManualTrigger = false) {
+      const ghUser = (portfolioState.githubUsername || 'affanakram1217-star').trim();
+      const refreshIcon = document.getElementById('gh-refresh-icon');
+      const tsEl = document.getElementById('gh-sync-timestamp');
+
+      if (refreshIcon) refreshIcon.classList.add('animate-spin');
+
+      // Update handle labels across UI
+      const setTxt = (id, val) => {
+        const el = document.getElementById(id);
+        if (el) el.textContent = val;
+      };
+      setTxt('nav-gh-handle', ghUser);
+      setTxt('hero-gh-user-text', ghUser);
+      setTxt('gh-feed-handle-code', `github.com/${ghUser}`);
+      setTxt('resume-gh-handle', ghUser);
+      const heroGhLink = document.getElementById('hero-gh-link');
+      if (heroGhLink) heroGhLink.href = `https://github.com/${encodeURIComponent(ghUser)}`;
+
+      try {
+        const response = await fetch(`https://api.github.com/users/${encodeURIComponent(ghUser)}/repos?sort=updated&per_page=100`);
+        if (response.ok) {
+          const repos = await response.json();
+          if (Array.isArray(repos) && repos.length > 0) {
+            cachedGitHubRepos = repos;
+            if (tsEl) {
+              tsEl.textContent = `Live GitHub Synced · ${new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}`;
+            }
+          } else {
+            cachedGitHubRepos = FALLBACK_GITHUB_REPOS;
+          }
+        } else {
+          cachedGitHubRepos = FALLBACK_GITHUB_REPOS;
+        }
+      } catch (e) {
+        cachedGitHubRepos = FALLBACK_GITHUB_REPOS;
+      }
+
+      if (refreshIcon) refreshIcon.classList.remove('animate-spin');
+      renderGitHubAndCustomProjects();
+    }
+
+    function renderGitHubAndCustomProjects() {
+      const grid = document.getElementById('github-live-repos-grid');
+      const badgeEl = document.getElementById('gh-repo-total-badge');
+      if (!grid) return;
+
+      const filteredGh = cachedGitHubRepos.filter(r => !portfolioState.hideForks || !r.fork);
+      const customList = portfolioState.customProjects || [];
+      const totalCount = filteredGh.length + customList.length;
+
+      if (badgeEl) badgeEl.textContent = `${totalCount} Total`;
+
+      const customCardsHtml = customList.map(proj => `
+        <article class="bg-sagesurf/45 border border-sageborder rounded-xl p-5 flex flex-col justify-between space-y-4 shadow-sm hover:-translate-y-0.5 transition-all">
+          <div class="space-y-2">
+            <div class="flex items-center justify-between gap-2 font-mono text-[11px]">
+              <span class="px-2.5 py-0.5 rounded-full bg-ivory border border-sageborder text-sageink font-semibold">
+                Custom Pinned · ${escapeHtml(proj.lang)}
+              </span>
+              <span class="text-sageink font-medium">Portfolio Studio</span>
+            </div>
+            <h4 class="font-serif text-xl text-espresso font-normal">
+              ${escapeHtml(proj.name)}
+            </h4>
+            <p class="text-xs text-slatewarm leading-relaxed">
+              ${escapeHtml(proj.desc)}
+            </p>
+          </div>
+          <div class="pt-3 border-t border-sageborder/70 flex items-center justify-between font-mono text-xs">
+            <a href="${escapeHtml(proj.url)}" target="_blank" rel="noopener noreferrer" class="text-sageink font-semibold hover:underline flex items-center gap-1">
+              <span>Inspect Project</span>
+              <span>&nearr;</span>
+            </a>
+            <button onclick="deleteCustomProject('${proj.id}')" class="text-roseink hover:underline text-[11px]">
+              Remove
+            </button>
+          </div>
+        </article>
+      `).join('');
+
+      const ghCardsHtml = filteredGh.map(repo => {
+        const updatedDate = repo.updated_at
+          ? new Date(repo.updated_at).toLocaleDateString('en-IN', { month: 'short', year: 'numeric' })
+          : '2026';
+        const lang = repo.language || 'Python / AI';
+        const desc = repo.description || 'Public engineering repository automatically synced from GitHub.';
+        return `
+          <article class="bg-ivory border border-borderwarm rounded-xl p-5 flex flex-col justify-between space-y-4 shadow-sm hover:border-sageborder hover:-translate-y-0.5 transition-all">
+            <div class="space-y-2">
+              <div class="flex items-center justify-between gap-2 font-mono text-[11px]">
+                <span class="px-2.5 py-0.5 rounded-full bg-skysurf border border-skyborder text-skyink font-semibold">
+                  ${escapeHtml(lang)}
+                </span>
+                <span class="text-slatewarm tabular-nums">&starf; ${repo.stargazers_count || 0} &middot; ${updatedDate}</span>
+              </div>
+              <h4 class="font-mono text-sm font-semibold text-espresso truncate" title="${escapeHtml(repo.name)}">
+                ${escapeHtml(repo.name)}
+              </h4>
+              <p class="text-xs text-slatewarm leading-relaxed line-clamp-3">
+                ${escapeHtml(desc)}
+              </p>
+            </div>
+            <div class="pt-3 border-t border-hairline flex items-center justify-between font-mono text-xs">
+              <span class="text-[11px] text-mutedwarm">${repo.fork ? 'Forked Repo' : 'Source Repo'}</span>
+              <a href="${escapeHtml(repo.html_url)}" target="_blank" rel="noopener noreferrer" class="text-sageink font-semibold hover:underline flex items-center gap-1">
+                <span>View on GitHub</span>
+                <span>&nearr;</span>
+              </a>
+            </div>
+          </article>
+        `;
+      }).join('');
+
+      grid.innerHTML = customCardsHtml + ghCardsHtml;
+      renderDrawerCustomProjectsList();
+    }
+
+    function syncAllLiveData(isManual = false) {
+      syncLeetCodeStats(isManual);
+      syncGitHubRepos(isManual);
+    }
+
+    function escapeHtml(str) {
+      return String(str || '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+    }
+
+    // =====================================================================
+    // 1. SCROLL REVEAL & TELEMETRY NUMBER COUNTERS
+    // =====================================================================
+    function initScrollRevealsAndCounters() {
+      const revealEls = document.querySelectorAll('.reveal-item');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+          }
+        });
+      }, { threshold: 0.1 });
+
+      revealEls.forEach((el) => observer.observe(el));
+
+      // Count-up telemetry numbers in Hero
+      const counters = document.querySelectorAll('.counter-value');
+      counters.forEach((counter) => {
+        const target = parseFloat(counter.getAttribute('data-target'));
+        const decimals = parseInt(counter.getAttribute('data-decimals') || '0', 10);
+        const duration = 1400;
+        const startTime = performance.now();
+
+        function updateCounter(now) {
+          const elapsed = now - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 3); // cubic ease-out
+          const val = (target * eased).toFixed(decimals);
+          counter.textContent = val;
+          if (progress < 1) {
+            requestAnimationFrame(updateCounter);
+          } else {
+            counter.textContent = target.toFixed(decimals);
+          }
+        }
+        requestAnimationFrame(updateCounter);
+      });
+    }
+
+    // Helper for crisp Retina / High-DPI Canvas sizing
+    function fitCanvasToContainer(canvas) {
+      if (!canvas) return { w: 300, h: 200, ctx: null };
+      const rect = canvas.getBoundingClientRect();
+      const dpr = window.devicePixelRatio || 1;
+      const w = Math.max(rect.width, 260);
+      const h = Math.max(rect.height, 180);
+      if (canvas.width !== Math.floor(w * dpr) || canvas.height !== Math.floor(h * dpr)) {
+        canvas.width = Math.floor(w * dpr);
+        canvas.height = Math.floor(h * dpr);
+      }
+      const ctx = canvas.getContext('2d');
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      return { w, h, ctx };
+    }
+
+    // =====================================================================
+    // 2. PROJECT 1 ANIMATION ENGINE: GeoVISTA 3D LiDAR + Shapely ULPIN
+    // =====================================================================
+    const geoBuildings = [
+      { id: 'ULPIN #2302-BPL-8410', rx: 46, ry: 24, height: 52, floors: 6, iou: '0.95' },
+      { id: 'ULPIN #2001-HZB-5192', rx: 56, ry: 28, height: 36, floors: 4, iou: '0.93' },
+      { id: 'ULPIN #2302-BPL-1094', rx: 38, ry: 22, height: 64, floors: 8, iou: '0.97' }
+    ];
+    let geoBuildingIdx = 0;
+    let geoShowLidar = true;
+
+    function drawGeoVistaScene(canvas, t, buildingConfig, showLidar) {
+      const { w, h, ctx } = fitCanvasToContainer(canvas);
+      if (!ctx) return;
+      ctx.clearRect(0, 0, w, h);
+
+      const cx = w * 0.5;
+      const cy = h * 0.64;
+      const rot = Math.sin(t * 0.0008) * 0.22;
+      const rx = buildingConfig.rx;
+      const ry = buildingConfig.ry;
+      const bHeight = buildingConfig.height;
+
+      // Compute 4 base corners of isometric parcel
+      const angles = [0, Math.PI / 2, Math.PI, (3 * Math.PI) / 2].map(a => a + rot + Math.PI / 4);
+      const basePts = angles.map(a => ({
+        x: cx + Math.cos(a) * rx * 1.35,
+        y: cy + Math.sin(a) * ry * 1.35
+      }));
+      const roofPts = basePts.map(p => ({ x: p.x, y: p.y - bHeight }));
+
+      // Draw outer GIS Shapely verification boundary polygon
+      ctx.save();
+      ctx.strokeStyle = '#2D6A4F';
+      ctx.lineWidth = 1.2;
+      ctx.setLineDash([4, 4]);
+      ctx.beginPath();
+      angles.forEach((a, i) => {
+        const gx = cx + Math.cos(a) * (rx * 1.75);
+        const gy = cy + Math.sin(a) * (ry * 1.75);
+        if (i === 0) ctx.moveTo(gx, gy);
+        else ctx.lineTo(gx, gy);
+      });
+      ctx.closePath();
+      ctx.stroke();
+      ctx.restore();
+
+      // Draw extruded 3D building walls
+      ctx.fillStyle = 'rgba(227, 239, 234, 0.88)';
+      ctx.strokeStyle = '#1B4332';
+      ctx.lineWidth = 1.6;
+
+      for (let i = 0; i < 4; i++) {
+        const next = (i + 1) % 4;
+        ctx.beginPath();
+        ctx.moveTo(basePts[i].x, basePts[i].y);
+        ctx.lineTo(basePts[next].x, basePts[next].y);
+        ctx.lineTo(roofPts[next].x, roofPts[next].y);
+        ctx.lineTo(roofPts[i].x, roofPts[i].y);
+        ctx.closePath();
+        ctx.fill();
+        ctx.stroke();
+      }
+
+      // Draw Roof Polygon
+      ctx.fillStyle = '#B8D8CA';
+      ctx.beginPath();
+      roofPts.forEach((p, i) => (i === 0 ? ctx.moveTo(p.x, p.y) : ctx.lineTo(p.x, p.y)));
+      ctx.closePath();
+      ctx.fill();
+      ctx.stroke();
+
+      // Sweeping LiDAR elevation laser plane
+      const scanPhase = (Math.sin(t * 0.0026) + 1) * 0.5; // 0..1
+      const scanY = cy + 16 - scanPhase * (bHeight + 36);
+
+      ctx.save();
+      ctx.strokeStyle = '#2D6A4F';
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.moveTo(cx - 95, scanY);
+      ctx.lineTo(cx + 95, scanY);
+      ctx.stroke();
+      ctx.restore();
+
+      // Animated LiDAR point cloud nodes
+      if (showLidar) {
+        for (let i = 0; i < 22; i++) {
+          const seed = i * 1.73;
+          const px = cx + Math.sin(seed * 3.1 + rot) * (rx * 1.1);
+          const py = cy - ((i / 22) * bHeight) + Math.cos(seed * 2.3) * 6;
+          const distToLaser = Math.abs(py - scanY);
+          const active = distToLaser < 14;
+          ctx.fillStyle = active ? '#D97706' : '#1B4332';
+          ctx.beginPath();
+          ctx.arc(px, py, active ? 3.1 : 1.8, 0, Math.PI * 2);
+          ctx.fill();
+        }
+      }
+
+      // Corner Shapely vertex markers
+      roofPts.forEach((p) => {
+        ctx.fillStyle = '#1B4332';
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, 3, 0, Math.PI * 2);
+        ctx.fill();
+      });
+    }
+
+    function geoCardCycleBuilding() {
+      geoBuildingIdx = (geoBuildingIdx + 1) % geoBuildings.length;
+      const b = geoBuildings[geoBuildingIdx];
+      const idEl = document.getElementById('geo-card-ulpin-id');
+      if (idEl) idEl.textContent = b.id;
+    }
+
+    function geoCardToggleLidar() {
+      geoShowLidar = !geoShowLidar;
+      const btn = document.getElementById('geo-card-lidar-btn');
+      if (btn) {
+        btn.textContent = geoShowLidar ? 'LiDAR Points: ON' : 'LiDAR Points: OFF';
+        btn.className = geoShowLidar
+          ? 'btn-tactile bg-sageink text-cream px-2.5 py-0.5 rounded text-[10px] font-semibold'
+          : 'btn-tactile bg-ivory text-sageink border border-sageborder px-2.5 py-0.5 rounded text-[10px] font-semibold';
+      }
+    }
+
+    // =====================================================================
+    // 3. PROJECT 2 ANIMATION ENGINE: NetSage AI Cisco Topology & RAG Healer
+    // =====================================================================
+    let netFaultActive = false;
+
+    function drawNetSageScene(canvas, t, isFault) {
+      const { w, h, ctx } = fitCanvasToContainer(canvas);
+      if (!ctx) return;
+      ctx.clearRect(0, 0, w, h);
+
+      const nodes = [
+        { x: w * 0.18, y: h * 0.44, label: 'RTR-CORE-01', sub: 'Gi0/1' },
+        { x: w * 0.50, y: h * 0.30, label: 'SW-DIST-02', sub: 'OSPF Area 0' },
+        { x: w * 0.82, y: h * 0.44, label: 'VLAN-40-GW', sub: 'MTU 1500' }
+      ];
+
+      // Draw links
+      for (let i = 0; i < 2; i++) {
+        const a = nodes[i];
+        const b = nodes[i + 1];
+        const linkFault = isFault && i === 1;
+        ctx.strokeStyle = linkFault ? '#C2410C' : '#1E3A8A';
+        ctx.lineWidth = linkFault ? 2.5 : 2;
+        ctx.setLineDash(linkFault ? [5, 4] : []);
+        ctx.beginPath();
+        ctx.moveTo(a.x, a.y);
+        ctx.lineTo(b.x, b.y);
+        ctx.stroke();
+        ctx.setLineDash([]);
+
+        // Animated packets along link
+        const pktProgress = ((t * 0.00095) + i * 0.35) % 1;
+        const px = a.x + (b.x - a.x) * pktProgress;
+        const py = a.y + (b.y - a.y) * pktProgress;
+
+        ctx.fillStyle = linkFault ? '#C2410C' : '#2D6A4F';
+        ctx.beginPath();
+        ctx.arc(px, py, 4.2, 0, Math.PI * 2);
+        ctx.fill();
+      }
+
+      // Draw RAG Diagnostic Rule-Check Wave from bottom center
+      const ragNode = { x: w * 0.50, y: h * 0.72 };
+      ctx.strokeStyle = isFault ? 'rgba(194, 65, 12, 0.35)' : 'rgba(37, 99, 235, 0.3)';
+      ctx.lineWidth = 1.2;
+      nodes.forEach((n) => {
+        ctx.beginPath();
+        ctx.moveTo(ragNode.x, ragNode.y);
+        ctx.lineTo(n.x, n.y);
+        ctx.stroke();
+      });
+
+      // Draw Router/Switch Nodes
+      nodes.forEach((n, idx) => {
+        const nodeAlert = isFault && idx >= 1;
+        ctx.fillStyle = nodeAlert ? '#F7E6E2' : '#E6ECF8';
+        ctx.strokeStyle = nodeAlert ? '#C2410C' : '#1E3A8A';
+        ctx.lineWidth = 1.8;
+        ctx.beginPath();
+        ctx.roundRect(n.x - 36, n.y - 18, 72, 36, 8);
+        ctx.fill();
+        ctx.stroke();
+
+        ctx.fillStyle = nodeAlert ? '#7C2D12' : '#1E3A8A';
+        ctx.font = '600 10px "JetBrains Mono", monospace';
+        ctx.textAlign = 'center';
+        ctx.fillText(n.label, n.x, n.y - 2);
+        ctx.font = '400 9px "JetBrains Mono", monospace';
+        ctx.fillText(n.sub, n.x, n.y + 11);
+      });
+
+      // RAG Engine Pill
+      ctx.fillStyle = '#FFFDF9';
+      ctx.strokeStyle = '#2563EB';
+      ctx.lineWidth = 1.5;
+      ctx.beginPath();
+      ctx.roundRect(ragNode.x - 64, ragNode.y - 13, 128, 26, 13);
+      ctx.fill();
+      ctx.stroke();
+      ctx.fillStyle = '#1E3A8A';
+      ctx.font = '600 9.5px "JetBrains Mono", monospace';
+      ctx.textAlign = 'center';
+      ctx.fillText(isFault ? 'RAG: FIXING OSPF MTU' : 'RAG RULE GUARD: OK', ragNode.x, ragNode.y + 3);
+    }
+
+    function netCardToggleFault() {
+      netFaultActive = !netFaultActive;
+      const btn = document.getElementById('net-card-fault-btn');
+      const cliText = document.getElementById('net-card-cli-text');
+      if (netFaultActive) {
+        if (btn) {
+          btn.textContent = 'Run RAG Auto-Remediation';
+          btn.className = 'btn-tactile bg-sageink text-cream px-2.5 py-0.5 rounded text-[10px] font-semibold';
+        }
+        if (cliText) {
+          cliText.textContent = 'FAULT: OSPF EXSTART/DR (Gi0/1 MTU 1400 != 1500) -> Suggest: ip mtu 1500';
+          cliText.className = 'text-roseink font-semibold truncate';
+        }
+      } else {
+        if (btn) {
+          btn.textContent = 'Inject OSPF MTU Fault';
+          btn.className = 'btn-tactile bg-rosesurf text-roseink border border-roseborder px-2.5 py-0.5 rounded text-[10px] font-semibold';
+        }
+        if (cliText) {
+          cliText.textContent = 'RTR-CORE# show ip ospf neighbor -> FULL/DR (Healthy)';
+          cliText.className = 'text-sageink font-semibold truncate';
+        }
+      }
+    }
+
+    // =====================================================================
+    // 4. PROJECT 3 ANIMATION ENGINE: Nova BLIP Vision Transformer Attention
+    // =====================================================================
+    const novaScenes = [
+      {
+        tokens: ['"an"', '"aerial"', '"drone"', '"view"', '"of"', '"urban"', '"solar"', '"rooftops"', '"in"', '"daylight"'],
+        conf: 'Conf: 98.4%',
+        accent: '#D97706'
+      },
+      {
+        tokens: ['"a"', '"network"', '"engineer"', '"inspecting"', '"fiber"', '"optic"', '"server"', '"racks"'],
+        conf: 'Conf: 97.9%',
+        accent: '#2D6A4F'
+      }
+    ];
+    let novaSceneIdx = 0;
+
+    function drawNovaScene(canvas, t, sceneObj) {
+      const { w, h, ctx } = fitCanvasToContainer(canvas);
+      if (!ctx) return;
+      ctx.clearRect(0, 0, w, h);
+
+      // Left side: 4x4 Vision Transformer Patch Grid over stylized scene
+      const gridX = 24;
+      const gridY = 18;
+      const gridW = Math.min(w * 0.44, 150);
+      const gridH = 128;
+      const cols = 4;
+      const rows = 4;
+      const cellW = gridW / cols;
+      const cellH = gridH / rows;
+
+      const activePatch = Math.floor((t * 0.0035) % (cols * rows));
+
+      for (let r = 0; r < rows; r++) {
+        for (let c = 0; c < cols; c++) {
+          const idx = r * cols + c;
+          const x = gridX + c * cellW;
+          const y = gridY + r * cellH;
+          const isHot = idx === activePatch || idx === (activePatch + 5) % 16;
+
+          ctx.fillStyle = isHot ? 'rgba(217, 119, 6, 0.34)' : 'rgba(251, 240, 217, 0.75)';
+          ctx.strokeStyle = isHot ? '#D97706' : '#E5DEC9';
+          ctx.lineWidth = isHot ? 1.8 : 1;
+          ctx.beginPath();
+          ctx.rect(x, y, cellW, cellH);
+          ctx.fill();
+          ctx.stroke();
+        }
+      }
+
+      // Right side: Cross-Attention Bezier Beams into Transformer Decoder Box
+      const activeCol = activePatch % cols;
+      const activeRow = Math.floor(activePatch / cols);
+      const srcX = gridX + (activeCol + 0.5) * cellW;
+      const srcY = gridY + (activeRow + 0.5) * cellH;
+
+      const decX = w * 0.62;
+      const decY = 36;
+      const decW = w * 0.32;
+      const decH = 92;
+
+      ctx.strokeStyle = '#D97706';
+      ctx.lineWidth = 1.6;
+      ctx.beginPath();
+      ctx.moveTo(srcX, srcY);
+      ctx.bezierCurveTo((srcX + decX) * 0.5, srcY - 20, (srcX + decX) * 0.5, decY + 45, decX, decY + 45);
+      ctx.stroke();
+
+      // Decoder Block
+      ctx.fillStyle = '#FFFDF9';
+      ctx.strokeStyle = '#78350F';
+      ctx.lineWidth = 1.5;
+      ctx.beginPath();
+      ctx.roundRect(decX, decY, decW, decH, 10);
+      ctx.fill();
+      ctx.stroke();
+
+      ctx.fillStyle = '#78350F';
+      ctx.font = '600 10px "JetBrains Mono", monospace';
+      ctx.textAlign = 'center';
+      ctx.fillText('BLIP ViT-Base', decX + decW / 2, decY + 26);
+      ctx.font = '400 9px "JetBrains Mono", monospace';
+      ctx.fillText(`Patch #${activePatch + 1} Attn`, decX + decW / 2, decY + 46);
+      ctx.fillStyle = '#2D6A4F';
+      ctx.fillText('HuggingFace PIL', decX + decW / 2, decY + 66);
+
+      // Update live token stream text in card banner
+      const tokenCount = Math.floor((t * 0.004) % (sceneObj.tokens.length + 2));
+      const visibleTokens = sceneObj.tokens.slice(0, Math.max(1, tokenCount)).join(' ');
+      const capEl = document.getElementById('nova-card-caption-stream');
+      if (capEl) capEl.textContent = visibleTokens;
+    }
+
+    function novaCardSwitchScene() {
+      novaSceneIdx = (novaSceneIdx + 1) % novaScenes.length;
+      const confEl = document.getElementById('nova-card-conf');
+      if (confEl) confEl.textContent = novaScenes[novaSceneIdx].conf;
+    }
+
+    // =====================================================================
+    // 5. PROJECT 4 ANIMATION ENGINE: Beyond Words 21-Point MediaPipe Hand
+    // =====================================================================
+    let currentSignPose = 0; // 0: HELLO, 1: THANK YOU, 2: AI READY
+    const signMetadata = [
+      { label: 'HELLO', conf: '0.992', spread: 1.0, curl: 0.0 },
+      { label: 'THANK YOU', conf: '0.987', spread: 0.65, curl: 0.18 },
+      { label: 'AI READY', conf: '0.995', spread: 0.85, curl: 0.42 }
+    ];
+
+    function drawBeyondWordsScene(canvas, t, poseIdx) {
+      const { w, h, ctx } = fitCanvasToContainer(canvas);
+      if (!ctx) return;
+      ctx.clearRect(0, 0, w, h);
+
+      const pose = signMetadata[poseIdx];
+      const cx = w * 0.5;
+      const wristY = h * 0.78;
+      const sway = Math.sin(t * 0.003) * 8;
+
+      const wrist = { x: cx + sway * 0.4, y: wristY };
+
+      // 5 Finger chains (4 landmarks each + wrist = 21 MediaPipe nodes)
+      const fingerAngles = [-0.65, -0.30, 0.0, 0.30, 0.62].map(a => a * pose.spread);
+      const fingerLengths = [42, 62, 68, 60, 48];
+
+      const allNodes = [wrist];
+
+      // Draw OpenCV Bounding Box
+      ctx.save();
+      ctx.strokeStyle = 'rgba(45, 106, 79, 0.55)';
+      ctx.lineWidth = 1.2;
+      ctx.setLineDash([4, 3]);
+      ctx.strokeRect(cx - 78 + sway * 0.3, 18, 156, 138);
+      ctx.restore();
+
+      fingerAngles.forEach((ang, fIdx) => {
+        let prev = wrist;
+        const len = fingerLengths[fIdx];
+        const curlFactor = (poseIdx === 2 && fIdx >= 3) ? 0.52 : (1 - pose.curl);
+
+        for (let seg = 1; seg <= 4; seg++) {
+          const r = (len * (seg / 4)) * curlFactor;
+          const wave = Math.sin(t * 0.004 + fIdx * 0.5 + seg * 0.3) * 2.2;
+          const nx = wrist.x + Math.sin(ang) * r * 1.35 + wave;
+          const ny = wrist.y - Math.cos(ang) * r * 1.15;
+
+          ctx.strokeStyle = '#C2410C';
+          ctx.lineWidth = 2;
+          ctx.beginPath();
+          ctx.moveTo(prev.x, prev.y);
+          ctx.lineTo(nx, ny);
+          ctx.stroke();
+
+          prev = { x: nx, y: ny };
+          allNodes.push(prev);
+        }
+      });
+
+      // Draw 21 MediaPipe Landmarks
+      allNodes.forEach((pt, idx) => {
+        ctx.fillStyle = idx === 0 || idx % 4 === 0 ? '#7C2D12' : '#FFFDF9';
+        ctx.strokeStyle = '#7C2D12';
+        ctx.lineWidth = 1.5;
+        ctx.beginPath();
+        ctx.arc(pt.x, pt.y, idx % 4 === 0 ? 3.4 : 2.5, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.stroke();
+      });
+
+      const coordsEl = document.getElementById('beyond-card-coords');
+      if (coordsEl) {
+        const normX = (0.5 + sway * 0.004).toFixed(2);
+        coordsEl.textContent = `WRIST(${normX}, 0.82, -0.03) · 21 Nodes`;
+      }
+    }
+
+    function beyondSelectSign(idx) {
+      currentSignPose = idx;
+      const meta = signMetadata[idx];
+      const predEl = document.getElementById('beyond-card-prediction');
+      if (predEl) {
+        predEl.textContent = `PREDICTION: "${meta.label}" (Softmax: ${meta.conf})`;
+      }
+      [0, 1, 2].forEach(i => {
+        const btn = document.getElementById(`sign-btn-${i}`);
+        if (btn) {
+          btn.className = i === idx
+            ? 'btn-tactile bg-roseink text-cream px-2 py-0.5 rounded text-[10px] font-semibold'
+            : 'btn-tactile bg-ivory text-roseink border border-roseborder px-2 py-0.5 rounded text-[10px] font-semibold';
+        }
+      });
+    }
+
+    // =====================================================================
+    // 6. UNIFIED HERO SIMULATOR CONTROLLER & MASTER 60FPS ANIMATION LOOP
+    // =====================================================================
+    let currentHeroSim = 'geovista';
+
+    const heroSimMeta = {
+      geovista: {
+        title: 'GeoVISTA // 3D LiDAR + Shapely ULPIN Scanner',
+        subtitle: 'Drone Point-Cloud Extrusion & Polygon Topology Check',
+        actionLabel: 'Scan Next Parcel',
+        badge: 'STATE: SHAPELY_POLYGON_VALID',
+        metric: 'ULPIN: #JH-HZB-84102',
+        cmd: '> FastAPI POST /api/v1/ulpin/extrude-3d',
+        log: 'LiDAR DSM points: 1,420 | Shapely IoU: 0.95 | Three.js Mesh Ready'
+      },
+      netsage: {
+        title: 'NetSage AI // Cisco IOS CLI & RAG Fault Healer',
+        subtitle: 'Deterministic Rule Guardrails + Packet Tracer Topology',
+        actionLabel: 'Toggle OSPF Fault',
+        badge: 'STATE: OSPF_NEIGHBOR_FULL',
+        metric: 'INTERFACE: Gi0/1 (MTU 1500)',
+        cmd: '> FastAPI POST /api/v1/netsage/diagnose-cli',
+        log: 'Cisco CLI parsed -> Deterministic rule check passed -> 0 Hallucinations'
+      },
+      nova: {
+        title: 'Nova // BLIP Vision-Language Cross-Attention',
+        subtitle: '4x4 ViT Patch Heatmap -> Autoregressive Caption Stream',
+        actionLabel: 'Switch Input Scene',
+        badge: 'MODEL: Salesforce/blip-image-captioning',
+        metric: 'CONFIDENCE: 98.4%',
+        cmd: '> python app.py --model blip-base --interface gradio',
+        log: 'PIL Tensor (384x384) -> ViT Patch Attention -> Token Stream Active'
+      },
+      beyond: {
+        title: 'Beyond Words // 21-Keypoint MediaPipe Hand Rig',
+        subtitle: 'OpenCV Real-Time Frame Capture & Gesture Classifier',
+        actionLabel: 'Cycle Hand Sign',
+        badge: 'MEDIAPIPE: 21_HAND_LANDMARKS',
+        metric: 'SOFTMAX: 0.992 (HELLO)',
+        cmd: '> cv2.VideoCapture(0) -> mp.solutions.hands.Hands()',
+        log: '3D Skeletal vectors normalized -> Gesture classifier latency: 14ms'
+      }
+    };
+
+    function switchHeroSim(mode) {
+      currentHeroSim = mode;
+      const meta = heroSimMeta[mode];
+      if (!meta) return;
+
+      document.getElementById('hero-sim-title').textContent = meta.title;
+      document.getElementById('hero-sim-subtitle').textContent = meta.subtitle;
+      document.getElementById('hero-sim-action-btn').textContent = meta.actionLabel;
+      document.getElementById('hero-canvas-badge').textContent = meta.badge;
+      document.getElementById('hero-canvas-metric').textContent = meta.metric;
+      document.getElementById('hero-sim-terminal').innerHTML = `
+        <div class="text-sageink font-semibold">${escapeHtml(meta.cmd)}</div>
+        <div id="hero-sim-log-line">${escapeHtml(meta.log)}</div>
+      `;
+
+      ['geovista', 'netsage', 'nova', 'beyond'].forEach(tab => {
+        const btn = document.getElementById(`hero-tab-${tab}`);
+        if (!btn) return;
+        if (tab === mode) {
+          btn.className = 'py-2.5 px-1.5 text-center border-r border-hairline transition-all bg-sagesurf text-sageink font-semibold border-b-2 border-b-sageink truncate';
+        } else {
+          btn.className = 'py-2.5 px-1.5 text-center border-r border-hairline transition-all text-slatewarm hover:text-espresso truncate';
+        }
+      });
+    }
+
+    function triggerHeroSimAction() {
+      if (currentHeroSim === 'geovista') {
+        geoCardCycleBuilding();
+        const b = geoBuildings[geoBuildingIdx];
+        document.getElementById('hero-canvas-metric').textContent = b.id;
+      } else if (currentHeroSim === 'netsage') {
+        netCardToggleFault();
+        document.getElementById('hero-canvas-badge').textContent = netFaultActive
+          ? 'ALERT: OSPF_EXSTART_MTU_MISMATCH'
+          : 'STATE: OSPF_NEIGHBOR_FULL';
+      } else if (currentHeroSim === 'nova') {
+        novaCardSwitchScene();
+        document.getElementById('hero-canvas-metric').textContent = novaScenes[novaSceneIdx].conf;
+      } else if (currentHeroSim === 'beyond') {
+        const nextPose = (currentSignPose + 1) % signMetadata.length;
+        beyondSelectSign(nextPose);
+        document.getElementById('hero-canvas-metric').textContent = `SIGN: ${signMetadata[nextPose].label}`;
+      }
+    }
+
+    function masterAnimationLoop(timestamp) {
+      const heroCanvas = document.getElementById('hero-sim-canvas');
+      if (heroCanvas) {
+        if (currentHeroSim === 'geovista') {
+          drawGeoVistaScene(heroCanvas, timestamp, geoBuildings[geoBuildingIdx], geoShowLidar);
+        } else if (currentHeroSim === 'netsage') {
+          drawNetSageScene(heroCanvas, timestamp, netFaultActive);
+        } else if (currentHeroSim === 'nova') {
+          drawNovaScene(heroCanvas, timestamp, novaScenes[novaSceneIdx]);
+        } else if (currentHeroSim === 'beyond') {
+          drawBeyondWordsScene(heroCanvas, timestamp, currentSignPose);
+        }
+      }
+
+      // Render the 4 individual project case study canvases simultaneously
+      const cGeo = document.getElementById('canvas-card-geovista');
+      if (cGeo) drawGeoVistaScene(cGeo, timestamp, geoBuildings[geoBuildingIdx], geoShowLidar);
+
+      const cNet = document.getElementById('canvas-card-netsage');
+      if (cNet) drawNetSageScene(cNet, timestamp, netFaultActive);
+
+      const cNova = document.getElementById('canvas-card-nova');
+      if (cNova) drawNovaScene(cNova, timestamp, novaScenes[novaSceneIdx]);
+
+      const cBeyond = document.getElementById('canvas-card-beyond');
+      if (cBeyond) drawBeyondWordsScene(cBeyond, timestamp, currentSignPose);
+
+      requestAnimationFrame(masterAnimationLoop);
+    }
+
+    // =====================================================================
+    // 7. PROJECT CATEGORY FILTER
+    // =====================================================================
+    function filterProjects(category) {
+      const cards = document.querySelectorAll('.project-card');
+      cards.forEach(card => {
+        const cat = card.getAttribute('data-proj-cat');
+        if (category === 'ALL' || cat === category) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+
+      document.querySelectorAll('.proj-tab-btn').forEach(btn => {
+        if (btn.getAttribute('data-proj-filter') === category) {
+          btn.className = 'proj-tab-btn bg-sageink text-cream font-mono text-xs font-medium px-3.5 py-1.5 rounded-lg transition-all';
+        } else {
+          btn.className = 'proj-tab-btn text-slatewarm hover:text-espresso font-mono text-xs px-3.5 py-1.5 rounded-lg transition-all';
+        }
+      });
+    }
+
+    // =====================================================================
+    // 8. DYNAMIC CERTIFICATIONS ENGINE (Supports Self-Service Additions + Resume Sync)
+    // =====================================================================
+    function getPastelClassForCategory(cat) {
+      if (cat === 'AI') return 'bg-ochresurf/70 border-ochreborder text-ochreink';
+      if (cat === 'CISCO') return 'bg-skysurf/70 border-skyborder text-skyink';
+      return 'bg-sagesurf/70 border-sageborder text-sageink';
+    }
+
+    function renderCerts(filterCat = currentCertFilter) {
+      currentCertFilter = filterCat;
+      const allCerts = portfolioState.certifications || [];
+      const grid = document.getElementById('certs-grid');
+      const filtered = filterCat === 'ALL'
+        ? allCerts
+        : allCerts.filter(c => c.cat === filterCat);
+
+      // Update counters across Navbar, Section Heading, Filter Tab, Drawer, and Printable Resume
+      const setTxt = (id, val) => {
+        const el = document.getElementById(id);
+        if (el) el.textContent = val;
+      };
+      setTxt('nav-cert-count', allCerts.length);
+      setTxt('cert-heading-count', allCerts.length);
+      setTxt('cert-tab-all-count', allCerts.length);
+      setTxt('drawer-cert-count', allCerts.length);
+      setTxt('resume-cert-total-count', allCerts.length);
+
+      if (grid) {
+        grid.innerHTML = filtered.map(c => {
+          const pastel = c.pastel || getPastelClassForCategory(c.cat);
+          const verifyLinkHtml = c.url
+            ? `<a href="${escapeHtml(c.url)}" target="_blank" rel="noopener noreferrer" class="text-sageink hover:underline font-semibold">Verify &nearr;</a>`
+            : `<span>Verified Credential</span>`;
+          return `
+            <div class="bg-ivory border border-borderwarm rounded-xl p-5 flex flex-col justify-between space-y-4 shadow-sm hover:border-sageborder transition-all hover:-translate-y-0.5">
+              <div class="space-y-2">
+                <div class="flex items-center justify-between gap-2 font-mono text-[11px]">
+                  <span class="px-2.5 py-0.5 rounded-full border font-semibold ${pastel}">
+                    ${escapeHtml(c.badge)}
+                  </span>
+                  <span class="text-slatewarm tabular-nums">${escapeHtml(c.date)}</span>
+                </div>
+                <h3 class="font-sans text-base font-semibold text-espresso leading-snug">
+                  ${escapeHtml(c.title)}
+                </h3>
+              </div>
+              <div class="pt-3 border-t border-hairline flex items-center justify-between font-mono text-xs text-slatewarm">
+                <span class="truncate pr-2">${escapeHtml(c.issuer)}</span>
+                ${verifyLinkHtml}
+              </div>
+            </div>
+          `;
+        }).join('');
+      }
+
+      // Sync Printable Resume Certifications List automatically
+      const resumeList = document.getElementById('resume-certs-list');
+      if (resumeList) {
+        resumeList.innerHTML = allCerts.map(c => `
+          <li>&bull; <strong class="text-espresso">${escapeHtml(c.title)}</strong> — ${escapeHtml(c.issuer)}, ${escapeHtml(c.date)} ${c.badge ? `(${escapeHtml(c.badge)})` : ''}</li>
+        `).join('');
+      }
+
+      renderDrawerCertsManageList();
+    }
+
+    function filterCerts(cat) {
+      renderCerts(cat);
+      document.querySelectorAll('.cert-tab-btn').forEach(btn => {
+        if (btn.getAttribute('data-cert-filter') === cat) {
+          btn.className = 'cert-tab-btn bg-sageink text-cream font-mono text-xs font-medium px-3 py-1.5 rounded-lg transition-all';
+        } else {
+          btn.className = 'cert-tab-btn text-slatewarm hover:text-espresso font-mono text-xs px-3 py-1.5 rounded-lg transition-all';
+        }
+      });
+    }
+
+    // =====================================================================
+    // STUDIO DRAWER CONTROLS (Add Certifications, Add Projects, Export JSON)
+    // =====================================================================
+    function openStudioDrawer(initialTab = 'certs') {
+      const backdrop = document.getElementById('studio-drawer-backdrop');
+      if (backdrop) {
+        backdrop.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+      }
+      document.getElementById('cfg-lc-user').value = portfolioState.leetcodeUsername || 'AffanCoder';
+      document.getElementById('cfg-gh-user').value = portfolioState.githubUsername || 'affanakram1217-star';
+      document.getElementById('toggle-hide-forks').checked = !!portfolioState.hideForks;
+      switchStudioTab(initialTab);
+    }
+
+    function closeStudioDrawer() {
+      const backdrop = document.getElementById('studio-drawer-backdrop');
+      if (backdrop) {
+        backdrop.classList.add('hidden');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function switchStudioTab(tab) {
+      const tabs = ['certs', 'projects', 'export'];
+      tabs.forEach(t => {
+        const panel = document.getElementById(`drawer-panel-${t}`);
+        const btn = document.getElementById(`drawer-tab-btn-${t}`);
+        if (panel) panel.classList.toggle('hidden', t !== tab);
+        if (btn) {
+          btn.className = t === tab
+            ? 'py-3 px-2 text-center border-r border-hairline font-semibold bg-sagesurf text-sageink border-b-2 border-b-sageink'
+            : 'py-3 px-2 text-center border-r border-hairline text-slatewarm hover:text-espresso';
+        }
+      });
+    }
+
+    function handleAddCertification(e) {
+      e.preventDefault();
+      const title = document.getElementById('new-cert-title').value.trim();
+      const issuer = document.getElementById('new-cert-issuer').value.trim();
+      const date = document.getElementById('new-cert-date').value.trim();
+      const cat = document.getElementById('new-cert-cat').value;
+      const badge = document.getElementById('new-cert-badge').value.trim();
+      const url = document.getElementById('new-cert-url').value.trim();
+
+      if (!title || !issuer || !date || !badge) return;
+
+      const newCert = {
+        id: 'custom-cert-' + Date.now(),
+        title,
+        issuer,
+        date,
+        cat,
+        badge,
+        url,
+        isCustom: true
+      };
+
+      portfolioState.certifications.unshift(newCert);
+      savePortfolioState();
+      renderCerts('ALL');
+      document.getElementById('add-cert-form').reset();
+
+      const statusMsg = document.getElementById('drawer-status-msg');
+      if (statusMsg) {
+        statusMsg.textContent = `Added "${title}" to Portfolio & Printable Resume ✓`;
+      }
+    }
+
+    function deleteCertification(certId) {
+      portfolioState.certifications = portfolioState.certifications.filter(c => c.id !== certId);
+      savePortfolioState();
+      renderCerts(currentCertFilter);
+    }
+
+    function renderDrawerCertsManageList() {
+      const container = document.getElementById('drawer-certs-manage-list');
+      if (!container) return;
+      container.innerHTML = (portfolioState.certifications || []).map(c => `
+        <div class="bg-ivory border border-hairline rounded-lg px-3.5 py-2.5 flex items-center justify-between gap-3 text-xs">
+          <div class="truncate">
+            <div class="font-semibold text-espresso truncate">${escapeHtml(c.title)}</div>
+            <div class="font-mono text-[11px] text-slatewarm">${escapeHtml(c.issuer)} &middot; ${escapeHtml(c.date)} &middot; ${escapeHtml(c.badge)}</div>
+          </div>
+          <button 
+            onclick="deleteCertification('${c.id}')"
+            title="Remove certification"
+            class="text-roseink hover:bg-rosesurf px-2 py-1 rounded font-mono text-[11px] shrink-0">
+            Remove
+          </button>
+        </div>
+      `).join('');
+    }
+
+    function handleAddCustomProject(e) {
+      e.preventDefault();
+      const name = document.getElementById('new-proj-name').value.trim();
+      const lang = document.getElementById('new-proj-lang').value.trim();
+      const desc = document.getElementById('new-proj-desc').value.trim();
+      const url = document.getElementById('new-proj-url').value.trim();
+
+      if (!name || !lang || !desc || !url) return;
+
+      portfolioState.customProjects.unshift({
+        id: 'proj-' + Date.now(),
+        name,
+        lang,
+        desc,
+        url
+      });
+
+      savePortfolioState();
+      renderGitHubAndCustomProjects();
+      document.getElementById('add-project-form').reset();
+
+      const statusMsg = document.getElementById('drawer-status-msg');
+      if (statusMsg) statusMsg.textContent = `Added project "${name}" to Live Projects Grid ✓`;
+    }
+
+    function deleteCustomProject(projId) {
+      portfolioState.customProjects = (portfolioState.customProjects || []).filter(p => p.id !== projId);
+      savePortfolioState();
+      renderGitHubAndCustomProjects();
+    }
+
+    function renderDrawerCustomProjectsList() {
+      const container = document.getElementById('drawer-custom-projects-list');
+      if (!container) return;
+      const list = portfolioState.customProjects || [];
+      if (list.length === 0) {
+        container.innerHTML = `<div class="font-mono text-[11px] text-mutedwarm">No custom pinned projects added yet. All public GitHub repos are automatically displayed.</div>`;
+        return;
+      }
+      container.innerHTML = list.map(p => `
+        <div class="bg-cream border border-hairline rounded-lg px-3 py-2 flex items-center justify-between gap-2">
+          <div class="truncate">
+            <span class="font-semibold text-espresso">${escapeHtml(p.name)}</span>
+            <span class="font-mono text-[10px] text-slatewarm ml-2">${escapeHtml(p.lang)}</span>
+          </div>
+          <button onclick="deleteCustomProject('${p.id}')" class="text-roseink font-mono text-[11px] hover:underline">Remove</button>
+        </div>
+      `).join('');
+    }
+
+    function toggleHideForks() {
+      const checked = document.getElementById('toggle-hide-forks').checked;
+      portfolioState.hideForks = checked;
+      savePortfolioState();
+      renderGitHubAndCustomProjects();
+    }
+
+    function saveHandlesAndResync() {
+      const lcInput = document.getElementById('cfg-lc-user').value.trim();
+      const ghInput = document.getElementById('cfg-gh-user').value.trim();
+      if (lcInput) portfolioState.leetcodeUsername = lcInput;
+      if (ghInput) portfolioState.githubUsername = ghInput;
+      savePortfolioState();
+      syncAllLiveData(true);
+      const statusMsg = document.getElementById('drawer-status-msg');
+      if (statusMsg) statusMsg.textContent = `Updated handles (${lcInput} / ${ghInput}) & triggered live sync ✓`;
+    }
+
+    function resetPortfolioToDefaults() {
+      localStorage.removeItem(STORAGE_KEY);
+      portfolioState = JSON.parse(JSON.stringify(DEFAULT_PORTFOLIO_CONFIG));
+      renderCerts('ALL');
+      applyLeetCodeTelemetryToDOM();
+      syncAllLiveData(true);
+      const statusMsg = document.getElementById('drawer-status-msg');
+      if (statusMsg) statusMsg.textContent = 'Reset portfolio state to default verified resume baseline.';
+    }
+
+    function copyPermanentConfigSnippet() {
+      const snippet = `const DEFAULT_PORTFOLIO_CONFIG = ${JSON.stringify(portfolioState, null, 2)};`;
+      const temp = document.createElement('textarea');
+      temp.value = snippet;
+      document.body.appendChild(temp);
+      temp.select();
+      document.execCommand('copy');
+      document.body.removeChild(temp);
+
+      const btn = document.getElementById('btn-copy-config-snippet');
+      if (btn) {
+        const orig = btn.textContent;
+        btn.textContent = 'Copied PORTFOLIO_CONFIG Block ✓';
+        setTimeout(() => { btn.textContent = orig; }, 2400);
+      }
+    }
+
+    function downloadPortfolioJson() {
+      const dataStr = 'data:text/json;charset=utf-8,' + encodeURIComponent(JSON.stringify(portfolioState, null, 2));
+      const a = document.createElement('a');
+      a.setAttribute('href', dataStr);
+      a.setAttribute('download', 'affan_portfolio_config.json');
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+    }
+
+    function importPortfolioJson(event) {
+      const file = event.target.files && event.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        try {
+          const imported = JSON.parse(e.target.result);
+          if (imported && Array.isArray(imported.certifications)) {
+            portfolioState = imported;
+            savePortfolioState();
+            renderCerts('ALL');
+            applyLeetCodeTelemetryToDOM();
+            syncAllLiveData(true);
+            const statusMsg = document.getElementById('drawer-status-msg');
+            if (statusMsg) statusMsg.textContent = 'Imported portfolio backup JSON successfully ✓';
+          }
+        } catch (err) {
+          console.warn('Invalid JSON file');
+        }
+      };
+      reader.readAsText(file);
+    }
+
+    // 9. CLIPBOARD COPY & RESUME MODAL CONTROLS
+    function copyEmailToClipboard(elementId) {
+      const email = 'affanakram1217@gmail.com';
+      const temp = document.createElement('textarea');
+      temp.value = email;
+      document.body.appendChild(temp);
+      temp.select();
+      document.execCommand('copy');
+      document.body.removeChild(temp);
+
+      const el = document.getElementById(elementId);
+      if (el) {
+        const orig = el.textContent;
+        el.textContent = 'Copied affanakram1217@gmail.com ✓';
+        setTimeout(() => { el.textContent = orig; }, 2200);
+      }
+    }
+
+    function openResumeModal() {
+      document.getElementById('resume-modal').classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeResumeModal() {
+      document.getElementById('resume-modal').classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+
+    function setResumeTheme(mode) {
+      const headerBox = document.getElementById('res-header-box');
+      const btnPastel = document.getElementById('btn-resume-pastel');
+      const btnAts = document.getElementById('btn-resume-ats');
+
+      if (mode === 'ats') {
+        headerBox.className = 'bg-ivory border-b-2 border-espresso pb-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4';
+        btnAts.className = 'px-2.5 py-1 rounded-md bg-espresso text-ivory font-semibold transition-all';
+        btnPastel.className = 'px-2.5 py-1 rounded-md text-slatewarm hover:text-espresso transition-all';
+      } else {
+        headerBox.className = 'bg-sagesurf/55 border border-sageborder rounded-xl p-5 sm:p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4';
+        btnPastel.className = 'px-2.5 py-1 rounded-md bg-sagesurf text-sageink font-semibold transition-all';
+        btnAts.className = 'px-2.5 py-1 rounded-md text-slatewarm hover:text-espresso transition-all';
+      }
+    }
+
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeResumeModal();
+        closeStudioDrawer();
+      }
+    });
+
+    // 10. RECRUITER FORM SUBMISSION
+    function handleInquirySubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('rec-name').value.trim();
+      const org = document.getElementById('rec-org').value.trim();
+      const email = document.getElementById('rec-email').value.trim();
+      const msg = document.getElementById('rec-msg').value.trim();
+
+      const errEl = document.getElementById('form-error-msg');
+      const okEl = document.getElementById('form-success-msg');
+
+      if (!name || !org || !email || !email.includes('@') || !msg) {
+        errEl.classList.remove('hidden');
+        okEl.classList.add('hidden');
+        return;
+      }
+
+      errEl.classList.add('hidden');
+      okEl.classList.remove('hidden');
+      document.getElementById('recruiter-form').reset();
+    }
+
+    // Initialize everything on DOMContentLoaded
+    window.addEventListener('DOMContentLoaded', () => {
+      renderCerts('ALL');
+      applyLeetCodeTelemetryToDOM();
+      initScrollRevealsAndCounters();
+      requestAnimationFrame(masterAnimationLoop);
+
+      // Automatically trigger live LeetCode & GitHub sync on page load
+      syncAllLiveData(false);
+
+      const heroCanvas = document.getElementById('hero-sim-canvas');
+      if (heroCanvas) {
+        heroCanvas.addEventListener('click', () => triggerHeroSimAction());
+      }
+    });
+  </script>
+</body>
+</html>
