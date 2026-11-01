@@ -144,10 +144,14 @@
   <header class="sticky top-0 z-40 h-16 w-full bg-cream/90 backdrop-blur-md border-b border-hairline">
     <div class="max-w-[1280px] mx-auto h-full px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4">
       
-      <!-- Left: Monogram & Live Auto-Sync Status Pill -->
+      <!-- Left: Monogram (Double-Click for Owner Unlock) & Live Auto-Sync Status Pill -->
       <div class="flex items-center gap-3 sm:gap-5">
-        <a href="#top" class="flex items-center gap-2.5 group focus:outline-none">
-          <span class="w-7 h-7 rounded-md bg-sagesurf border border-sageborder flex items-center justify-center font-mono text-xs font-semibold text-sageink group-hover:bg-sageink group-hover:text-cream transition-colors">
+        <a 
+          href="#top" 
+          ondblclick="event.preventDefault(); requestOwnerAccess('certs');"
+          title="MD Affan Akram (Owner: Double-click or press Shift+Alt+M to manage)"
+          class="flex items-center gap-2.5 group focus:outline-none">
+          <span class="w-7 h-7 rounded-md bg-sagesurf border border-sageborder flex items-center justify-center font-mono text-xs font-semibold text-sageink group-hover:bg-sageink group-hover:text-cream transition-colors select-none">
             MA
           </span>
           <span class="font-sans text-sm font-semibold tracking-tight text-espresso">
@@ -166,7 +170,7 @@
         </div>
       </div>
 
-      <!-- Right: Section Links + Sync Live Data + Manage Portfolio + View Resume -->
+      <!-- Right: Section Links + Sync Live Data + Owner-Only Manage Button + View Resume -->
       <div class="flex items-center gap-2 sm:gap-3">
         <nav aria-label="Primary Navigation" class="hidden lg:flex items-center gap-5 text-xs font-medium text-slatewarm mr-1">
           <a href="#experience" class="hover:text-espresso transition-colors py-1">Experience</a>
@@ -188,14 +192,15 @@
           <span class="hidden sm:inline">Sync Live Data</span>
         </button>
 
+        <!-- Hidden from public visitors until Owner Mode is unlocked via Passcode -->
         <button 
-          onclick="openStudioDrawer('certs')"
-          class="btn-tactile whitespace-nowrap bg-ochresurf hover:bg-ochreborder/60 text-ochreink border border-ochreborder font-mono text-xs font-medium px-3 py-2 rounded-lg flex items-center gap-1.5 shadow-sm">
+          onclick="requestOwnerAccess('certs')"
+          class="owner-only-control hidden btn-tactile whitespace-nowrap bg-ochresurf hover:bg-ochreborder/60 text-ochreink border border-ochreborder font-mono text-xs font-medium px-3 py-2 rounded-lg flex items-center gap-1.5 shadow-sm">
           <svg class="w-3.5 h-3.5 stroke-[2]" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-            <circle cx="12" cy="12" r="3"></circle>
-            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
           </svg>
-          <span>Manage Portfolio</span>
+          <span>Owner Studio</span>
         </button>
 
         <button 
@@ -299,9 +304,17 @@
               <span>View Resume</span>
             </button>
 
+            <a 
+              href="#projects"
+              class="btn-tactile whitespace-nowrap bg-ivory hover:bg-sand text-espresso border border-borderwarm font-mono text-xs sm:text-sm font-medium px-4 py-3 rounded-xl flex items-center gap-2 shadow-sm">
+              <span>Explore Live Simulations</span>
+              <span>&darr;</span>
+            </a>
+
+            <!-- Owner-only button (hidden from public visitors) -->
             <button 
-              onclick="openStudioDrawer('certs')"
-              class="btn-tactile whitespace-nowrap bg-ochresurf hover:bg-ochreborder/70 text-ochreink border border-ochreborder font-mono text-xs sm:text-sm font-medium px-4 py-3 rounded-xl flex items-center gap-2 shadow-sm">
+              onclick="requestOwnerAccess('certs')"
+              class="owner-only-control hidden btn-tactile whitespace-nowrap bg-ochresurf hover:bg-ochreborder/70 text-ochreink border border-ochreborder font-mono text-xs sm:text-sm font-medium px-4 py-3 rounded-xl flex items-center gap-2 shadow-sm">
               <svg class="w-4 h-4 stroke-[2]" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                 <line x1="12" y1="5" x2="12" y2="19"></line>
                 <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -943,7 +956,7 @@
               Public Repositories &amp; Custom Added Projects (<span id="gh-repo-total-badge">Syncing...</span>)
             </h3>
             <p class="text-xs sm:text-sm text-slatewarm mt-0.5">
-              Whenever you push a new repository to <code id="gh-feed-handle-code" class="font-mono text-espresso bg-sand px-1.5 py-0.5 rounded">github.com/affanakram1217-star</code> or add a custom project in Studio Manager, it automatically renders below.
+              Automatically synced with <code id="gh-feed-handle-code" class="font-mono text-espresso bg-sand px-1.5 py-0.5 rounded">github.com/affanakram1217-star</code>.
             </p>
           </div>
 
@@ -962,8 +975,8 @@
               <span>Refresh GitHub</span>
             </button>
             <button 
-              onclick="openStudioDrawer('projects')"
-              class="btn-tactile bg-sagesurf hover:bg-sageborder/70 text-sageink border border-sageborder font-mono text-xs font-medium px-3.5 py-2 rounded-lg flex items-center gap-1.5 shadow-sm">
+              onclick="requestOwnerAccess('projects')"
+              class="owner-only-control hidden btn-tactile bg-sagesurf hover:bg-sageborder/70 text-sageink border border-sageborder font-mono text-xs font-medium px-3.5 py-2 rounded-lg flex items-center gap-1.5 shadow-sm">
               <svg class="w-3.5 h-3.5 stroke-[2]" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                 <line x1="12" y1="5" x2="12" y2="19"></line>
                 <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -1150,7 +1163,7 @@
 
             <div class="flex items-center justify-between text-[11px] font-mono text-ochreink pt-1 border-t border-ochreborder/60">
               <span id="lc-sync-status-label">Status: Verified Baseline / Auto-Sync</span>
-              <button onclick="openStudioDrawer('export')" class="underline hover:text-espresso">Configure Handle &rarr;</button>
+              <a href="https://leetcode.com/u/AffanCoder/" target="_blank" rel="noopener noreferrer" class="underline hover:text-espresso">View Profile &nearr;</a>
             </div>
 
             <div class="pt-2 border-t border-ochreborder/80 text-xs text-espresso/90 space-y-1.5">
@@ -1256,13 +1269,13 @@
     </section>
 
     <!-- ===================================================================
-         SECTION 5: FILTERABLE VERIFIED CERTIFICATIONS LEDGER + SELF-SERVICE ADDER
+         SECTION 5: FILTERABLE VERIFIED CERTIFICATIONS LEDGER
     ==================================================================== -->
     <section id="certifications" class="py-16 md:py-24 border-b border-hairline">
       
       <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8 reveal-item">
         <div>
-          <span class="font-mono text-xs text-sageink font-semibold">04 / Verified Credentials &amp; Self-Service Manager</span>
+          <span class="font-mono text-xs text-sageink font-semibold">04 / Verified Credentials</span>
           <h2 class="font-serif text-4xl sm:text-5xl text-espresso tracking-tight mt-1">
             <span id="cert-heading-count">11</span> Industry &amp; University Certifications
           </h2>
@@ -1285,10 +1298,10 @@
             </button>
           </div>
 
-          <!-- Direct "+ Add Certification" Button -->
+          <!-- Owner-only "+ Add New Certification" Button (Hidden from Public Visitors) -->
           <button 
-            onclick="openStudioDrawer('certs')"
-            class="btn-tactile bg-ochresurf hover:bg-ochreborder/70 text-ochreink border border-ochreborder font-mono text-xs font-semibold px-3.5 py-2.5 rounded-xl flex items-center gap-1.5 shadow-sm">
+            onclick="requestOwnerAccess('certs')"
+            class="owner-only-control hidden btn-tactile bg-ochresurf hover:bg-ochreborder/70 text-ochreink border border-ochreborder font-mono text-xs font-semibold px-3.5 py-2.5 rounded-xl flex items-center gap-1.5 shadow-sm">
             <svg class="w-3.5 h-3.5 stroke-[2.2]" viewBox="0 0 24 24" fill="none" stroke="currentColor">
               <line x1="12" y1="5" x2="12" y2="19"></line>
               <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -1474,17 +1487,90 @@
 
   </main>
 
-  <!-- Studio Colophon Footer -->
+  <!-- Studio Colophon Footer (Includes Discreet Owner Lock Icon) -->
   <footer class="border-t border-hairline bg-sand/60 py-8">
     <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-xs text-slatewarm">
       <div>
         MD Affan Akram · B.Tech CSE (2024–2028) · LNCTS Bhopal &amp; Hazaribagh, Jharkhand
       </div>
-      <div class="tabular-nums">
-        8.41 CGPA · 418 LeetCode · SIH 2026 Finalist
+      <div class="flex items-center gap-4 tabular-nums">
+        <span>8.41 CGPA · 418 LeetCode · SIH 2026 Finalist</span>
+        <button 
+          onclick="requestOwnerAccess('certs')"
+          id="footer-owner-lock-btn"
+          title="Owner Access (Shift + Alt + M)"
+          class="text-mutedwarm hover:text-espresso transition-colors flex items-center gap-1 px-2 py-1 rounded border border-transparent hover:border-hairline">
+          <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+          </svg>
+          <span id="footer-owner-lock-label" class="text-[10px]">Owner Lock</span>
+        </button>
       </div>
     </div>
   </footer>
+
+  <!-- =====================================================================
+       OWNER AUTHENTICATION PASSCODE MODAL
+       Ensures ONLY MD Affan Akram can unlock the Portfolio Studio Manager
+  ====================================================================== -->
+  <div 
+    id="owner-auth-modal" 
+    class="fixed inset-0 z-50 hidden bg-espresso/60 backdrop-blur-sm flex items-center justify-center p-4"
+    role="dialog"
+    aria-modal="true">
+    <div class="w-full max-w-md bg-cream border border-borderwarm rounded-2xl shadow-2xl overflow-hidden">
+      <div class="bg-sand px-5 py-4 border-b border-hairline flex items-center justify-between">
+        <div class="flex items-center gap-2 font-mono text-xs font-semibold text-espresso">
+          <svg class="w-4 h-4 text-sageink" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+          </svg>
+          <span>Owner Verification Required</span>
+        </div>
+        <button onclick="closeOwnerAuthModal()" class="text-slatewarm hover:text-espresso font-mono text-xs">
+          [ESC]
+        </button>
+      </div>
+
+      <form onsubmit="verifyOwnerPasscode(event)" class="p-6 space-y-4">
+        <p class="text-xs text-slatewarm leading-relaxed">
+          This portfolio is in <strong>Public Read-Only Mode</strong> for visitors and recruiters. Enter your private Owner Passcode to unlock certification and project editing controls.
+        </p>
+
+        <div>
+          <label for="owner-passcode-input" class="block font-mono text-[11px] text-slatewarm mb-1.5">
+            Owner Passcode
+          </label>
+          <input 
+            id="owner-passcode-input" 
+            type="password" 
+            required
+            autocomplete="off"
+            placeholder="Enter owner passcode..."
+            class="w-full bg-ivory border border-hairline focus:border-sageink rounded-xl px-3.5 py-2.5 text-sm font-mono text-espresso focus:outline-none" />
+        </div>
+
+        <div id="owner-auth-error" class="hidden font-mono text-xs text-roseink bg-rosesurf border border-roseborder px-3 py-2 rounded-lg">
+          Invalid passcode. Only MD Affan Akram can unlock studio editing.
+        </div>
+
+        <div class="flex items-center justify-end gap-2 pt-1">
+          <button 
+            type="button"
+            onclick="closeOwnerAuthModal()"
+            class="btn-tactile bg-ivory hover:bg-sand text-slatewarm border border-hairline font-mono text-xs px-4 py-2.5 rounded-xl">
+            Cancel
+          </button>
+          <button 
+            type="submit"
+            class="btn-tactile bg-sageink hover:bg-[#144235] text-cream font-mono text-xs font-semibold px-5 py-2.5 rounded-xl shadow-sm">
+            Unlock Studio Mode
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
 
   <!-- =====================================================================
        AESTHETIC PASTEL & ATS PRINTABLE RESUME MODAL ("View Resume")
@@ -1711,9 +1797,9 @@
   </div>
 
   <!-- =====================================================================
-       SELF-SERVICE PORTFOLIO & CERTIFICATION STUDIO DRAWER
+       SELF-SERVICE PORTFOLIO & CERTIFICATION STUDIO DRAWER (OWNER-LOCKED)
        Allows adding Certifications, Custom Projects, Live Handle Config,
-       and Exporting Permanent PORTFOLIO_CONFIG JSON for index.html
+       Direct GitHub API Commit Push, and Exporting Permanent PORTFOLIO_CONFIG
   ====================================================================== -->
   <div 
     id="studio-drawer-backdrop" 
@@ -1729,17 +1815,25 @@
         <div>
           <div class="flex items-center gap-2 font-mono text-xs text-sageink font-semibold">
             <span class="w-2 h-2 rounded-full bg-sageaccent"></span>
-            <span>SELF-SERVICE PORTFOLIO &amp; LIVE SYNC MANAGER</span>
+            <span>OWNER-UNLOCKED STUDIO MANAGER</span>
           </div>
           <h2 class="font-serif text-2xl text-espresso mt-0.5">
-            Add Certifications, Projects &amp; Auto-Sync Settings
+            Add Certifications, Projects &amp; Security Settings
           </h2>
         </div>
-        <button 
-          onclick="closeStudioDrawer()"
-          class="btn-tactile bg-ivory hover:bg-cream text-slatewarm hover:text-espresso border border-hairline font-mono text-xs px-3 py-2 rounded-lg">
-          Close [ESC]
-        </button>
+        <div class="flex items-center gap-2">
+          <button 
+            onclick="lockOwnerSession()"
+            title="Lock studio and hide all edit controls"
+            class="btn-tactile bg-rosesurf hover:bg-roseborder/70 text-roseink border border-roseborder font-mono text-xs font-semibold px-3 py-2 rounded-lg">
+            Lock Owner Mode
+          </button>
+          <button 
+            onclick="closeStudioDrawer()"
+            class="btn-tactile bg-ivory hover:bg-cream text-slatewarm hover:text-espresso border border-hairline font-mono text-xs px-3 py-2 rounded-lg">
+            Close [ESC]
+          </button>
+        </div>
       </div>
 
       <!-- 3-Tab Switcher Bar -->
@@ -1760,7 +1854,7 @@
           id="drawer-tab-btn-export"
           onclick="switchStudioTab('export')"
           class="py-3 px-2 text-center text-slatewarm hover:text-espresso">
-          3. Live Sync &amp; Permanent Export
+          3. Security &amp; Publish
         </button>
       </div>
 
@@ -1776,7 +1870,7 @@
               <h3 class="font-mono text-xs font-semibold uppercase tracking-wider text-sageink">
                 Add a New Certification (Updates Site + Printable Resume)
               </h3>
-              <span class="font-mono text-[11px] text-mutedwarm">Instant Save</span>
+              <span class="font-mono text-[11px] text-mutedwarm">Owner Authenticated</span>
             </div>
 
             <form id="add-cert-form" onsubmit="handleAddCertification(event)" class="space-y-3.5">
@@ -1850,11 +1944,11 @@
             </form>
           </div>
 
-          <!-- List of Existing Certifications (with Delete button for custom ones) -->
+          <!-- List of Existing Certifications (with Delete button for owner) -->
           <div class="space-y-2.5">
             <div class="flex items-center justify-between font-mono text-xs text-slatewarm">
               <span>CURRENT CERTIFICATIONS LEDGER (<span id="drawer-cert-count">11</span>)</span>
-              <span>Click trash icon to remove custom items</span>
+              <span>Owner-Only Management</span>
             </div>
             <div id="drawer-certs-manage-list" class="space-y-2 max-h-64 overflow-y-auto pr-1">
               <!-- Populated dynamically -->
@@ -1936,10 +2030,35 @@
         </div>
 
         <!-- ===============================================================
-             TAB 3: LIVE HANDLES & PERMANENT CODE / JSON EXPORTER
+             TAB 3: SECURITY PASSCODE, LIVE HANDLES & PERMANENT EXPORT
         ================================================================ -->
         <div id="drawer-panel-export" class="hidden space-y-6">
           
+          <!-- Change Owner Passcode Card -->
+          <div class="bg-ivory border border-borderwarm rounded-xl p-5 space-y-3.5 shadow-sm">
+            <div class="flex items-center justify-between">
+              <h3 class="font-mono text-xs font-semibold uppercase tracking-wider text-sageink">
+                Owner Security Passcode Settings
+              </h3>
+              <span class="font-mono text-[10px] bg-sagesurf text-sageink px-2 py-0.5 rounded border border-sageborder">SHA-256 Protected</span>
+            </div>
+            <p class="text-xs text-slatewarm">
+              Public visitors cannot see or open this drawer without your passcode (Shortcut: <code class="font-mono bg-sand px-1.5 py-0.5 rounded">Shift + Alt + M</code> or double-clicking the <code class="font-mono bg-sand px-1.5 py-0.5 rounded">MA</code> logo).
+            </p>
+            <div class="flex flex-col sm:flex-row gap-2">
+              <input 
+                id="new-owner-passcode" 
+                type="password" 
+                placeholder="Enter new custom passcode..."
+                class="flex-1 bg-cream border border-hairline rounded-lg px-3 py-2 text-sm font-mono text-espresso focus:outline-none" />
+              <button 
+                onclick="updateOwnerPasscode()"
+                class="btn-tactile bg-sageink text-cream font-mono text-xs font-semibold px-4 py-2 rounded-lg shrink-0">
+                Update Passcode
+              </button>
+            </div>
+          </div>
+
           <!-- Live Handle Configurator -->
           <div class="bg-ivory border border-borderwarm rounded-xl p-5 space-y-4 shadow-sm">
             <h3 class="font-mono text-xs font-semibold uppercase tracking-wider text-ochreink">
@@ -1981,17 +2100,16 @@
           <div class="bg-ochresurf/65 border border-ochreborder rounded-xl p-5 space-y-4">
             <div class="flex items-center justify-between">
               <h3 class="font-mono text-xs font-semibold uppercase tracking-wider text-ochreink">
-                Make Your Changes Permanent Across All Devices
+                Publish Your Changes Permanently to GitHub Pages
               </h3>
-              <span class="font-mono text-[10px] bg-ivory px-2 py-0.5 rounded border border-ochreborder text-ochreink">Static Host Ready</span>
+              <span class="font-mono text-[10px] bg-ivory px-2 py-0.5 rounded border border-ochreborder text-ochreink">Owner Only</span>
             </div>
             <p class="text-xs text-espresso/90 leading-relaxed">
-              Everything you add above is saved immediately in your browser’s <code class="font-mono bg-ivory px-1 rounded">localStorage</code>. When you deploy to GitHub Pages, Vercel, or Netlify and want your new certifications to appear for all visitors permanently:
+              Because GitHub Pages hosts your <code class="font-mono bg-ivory px-1 rounded">index.html</code> directly from your private GitHub account, <strong>nobody on the internet can alter your live site</strong> unless they log into your GitHub account. To publish new certifications you added above to your live repository:
             </p>
             <ol class="list-decimal list-inside text-xs text-espresso/90 space-y-1 font-mono">
               <li>Click <strong>"Copy Updated PORTFOLIO_CONFIG Block"</strong> below.</li>
-              <li>Open <code class="bg-ivory px-1 rounded">index.html</code> and locate <code class="bg-ivory px-1 rounded">// [START_PORTFOLIO_CONFIG]</code>.</li>
-              <li>Paste and save — your new certifications and settings are now permanently baked into the HTML!</li>
+              <li>Paste it over <code class="bg-ivory px-1 rounded">const DEFAULT_PORTFOLIO_CONFIG = ...</code> in your GitHub repo’s <code class="bg-ivory px-1 rounded">index.html</code> and commit.</li>
             </ol>
 
             <div class="flex flex-wrap items-center gap-2 pt-1">
@@ -2019,8 +2137,8 @@
 
       <!-- Drawer Footer Status -->
       <div class="bg-sand px-6 py-3 border-t border-hairline flex items-center justify-between font-mono text-[11px] text-slatewarm">
-        <span id="drawer-status-msg">All changes automatically synced to browser storage &amp; printable resume.</span>
-        <span class="text-sageink font-semibold">Portfolio Studio v2.4</span>
+        <span id="drawer-status-msg">Owner Mode Unlocked · Changes synced to local browser &amp; printable resume.</span>
+        <span class="text-sageink font-semibold">Owner Security v2.5</span>
       </div>
 
     </aside>
@@ -2039,6 +2157,8 @@
       leetcodeUsername: 'AffanCoder',
       githubUsername: 'affanakram1217-star',
       hideForks: false,
+      // Default SHA-256 hash corresponds to default owner passcode: affan1217
+      ownerPassHash: '85f4ff026e0c7ef75c8ae70efed8e4234abdc04bc58cb15e7f1df9ec02bf549b',
       leetcodeBaseline: {
         totalSolved: 418,
         easySolved: 162,
@@ -2172,9 +2292,12 @@
     // [END_PORTFOLIO_CONFIG]
 
     const STORAGE_KEY = 'affan_portfolio_studio_v2';
+    const OWNER_SESSION_KEY = 'affan_owner_unlocked_session';
     let portfolioState = loadPortfolioState();
     let currentCertFilter = 'ALL';
     let cachedGitHubRepos = [];
+    let isOwnerUnlocked = sessionStorage.getItem(OWNER_SESSION_KEY) === 'true';
+    let pendingStudioTab = 'certs';
 
     function loadPortfolioState() {
       try {
@@ -2201,6 +2324,112 @@
         console.warn('Could not persist to localStorage:', e);
       }
     }
+
+    // =====================================================================
+    // OWNER AUTHENTICATION & ACCESS CONTROL ENGINE
+    // Hides all editing controls from public visitors; unlocks via SHA-256
+    // =====================================================================
+    async function sha256Hex(message) {
+      const msgBuffer = new TextEncoder().encode(message);
+      const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
+      const hashArray = Array.from(new Uint8Array(hashBuffer));
+      return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+    }
+
+    function syncOwnerControlsVisibility() {
+      const ownerEls = document.querySelectorAll('.owner-only-control');
+      ownerEls.forEach(el => {
+        if (isOwnerUnlocked) {
+          el.classList.remove('hidden');
+        } else {
+          el.classList.add('hidden');
+        }
+      });
+
+      const lockLabel = document.getElementById('footer-owner-lock-label');
+      if (lockLabel) {
+        lockLabel.textContent = isOwnerUnlocked ? 'Owner Unlocked (Studio)' : 'Owner Lock';
+      }
+
+      // Re-render custom project cards so "Remove" buttons only show when unlocked
+      renderGitHubAndCustomProjects();
+    }
+
+    function requestOwnerAccess(targetTab = 'certs') {
+      pendingStudioTab = targetTab;
+      if (isOwnerUnlocked) {
+        openStudioDrawer(targetTab);
+        return;
+      }
+      const modal = document.getElementById('owner-auth-modal');
+      const errEl = document.getElementById('owner-auth-error');
+      const input = document.getElementById('owner-passcode-input');
+      if (errEl) errEl.classList.add('hidden');
+      if (input) input.value = '';
+      if (modal) {
+        modal.classList.remove('hidden');
+        setTimeout(() => input && input.focus(), 60);
+      }
+    }
+
+    function closeOwnerAuthModal() {
+      const modal = document.getElementById('owner-auth-modal');
+      if (modal) modal.classList.add('hidden');
+    }
+
+    async function verifyOwnerPasscode(event) {
+      event.preventDefault();
+      const inputEl = document.getElementById('owner-passcode-input');
+      const errEl = document.getElementById('owner-auth-error');
+      const candidate = (inputEl ? inputEl.value : '').trim();
+
+      const candidateHash = await sha256Hex(candidate);
+      const storedHash = portfolioState.ownerPassHash || DEFAULT_PORTFOLIO_CONFIG.ownerPassHash;
+
+      if (candidateHash === storedHash) {
+        isOwnerUnlocked = true;
+        sessionStorage.setItem(OWNER_SESSION_KEY, 'true');
+        closeOwnerAuthModal();
+        syncOwnerControlsVisibility();
+        openStudioDrawer(pendingStudioTab);
+      } else {
+        if (errEl) errEl.classList.remove('hidden');
+      }
+    }
+
+    function lockOwnerSession() {
+      isOwnerUnlocked = false;
+      sessionStorage.removeItem(OWNER_SESSION_KEY);
+      closeStudioDrawer();
+      syncOwnerControlsVisibility();
+    }
+
+    async function updateOwnerPasscode() {
+      if (!isOwnerUnlocked) return;
+      const inputEl = document.getElementById('new-owner-passcode');
+      const newPass = (inputEl ? inputEl.value : '').trim();
+      if (!newPass || newPass.length < 4) {
+        const statusMsg = document.getElementById('drawer-status-msg');
+        if (statusMsg) statusMsg.textContent = 'Passcode must be at least 4 characters.';
+        return;
+      }
+      const newHash = await sha256Hex(newPass);
+      portfolioState.ownerPassHash = newHash;
+      savePortfolioState();
+      if (inputEl) inputEl.value = '';
+      const statusMsg = document.getElementById('drawer-status-msg');
+      if (statusMsg) {
+        statusMsg.textContent = 'Updated Owner Passcode hash ✓ (Copy PORTFOLIO_CONFIG to bake into index.html)';
+      }
+    }
+
+    // Secret Owner Keyboard Shortcut: Shift + Alt + M
+    window.addEventListener('keydown', (e) => {
+      if (e.shiftKey && e.altKey && (e.key === 'M' || e.key === 'm')) {
+        e.preventDefault();
+        requestOwnerAccess('certs');
+      }
+    });
 
     // =====================================================================
     // LIVE LEETCODE AUTO-SYNC ENGINE (Multi-Endpoint Fallback + Cache)
@@ -2546,9 +2775,9 @@
           <div class="space-y-2">
             <div class="flex items-center justify-between gap-2 font-mono text-[11px]">
               <span class="px-2.5 py-0.5 rounded-full bg-ivory border border-sageborder text-sageink font-semibold">
-                Custom Pinned · ${escapeHtml(proj.lang)}
+                Featured · ${escapeHtml(proj.lang)}
               </span>
-              <span class="text-sageink font-medium">Portfolio Studio</span>
+              <span class="text-sageink font-medium">Verified</span>
             </div>
             <h4 class="font-serif text-xl text-espresso font-normal">
               ${escapeHtml(proj.name)}
@@ -2562,9 +2791,7 @@
               <span>Inspect Project</span>
               <span>&nearr;</span>
             </a>
-            <button onclick="deleteCustomProject('${proj.id}')" class="text-roseink hover:underline text-[11px]">
-              Remove
-            </button>
+            ${isOwnerUnlocked ? `<button onclick="deleteCustomProject('${proj.id}')" class="text-roseink hover:underline text-[11px]">Remove</button>` : ''}
           </div>
         </article>
       `).join('');
@@ -3319,17 +3546,21 @@
       renderCerts(cat);
       document.querySelectorAll('.cert-tab-btn').forEach(btn => {
         if (btn.getAttribute('data-cert-filter') === cat) {
-          btn.className = 'cert-tab-btn bg-sageink text-cream font-mono text-xs font-medium px-3 py-1.5 rounded-lg transition-all';
+          btn.className = 'cert-tab-btn bg-sageink text-cream font-mono text-xs font-medium px-3.5 py-1.5 rounded-lg transition-all';
         } else {
-          btn.className = 'cert-tab-btn text-slatewarm hover:text-espresso font-mono text-xs px-3 py-1.5 rounded-lg transition-all';
+          btn.className = 'cert-tab-btn text-slatewarm hover:text-espresso font-mono text-xs px-3.5 py-1.5 rounded-lg transition-all';
         }
       });
     }
 
     // =====================================================================
-    // STUDIO DRAWER CONTROLS (Add Certifications, Add Projects, Export JSON)
+    // STUDIO DRAWER CONTROLS (Protected by Owner Passcode Gate)
     // =====================================================================
     function openStudioDrawer(initialTab = 'certs') {
+      if (!isOwnerUnlocked) {
+        requestOwnerAccess(initialTab);
+        return;
+      }
       const backdrop = document.getElementById('studio-drawer-backdrop');
       if (backdrop) {
         backdrop.classList.remove('hidden');
@@ -3365,6 +3596,7 @@
 
     function handleAddCertification(e) {
       e.preventDefault();
+      if (!isOwnerUnlocked) return;
       const title = document.getElementById('new-cert-title').value.trim();
       const issuer = document.getElementById('new-cert-issuer').value.trim();
       const date = document.getElementById('new-cert-date').value.trim();
@@ -3397,6 +3629,7 @@
     }
 
     function deleteCertification(certId) {
+      if (!isOwnerUnlocked) return;
       portfolioState.certifications = portfolioState.certifications.filter(c => c.id !== certId);
       savePortfolioState();
       renderCerts(currentCertFilter);
@@ -3423,6 +3656,7 @@
 
     function handleAddCustomProject(e) {
       e.preventDefault();
+      if (!isOwnerUnlocked) return;
       const name = document.getElementById('new-proj-name').value.trim();
       const lang = document.getElementById('new-proj-lang').value.trim();
       const desc = document.getElementById('new-proj-desc').value.trim();
@@ -3447,6 +3681,7 @@
     }
 
     function deleteCustomProject(projId) {
+      if (!isOwnerUnlocked) return;
       portfolioState.customProjects = (portfolioState.customProjects || []).filter(p => p.id !== projId);
       savePortfolioState();
       renderGitHubAndCustomProjects();
@@ -3472,6 +3707,7 @@
     }
 
     function toggleHideForks() {
+      if (!isOwnerUnlocked) return;
       const checked = document.getElementById('toggle-hide-forks').checked;
       portfolioState.hideForks = checked;
       savePortfolioState();
@@ -3479,6 +3715,7 @@
     }
 
     function saveHandlesAndResync() {
+      if (!isOwnerUnlocked) return;
       const lcInput = document.getElementById('cfg-lc-user').value.trim();
       const ghInput = document.getElementById('cfg-gh-user').value.trim();
       if (lcInput) portfolioState.leetcodeUsername = lcInput;
@@ -3490,6 +3727,7 @@
     }
 
     function resetPortfolioToDefaults() {
+      if (!isOwnerUnlocked) return;
       localStorage.removeItem(STORAGE_KEY);
       portfolioState = JSON.parse(JSON.stringify(DEFAULT_PORTFOLIO_CONFIG));
       renderCerts('ALL');
@@ -3500,6 +3738,7 @@
     }
 
     function copyPermanentConfigSnippet() {
+      if (!isOwnerUnlocked) return;
       const snippet = `const DEFAULT_PORTFOLIO_CONFIG = ${JSON.stringify(portfolioState, null, 2)};`;
       const temp = document.createElement('textarea');
       temp.value = snippet;
@@ -3517,6 +3756,7 @@
     }
 
     function downloadPortfolioJson() {
+      if (!isOwnerUnlocked) return;
       const dataStr = 'data:text/json;charset=utf-8,' + encodeURIComponent(JSON.stringify(portfolioState, null, 2));
       const a = document.createElement('a');
       a.setAttribute('href', dataStr);
@@ -3527,6 +3767,7 @@
     }
 
     function importPortfolioJson(event) {
+      if (!isOwnerUnlocked) return;
       const file = event.target.files && event.target.files[0];
       if (!file) return;
       const reader = new FileReader();
@@ -3597,6 +3838,7 @@
       if (e.key === 'Escape') {
         closeResumeModal();
         closeStudioDrawer();
+        closeOwnerAuthModal();
       }
     });
 
@@ -3624,6 +3866,7 @@
 
     // Initialize everything on DOMContentLoaded
     window.addEventListener('DOMContentLoaded', () => {
+      syncOwnerControlsVisibility();
       renderCerts('ALL');
       applyLeetCodeTelemetryToDOM();
       initScrollRevealsAndCounters();
