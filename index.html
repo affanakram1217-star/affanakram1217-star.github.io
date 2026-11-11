@@ -219,7 +219,7 @@
         <a href="#architecture-explorer" class="hover:text-main transition-colors py-1">Pipeline Explorer</a>
         <a href="#github-dashboard" class="hover:text-main transition-colors py-1">GitHub Dashboard</a>
         <a href="#engineering-quality" class="hover:text-main transition-colors py-1">Engineering Quality</a>
-        <a href="#experience" class="hover:text-main transition-colors py-1">Experience &amp; Credentials</a>
+        <a href="#experience" class="hover:text-main transition-colors py-1">Experience &amp; LeetCode Matrix</a>
         <a href="#blog" class="hover:text-main transition-colors py-1">Technical Notes</a>
         <a href="#contact" class="hover:text-main transition-colors py-1">Contact</a>
       </nav>
@@ -257,7 +257,6 @@
 
     <!-- ===================================================================
          SECTION 1: HERO SECTION + KINETIC 5-PROJECT SIMULATOR
-         Preserves exact kinetic-sim window from screenshot + adds StaffSync
     ==================================================================== -->
     <section id="top" class="py-10 md:py-16 border-b border-struct">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
@@ -290,11 +289,11 @@
               <div class="font-mono text-[10px] text-dim mt-0.5">LNCTS Bhopal (’28)</div>
             </div>
 
-            <div class="surface-card border border-struct rounded-xl p-3.5">
+            <a href="#leetcode-skill-matrix" class="surface-card border border-struct rounded-xl p-3.5 block hover:border-[#8A5A10] transition-colors">
               <div class="font-mono text-[10px] text-sub uppercase">DSA Problem Solving</div>
               <div id="hero-verified-lc" class="font-mono text-xl sm:text-2xl font-bold text-[#8A5A10] dark:text-amber-400 mt-1">418 Solved</div>
-              <div class="font-mono text-[10px] text-dim mt-0.5">LeetCode: AffanCoder</div>
-            </div>
+              <div id="hero-verified-lc-sub" class="font-mono text-[10px] text-dim mt-0.5">View Topic Matrix &darr;</div>
+            </a>
 
             <div class="surface-card border border-struct rounded-xl p-3.5">
               <div class="font-mono text-[10px] text-sub uppercase">SIH 2026 Status</div>
@@ -368,7 +367,7 @@
 
         </div>
 
-        <!-- Right 5 Columns: Restored KINETIC-SIM Window from Screenshot (with all 5 projects) -->
+        <!-- Right 5 Columns: KINETIC-SIM Window (All 5 Projects) -->
         <div class="lg:col-span-5 w-full">
           <div class="surface-card border border-struct rounded-2xl overflow-hidden shadow-md">
             
@@ -405,7 +404,7 @@
               </button>
             </div>
 
-            <!-- Main Kinetic Canvas Stage (Matches your screenshot layout) -->
+            <!-- Main Kinetic Canvas Stage -->
             <div class="p-4 sm:p-5 bg-dot-matrix space-y-3.5">
               <div class="flex items-center justify-between gap-2">
                 <div>
@@ -461,8 +460,6 @@
 
     <!-- ===================================================================
          SECTION 2: ENGINEERING PROJECTS — ANIMATED + 16-POINT CASE STUDIES
-         Every project card has its live interactive canvas animation AND
-         its full 16-point engineering case study dossier
     ==================================================================== -->
     <section id="projects" class="py-16 md:py-20 border-b border-struct">
       <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8 border-b border-struct">
@@ -498,9 +495,7 @@
       <!-- 5 Animated Case Study Cards Grid -->
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 pt-10">
 
-        <!-- ===============================================================
-             PROJECT 1: GeoVISTA (3D ULPIN for Urban Property Mapping)
-        ================================================================ -->
+        <!-- PROJECT 1: GeoVISTA -->
         <article data-cs-card="AI_BACKEND" class="cs-project-card surface-card border border-struct rounded-2xl p-6 sm:p-7 flex flex-col justify-between space-y-5 shadow-sm">
           <div class="space-y-4">
             <div class="flex flex-wrap items-center justify-between gap-2 font-mono text-xs">
@@ -575,9 +570,7 @@
           </div>
         </article>
 
-        <!-- ===============================================================
-             PROJECT 2: NetSage AI (Cisco Network Troubleshooting Assistant)
-        ================================================================ -->
+        <!-- PROJECT 2: NetSage AI -->
         <article data-cs-card="AI_BACKEND" class="cs-project-card surface-card border border-struct rounded-2xl p-6 sm:p-7 flex flex-col justify-between space-y-5 shadow-sm">
           <div class="space-y-4">
             <div class="flex flex-wrap items-center justify-between gap-2 font-mono text-xs">
@@ -650,9 +643,7 @@
           </div>
         </article>
 
-        <!-- ===============================================================
-             PROJECT 3: StaffSync (MERN Role-Based HR Management System)
-        ================================================================ -->
+        <!-- PROJECT 3: StaffSync -->
         <article data-cs-card="MERN" class="cs-project-card surface-card border border-struct rounded-2xl p-6 sm:p-7 flex flex-col justify-between space-y-5 shadow-sm">
           <div class="space-y-4">
             <div class="flex flex-wrap items-center justify-between gap-2 font-mono text-xs">
@@ -724,9 +715,7 @@
           </div>
         </article>
 
-        <!-- ===============================================================
-             PROJECT 4: Nova (BLIP Image Caption Generator)
-        ================================================================ -->
+        <!-- PROJECT 4: Nova -->
         <article data-cs-card="CV_VLM" class="cs-project-card surface-card border border-struct rounded-2xl p-6 sm:p-7 flex flex-col justify-between space-y-5 shadow-sm">
           <div class="space-y-4">
             <div class="flex flex-wrap items-center justify-between gap-2 font-mono text-xs">
@@ -797,9 +786,7 @@
           </div>
         </article>
 
-        <!-- ===============================================================
-             PROJECT 5: Beyond Words (Real-Time Sign Language Detector)
-        ================================================================ -->
+        <!-- PROJECT 5: Beyond Words -->
         <article data-cs-card="CV_VLM" class="cs-project-card lg:col-span-2 surface-card border border-struct rounded-2xl p-6 sm:p-7 flex flex-col justify-between space-y-5 shadow-sm">
           <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
             <div class="lg:col-span-6 space-y-4">
@@ -890,9 +877,7 @@
           </p>
         </div>
 
-        <div id="explorer-project-tabs" class="flex flex-wrap gap-1.5 surface-elevated p-1.5 border border-struct rounded-xl font-mono text-xs">
-          <!-- Populated by initArchitectureExplorer() -->
-        </div>
+        <div id="explorer-project-tabs" class="flex flex-wrap gap-1.5 surface-elevated p-1.5 border border-struct rounded-xl font-mono text-xs"></div>
       </div>
 
       <div class="surface-card border border-struct rounded-2xl overflow-hidden shadow-sm">
@@ -1116,20 +1101,20 @@
     </section>
 
     <!-- ===================================================================
-         SECTION 6: CATEGORIZED EXPERIENCE, ACHIEVEMENTS & CERTIFICATIONS
+         SECTION 6: CATEGORIZED EXPERIENCE, LEETCODE TOPIC MATRIX & CERTS
     ==================================================================== -->
     <section id="experience" class="py-16 md:py-20 border-b border-struct">
       <div class="mb-10">
         <span class="font-mono text-xs text-[#1F5E4B] dark:text-emerald-400 font-semibold uppercase tracking-wider">05 / Verified Experience &amp; Credentials</span>
         <h2 class="font-serif text-4xl sm:text-5xl text-main tracking-tight mt-1">
-          Internships, Hackathons, Simulations &amp; Honors
+          Internships, Hackathons, Simulations &amp; DSA Mastery
         </h2>
         <p class="text-sm text-sub mt-1">
-          Strictly separated across Internships, Hackathons, Job Simulations, Scholarships, Competitive Programming, and 11 Certifications.
+          Strictly separated across Internships, Hackathons, Job Simulations, Scholarships, Topic-Wise Competitive Programming, and 11 Certifications.
         </p>
       </div>
 
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-12">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-10">
         
         <!-- A. INTERNSHIPS -->
         <div class="lg:col-span-6 surface-card border border-struct rounded-2xl p-6 space-y-5">
@@ -1189,48 +1174,201 @@
           </div>
         </div>
 
-        <!-- D. SCHOLARSHIPS & EDUCATION -->
-        <div class="lg:col-span-6 surface-card border border-struct rounded-2xl p-6 space-y-3">
-          <div class="flex items-center justify-between border-b border-struct pb-2.5">
-            <span class="font-mono text-xs font-bold text-[#9E3B24] dark:text-rose-400 uppercase tracking-wider">D. Scholarships &amp; Education</span>
-            <span class="font-mono text-[11px] pill-rose px-2 py-0.5 rounded font-semibold">Merit Scholar</span>
+        <!-- D. SCHOLARSHIPS & EDUCATION (Full Width Banner) -->
+        <div class="lg:col-span-12 surface-card border border-struct rounded-2xl p-6">
+          <div class="flex flex-wrap items-center justify-between border-b border-struct pb-2.5 mb-4 gap-2">
+            <span class="font-mono text-xs font-bold text-[#9E3B24] dark:text-rose-400 uppercase tracking-wider">D. Scholarships &amp; Academic Record</span>
+            <span class="font-mono text-[11px] pill-rose px-2.5 py-0.5 rounded font-semibold">Reliance Foundation Merit Scholar</span>
           </div>
-          <div class="p-3.5 rounded-xl surface-elevated border border-struct text-xs">
-            <div class="font-bold text-main">Reliance Foundation Undergraduate (UG) Scholarship</div>
-            <div class="text-sub mt-0.5">Awarded for merit-based academic excellence in undergraduate engineering.</div>
-          </div>
-          <div class="p-3.5 rounded-xl surface-elevated border border-struct text-xs space-y-1">
-            <div class="flex justify-between font-bold text-main">
-              <span>LNCTS, Bhopal — B.Tech CSE (2024–2028)</span>
-              <span class="font-mono text-[#1F5E4B] dark:text-emerald-400">8.41 / 10.00 CGPA</span>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="p-4 rounded-xl surface-elevated border border-struct text-xs space-y-1">
+              <div class="font-bold text-main text-sm">Reliance Foundation Undergraduate (UG) Scholarship</div>
+              <div class="text-sub">Selected on a competitive merit basis for undergraduate engineering excellence.</div>
             </div>
-            <div class="text-sub">St. Xavier’s School, Hazaribagh — Class XII: <strong>92.0%</strong> (2024) | Class X: <strong>95.2%</strong> (2022)</div>
+            <div class="p-4 rounded-xl surface-elevated border border-struct text-xs space-y-1">
+              <div class="flex justify-between font-bold text-main text-sm">
+                <span>LNCTS, Bhopal — B.Tech CSE (2024–2028)</span>
+                <span class="font-mono text-[#1F5E4B] dark:text-emerald-400">8.41 / 10.00 CGPA</span>
+              </div>
+              <div class="text-sub">St. Xavier’s School, Hazaribagh — Class XII: <strong>92.0%</strong> (2024) | Class X: <strong>95.2%</strong> (2022)</div>
+            </div>
           </div>
         </div>
 
-        <!-- F. COMPETITIVE PROGRAMMING -->
-        <div class="lg:col-span-6 surface-card border border-struct rounded-2xl p-6 space-y-3">
-          <div class="flex items-center justify-between border-b border-struct pb-2.5">
-            <span class="font-mono text-xs font-bold text-[#8A5A10] dark:text-amber-400 uppercase tracking-wider">F. Competitive Programming (LeetCode)</span>
-            <a href="https://leetcode.com/u/AffanCoder/" target="_blank" rel="noopener noreferrer" class="font-mono text-xs text-[#1F5E4B] dark:text-emerald-400 hover:underline">
-              AffanCoder &nearr;
-            </a>
-          </div>
-          <div class="p-4 rounded-xl surface-elevated border border-struct flex items-center justify-between">
+        <!-- F. COMPETITIVE PROGRAMMING & TOPIC-WISE LEETCODE SKILL MATRIX -->
+        <div id="leetcode-skill-matrix" class="lg:col-span-12 surface-card border border-struct rounded-2xl p-6 sm:p-7 space-y-6 shadow-sm">
+          
+          <!-- Header & Live Sync Controls -->
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-struct pb-4">
             <div>
-              <div id="cp-leetcode-total" class="font-mono text-2xl font-bold text-main tabular-nums">418 Problems Solved</div>
-              <div id="cp-leetcode-status" class="font-mono text-[11px] text-sub mt-0.5">C++ (STL) &amp; Python · Data Structures &amp; Algorithms</div>
+              <div class="flex items-center gap-2">
+                <span class="font-mono text-xs font-bold text-[#8A5A10] dark:text-amber-400 uppercase tracking-wider">
+                  F. Competitive Programming &amp; Topic-Wise Skill Matrix
+                </span>
+                <span class="font-mono text-[10px] pill-sage px-2 py-0.5 rounded font-semibold">C++ &amp; Python DSA</span>
+              </div>
+              <h3 class="font-serif text-3xl text-main mt-1">
+                LeetCode Profile: <a href="https://leetcode.com/u/AffanCoder/" target="_blank" rel="noopener noreferrer" class="underline hover:text-[#1F5E4B]">AffanCoder &nearr;</a>
+              </h3>
+              <p id="cp-leetcode-status" class="font-mono text-xs text-sub mt-0.5">
+                Auto-syncing live difficulty &amp; topic-wise tag telemetry from LeetCode...
+              </p>
             </div>
-            <button type="button" onclick="syncVerifiedLeetCode()" class="btn-interactive surface-card border border-struct px-3 py-1.5 rounded-lg font-mono text-xs">
-              Sync Live
-            </button>
+
+            <div class="flex flex-wrap items-center gap-2.5">
+              <!-- Category Filter Tabs for Topics -->
+              <div class="flex flex-wrap gap-1 surface-elevated p-1 border border-struct rounded-xl font-mono text-xs">
+                <button type="button" onclick="switchLeetCodeTopicTab('ALL')" id="lc-tab-ALL" class="px-3 py-1.5 rounded-lg pill-sage font-semibold transition-all">
+                  All Top Skills
+                </button>
+                <button type="button" onclick="switchLeetCodeTopicTab('DS')" id="lc-tab-DS" class="px-3 py-1.5 rounded-lg text-sub hover:text-main transition-all">
+                  Data Structures
+                </button>
+                <button type="button" onclick="switchLeetCodeTopicTab('ALGO')" id="lc-tab-ALGO" class="px-3 py-1.5 rounded-lg text-sub hover:text-main transition-all">
+                  Algorithms &amp; Techniques
+                </button>
+                <button type="button" onclick="switchLeetCodeTopicTab('TIER')" id="lc-tab-TIER" class="px-3 py-1.5 rounded-lg text-sub hover:text-main transition-all">
+                  By LeetCode Tier
+                </button>
+              </div>
+
+              <button
+                type="button"
+                onclick="syncVerifiedLeetCode(true)"
+                id="lc-sync-btn"
+                class="btn-interactive surface-elevated border border-struct px-3.5 py-2 rounded-xl font-mono text-xs text-main flex items-center gap-1.5 shrink-0">
+                <svg id="lc-sync-spinner" class="w-3.5 h-3.5 text-[#1F5E4B]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="23 4 23 10 17 10"></polyline>
+                  <polyline points="1 20 1 14 7 14"></polyline>
+                  <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
+                </svg>
+                <span>Sync Live</span>
+              </button>
+            </div>
           </div>
-          <div class="flex flex-wrap gap-1.5 font-mono text-[11px]">
-            <span class="px-2.5 py-1 rounded surface-elevated border border-struct">Arrays &amp; Sliding Window</span>
-            <span class="px-2.5 py-1 rounded surface-elevated border border-struct">Two Pointers &amp; Binary Search</span>
-            <span class="px-2.5 py-1 rounded surface-elevated border border-struct">Trees, Tries &amp; Graphs (BFS/DFS)</span>
-            <span class="px-2.5 py-1 rounded surface-elevated border border-struct">Dynamic Programming</span>
+
+          <!-- Top Row: Overall Solved + Easy / Medium / Hard Progress Distribution + Tier Summary -->
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 items-stretch tabular-nums">
+            
+            <!-- Left 5 Cols: Difficulty Breakdown & Proportional Bar -->
+            <div class="lg:col-span-5 surface-elevated border border-struct rounded-xl p-5 flex flex-col justify-between space-y-4">
+              <div class="flex items-baseline justify-between">
+                <div>
+                  <span class="font-mono text-[10px] text-sub uppercase block">TOTAL PROBLEMS SOLVED</span>
+                  <div id="cp-leetcode-total" class="font-mono text-3xl font-bold text-main mt-0.5">418 Solved</div>
+                </div>
+                <span id="lc-sync-badge" class="font-mono text-[10px] pill-sage px-2.5 py-1 rounded-md font-semibold">
+                  Verified Profile
+                </span>
+              </div>
+
+              <!-- Stacked Multi-Color Difficulty Progress Bar -->
+              <div class="space-y-1.5">
+                <div class="flex justify-between font-mono text-[11px] text-sub">
+                  <span>Difficulty Distribution</span>
+                  <span id="lc-diff-ratio-label">Easy · Medium · Hard</span>
+                </div>
+                <div class="h-3 w-full rounded-full overflow-hidden flex surface-card border border-struct p-0.5 gap-0.5">
+                  <div id="lc-bar-easy" class="h-full rounded-l-full bg-[#1F5E4B] transition-all duration-500" style="width: 40%"></div>
+                  <div id="lc-bar-med" class="h-full bg-[#D97706] transition-all duration-500" style="width: 48%"></div>
+                  <div id="lc-bar-hard" class="h-full rounded-r-full bg-[#9E3B24] transition-all duration-500" style="width: 12%"></div>
+                </div>
+              </div>
+
+              <!-- 3 Difficulty Cards -->
+              <div class="grid grid-cols-3 gap-2.5 font-mono text-xs pt-1">
+                <div class="surface-card border border-struct rounded-lg p-3">
+                  <div class="flex items-center justify-between">
+                    <span class="text-[10px] text-sub">EASY</span>
+                    <span class="w-2 h-2 rounded-full bg-[#1F5E4B]"></span>
+                  </div>
+                  <div id="lc-easy-val" class="text-lg font-bold text-[#1F5E4B] dark:text-emerald-400 mt-1">168</div>
+                  <div id="lc-easy-pct" class="text-[10px] text-dim">40.2%</div>
+                </div>
+                <div class="surface-card border border-struct rounded-lg p-3">
+                  <div class="flex items-center justify-between">
+                    <span class="text-[10px] text-sub">MEDIUM</span>
+                    <span class="w-2 h-2 rounded-full bg-[#D97706]"></span>
+                  </div>
+                  <div id="lc-med-val" class="text-lg font-bold text-[#8A5A10] dark:text-amber-400 mt-1">204</div>
+                  <div id="lc-med-pct" class="text-[10px] text-dim">48.8%</div>
+                </div>
+                <div class="surface-card border border-struct rounded-lg p-3">
+                  <div class="flex items-center justify-between">
+                    <span class="text-[10px] text-sub">HARD</span>
+                    <span class="w-2 h-2 rounded-full bg-[#9E3B24]"></span>
+                  </div>
+                  <div id="lc-hard-val" class="text-lg font-bold text-[#9E3B24] dark:text-rose-400 mt-1">46</div>
+                  <div id="lc-hard-pct" class="text-[10px] text-dim">11.0%</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right 7 Cols: Skill Tier Overview & Engineering Competency Summary -->
+            <div class="lg:col-span-7 surface-elevated border border-struct rounded-xl p-5 flex flex-col justify-between space-y-4">
+              <div class="flex flex-wrap items-center justify-between gap-2 border-b border-struct pb-2.5">
+                <div>
+                  <span class="font-mono text-xs font-bold text-main uppercase">Algorithmic Skill Tier Summary</span>
+                  <p class="text-xs text-sub">Note: Single problems on LeetCode carry multiple tags (e.g., <em>Array + Two Pointers + Sorting</em>).</p>
+                </div>
+                <span id="lc-total-tag-hits" class="font-mono text-xs pill-ochre px-2.5 py-1 rounded font-semibold">
+                  18 Core Topics Tracked
+                </span>
+              </div>
+
+              <!-- 3 LeetCode Skill Tiers (Fundamental / Intermediate / Advanced) -->
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 font-mono">
+                <div class="surface-card border border-struct rounded-xl p-3.5 space-y-1">
+                  <div class="flex items-center justify-between text-[10px]">
+                    <span class="pill-sage px-2 py-0.5 rounded font-semibold">FUNDAMENTAL</span>
+                    <span class="text-sub">O(1)–O(N)</span>
+                  </div>
+                  <div id="lc-tier-fund-count" class="text-xl font-bold text-main pt-1">480+ Tag Hits</div>
+                  <div class="text-[11px] text-sub font-sans">Arrays, Strings, Two Pointers, Matrix, Stack, Queue, Linked List</div>
+                </div>
+
+                <div class="surface-card border border-struct rounded-xl p-3.5 space-y-1">
+                  <div class="flex items-center justify-between text-[10px]">
+                    <span class="pill-sky px-2 py-0.5 rounded font-semibold">INTERMEDIATE</span>
+                    <span class="text-sub">O(N log N)</span>
+                  </div>
+                  <div id="lc-tier-inter-count" class="text-xl font-bold text-main pt-1">390+ Tag Hits</div>
+                  <div class="text-[11px] text-sub font-sans">Hash Table, Binary Search, Sliding Window, Trees, DFS/BFS, Greedy, Heap</div>
+                </div>
+
+                <div class="surface-card border border-struct rounded-xl p-3.5 space-y-1">
+                  <div class="flex items-center justify-between text-[10px]">
+                    <span class="pill-ochre px-2 py-0.5 rounded font-semibold">ADVANCED</span>
+                    <span class="text-sub">DP &amp; Graphs</span>
+                  </div>
+                  <div id="lc-tier-adv-count" class="text-xl font-bold text-main pt-1">145+ Tag Hits</div>
+                  <div class="text-[11px] text-sub font-sans">Dynamic Programming, Backtracking, Union-Find, Tries, Monotonic Stack</div>
+                </div>
+              </div>
+
+              <!-- Mapped Practical Engineering Application -->
+              <div class="p-3 rounded-lg surface-card border border-struct font-mono text-[11px] text-sub flex flex-wrap items-center justify-between gap-2">
+                <span><strong class="text-main">Applied in Projects:</strong> Graph BFS/DFS &rarr; <em>NetSage Topology</em> · Computational Geometry &rarr; <em>GeoVISTA</em> · Hash/Trie Indexing &rarr; <em>RAG</em></span>
+                <span class="text-[#1F5E4B] dark:text-emerald-400 font-semibold">C++17 / Python 3</span>
+              </div>
+            </div>
+
           </div>
+
+          <!-- Topic-Wise Problem & Skill Cards Grid -->
+          <div>
+            <div class="flex items-center justify-between font-mono text-xs mb-3">
+              <span id="lc-topic-grid-heading" class="text-main font-bold uppercase">
+                Topic-Wise Problems Solved &amp; Mapped Engineering Skills (All 18 Core Topics)
+              </span>
+              <span class="text-sub text-[11px]">Sorted by Solved Volume</span>
+            </div>
+
+            <div id="lc-topic-cards-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5 tabular-nums">
+              <!-- Populated dynamically by renderLeetCodeTopicMatrix() -->
+            </div>
+          </div>
+
         </div>
 
       </div>
@@ -1333,7 +1471,7 @@
       <div class="flex items-center gap-4">
         <a href="https://github.com/affanakram1217-star" target="_blank" rel="noopener noreferrer" class="hover:text-main">GitHub</a>
         <span>·</span>
-        <a href="https://leetcode.com/u/AffanCoder/" target="_blank" rel="noopener noreferrer" class="hover:text-main">LeetCode (418)</a>
+        <a href="https://leetcode.com/u/AffanCoder/" target="_blank" rel="noopener noreferrer" class="hover:text-main">LeetCode (AffanCoder)</a>
         <span>·</span>
         <button type="button" onclick="openResumeModal()" class="hover:text-main underline">ATS Resume</button>
       </div>
@@ -1404,7 +1542,7 @@
             <div>affanakram1217@gmail.com</div>
             <div>github.com/affanakram1217-star</div>
             <div>affanakram1217-star.github.io</div>
-            <div>LeetCode: AffanCoder (418 Solved)</div>
+            <div id="resume-lc-count">LeetCode: AffanCoder (418 Solved)</div>
           </div>
         </div>
 
@@ -1435,7 +1573,7 @@
   </div>
 
   <!-- =====================================================================
-       PORTFOLIO DATA + 60 FPS KINETIC PROJECT ANIMATIONS + EXPLORER
+       PORTFOLIO DATA + 60 FPS KINETIC PROJECT ANIMATIONS + TOPIC SKILL ENGINE
   ====================================================================== -->
   <script>
     const PORTFOLIO_DATA = {
@@ -1489,8 +1627,8 @@
                                                            │
                                                            ▼
 [Cisco Docs Vector Store] ──► [RAG Prompt Assembler] ◄─────┘
-                                    │
-                                    ▼
+                                                           │
+                                                           ▼
              [Root-Cause Diagnosis + Verified IOS CLI Fix Script]`,
           dataFlowDiagram: '1. Paste CLI output -> 2. FastAPI parser segments command blocks -> 3. Rule Engine flags MTU/timer/VLAN mismatches -> 4. RAG retrieves Cisco docs -> 5. Outputs root cause + IOS config block.',
           engineeringDecisions: [
@@ -1753,1097 +1891,4 @@ if not poly.is_valid:
               name: 'Cross-Attention Beam',
               heading: 'Stage 3: Conditional Text Generation',
               explanation: 'Decodes natural-language description from visual features.',
-              inputCode: `out = model.generate(**inputs, max_new_tokens=40)`,
-              outputCode: `"an aerial view of urban buildings and roads during daytime"`
-            },
-            {
-              step: '04. Gradio UI',
-              name: 'Browser Output',
-              heading: 'Stage 4: Interactive Gradio Response',
-              explanation: 'Streams generated caption back to the user.',
-              inputCode: `gr.Interface(fn=generate_caption, inputs="image", outputs="text")`,
-              outputCode: `200 OK · Rendered in Gradio UI`
-            }
-          ]
-        },
-        'beyond-words': {
-          title: 'Beyond Words — MediaPipe 21-Keypoint Sign Classification',
-          badge: 'OpenCV · MediaPipe · Deep Learning',
-          repoUrl: 'https://github.com/affanakram1217-star/ml-mini-projects',
-          stages: [
-            {
-              step: '01. OpenCV Frame',
-              name: 'RGB Video Capture',
-              heading: 'Stage 1: Real-Time Frame Acquisition',
-              explanation: 'Captures and flips video frame via OpenCV.',
-              inputCode: `rgb = cv2.cvtColor(cv2.flip(frame, 1), cv2.COLOR_BGR2RGB)`,
-              outputCode: `Frame Tensor: shape=(480, 640, 3)`
-            },
-            {
-              step: '02. MediaPipe 21',
-              name: '3D Hand Landmarks',
-              heading: 'Stage 2: 21 3D Hand Keypoint Extraction',
-              explanation: 'Extracts 21 (x, y, z) skeletal coordinates.',
-              inputCode: `landmarks = hands.process(rgb).multi_hand_landmarks[0].landmark`,
-              outputCode: `Extracted: 21 Nodes x 3 Coords = 63 Features`
-            },
-            {
-              step: '03. Normalization',
-              name: 'Wrist-Origin Scale',
-              heading: 'Stage 3: Wrist-Relative Coordinate Normalization',
-              explanation: 'Centers coordinates around wrist (node 0) for position invariance.',
-              inputCode: `rel = np.array([[lm.x, lm.y, lm.z] - wrist for lm in landmarks]).flatten()`,
-              outputCode: `Normalized Vector: shape=(63,), range=[-1.0, 1.0]`
-            },
-            {
-              step: '04. Classifier',
-              name: 'Gesture Prediction',
-              heading: 'Stage 4: Real-Time Sign Prediction Overlay',
-              explanation: 'Predicts sign label and renders skeletal HUD.',
-              inputCode: `pred = CLASSES[np.argmax(classifier.predict(norm_vec))]`,
-              outputCode: `Predicted Sign: "HELLO"`
-            }
-          ]
-        }
-      },
-
-      certifications: [
-        { title: 'Vibe Coding – AI Assisted Application Development', issuer: 'NASSCOM (FutureSkills Prime)', date: 'Oct 2026', badge: 'Gold · 100%', cat: 'AI' },
-        { title: 'Prompt Engineering and ChatGPT', issuer: 'NASSCOM (FutureSkills Prime)', date: 'Sep 2026', badge: 'Gold · 84%', cat: 'AI' },
-        { title: 'Introduction to Generative AI', issuer: 'Google Cloud (Coursera)', date: 'Oct 2026', badge: 'Google Cloud', cat: 'AI' },
-        { title: 'Java Programming: Solving Problems with Software', issuer: 'Duke University (Coursera)', date: 'Oct 2026', badge: 'Duke University', cat: 'SWE' },
-        { title: 'AI for Business: Generation & Prediction', issuer: 'Coursera', date: 'Sep 2026', badge: 'GenAI & ML', cat: 'AI' },
-        { title: 'Data Analytics Essentials', issuer: 'Cisco Networking Academy (LNCT)', date: 'Jun 2026', badge: 'Cisco NetAcad', cat: 'CISCO' },
-        { title: 'Apply AI: Analyze Customer Reviews', issuer: 'Cisco Networking Academy (LNCT)', date: 'May 2026', badge: 'Cisco AI', cat: 'CISCO' },
-        { title: 'Introduction to Modern AI', issuer: 'Cisco Networking Academy (LNCT)', date: 'May 2026', badge: 'Cisco AI', cat: 'CISCO' },
-        { title: 'Introduction to IoT and Digital Transformation', issuer: 'Cisco Networking Academy (EdCreate Foundation)', date: 'Sep 2025', badge: 'Cisco IoT', cat: 'CISCO' },
-        { title: 'Python Essentials 1', issuer: 'Cisco Networking Academy (Python Institute)', date: 'Mar 2025', badge: 'Python Institute', cat: 'CISCO' },
-        { title: 'Preparing Data for Analysis with Microsoft Excel', issuer: 'Microsoft / Coursera', date: 'Oct 2026', badge: 'Microsoft', cat: 'SWE' }
-      ],
-
-      technicalNotes: [
-        {
-          id: 'note-rag-deterministic',
-          title: 'Combining Deterministic Rule Engines with RAG for Network Diagnostics',
-          status: 'Architecture Note · NetSage AI',
-          readingTime: '5 min read',
-          relatedProject: 'NetSage AI',
-          tags: ['RAG', 'FastAPI', 'Cisco IOS', 'Deterministic Validation'],
-          summary: 'Why pure LLM prompting fails on Cisco CLI logs, and how pre-validating protocol invariants (MTU, timers, subnet masks) eliminates hallucinated remediation commands.',
-          codeSnippet: `def evaluate_ospf_invariants(neighbor_state: str, local_mtu: int, peer_mtu: int):
-    if neighbor_state.startswith("EXSTART") and local_mtu != peer_mtu:
-        return {"anomaly": "MTU_MISMATCH", "fix": f"ip mtu {peer_mtu}"}
-    return {"anomaly": None}`,
-          body: 'In NetSage AI, raw CLI outputs first pass through a deterministic parser that checks hard protocol invariants. Those structured findings are then injected into the RAG prompt alongside Cisco documentation chunks.'
-        },
-        {
-          id: 'note-geospatial-shapely',
-          title: 'Topological Polygon Healing & 3D ULPIN Generation with Shapely and FastAPI',
-          status: 'Architecture Note · GeoVISTA (SIH 2026)',
-          readingTime: '6 min read',
-          relatedProject: 'GeoVISTA',
-          tags: ['Geospatial', 'Shapely', 'LiDAR', 'FastAPI'],
-          summary: 'Handling self-intersecting building segmentation masks and combining 2D parcel centroids with LiDAR elevation deltas.',
-          codeSnippet: `from shapely.geometry import Polygon
-def validate_and_repair_footprint(coords):
-    poly = Polygon(coords)
-    return poly if poly.is_valid else poly.buffer(0)`,
-          body: 'By enforcing Pydantic coordinate validation at the FastAPI boundary and applying Shapely topological verification, GeoVISTA guarantees clean downstream 3D extrusion in Three.js.'
-        },
-        {
-          id: 'note-mern-rbac',
-          title: 'Designing Role-Based Access Control (RBAC) & Leave State Machines in MERN',
-          status: 'Architecture Note · StaffSync',
-          readingTime: '5 min read',
-          relatedProject: 'StaffSync',
-          tags: ['MERN', 'JWT', 'Express.js', 'MongoDB', 'RBAC'],
-          summary: 'Structuring JWT claims, Express authorization middleware, and atomic Mongoose state transitions for HR workflows.',
-          codeSnippet: `export const authorizeRoles = (...roles) => (req, res, next) =>
-  roles.includes(req.user.role) ? next() : res.status(403).json({ error: "Access denied" });`,
-          body: 'In StaffSync, security is enforced at the Express API layer rather than relying on conditional UI rendering in React.'
-        }
-      ]
-    };
-
-    function escapeHtml(str) {
-      return String(str || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
-    }
-
-    // =====================================================================
-    // 1. THEME TOGGLE (Warm Studio Default <-> Terminal Dark)
-    // =====================================================================
-    function toggleTheme() {
-      const root = document.documentElement;
-      const isDark = root.classList.toggle('dark');
-      const label = document.getElementById('theme-toggle-label');
-      if (label) label.textContent = isDark ? 'Warm Studio' : 'Terminal Dark';
-    }
-
-    // =====================================================================
-    // 2. 60 FPS KINETIC SIMULATOR ENGINE (Hero + All 5 Project Canvases)
-    // =====================================================================
-    let animTick = 0;
-    let activeHeroSim = 'geovista';
-
-    // Project 1: GeoVISTA State
-    let geoParcelIdx = 0;
-    let geoShowLidar = true;
-    const GEO_PARCELS = [
-      { id: '#JH-HZB-84102', h: 48, sides: 4, iou: '0.942', pts: 1420 },
-      { id: '#MP-BPL-26011', h: 62, sides: 6, iou: '0.968', pts: 1890 },
-      { id: '#JH-RAN-51209', h: 38, sides: 5, iou: '0.925', pts: 1150 }
-    ];
-
-    // Project 2: NetSage State
-    let netSageFaultActive = false;
-    let netSageHealingProgress = 0;
-
-    // Project 3: StaffSync State
-    let staffSyncStateIdx = 0;
-    const STAFFSYNC_STATES = [
-      { role: 'HR_ADMIN', route: 'PATCH /api/leaves/approve', code: '200 OK', status: 'APPROVED', color: '#1F5E4B' },
-      { role: 'EMPLOYEE', route: 'POST /api/attendance/check-in', code: '201 CREATED', status: 'LOGGED 09:02 AM', color: '#284B8C' },
-      { role: 'EMPLOYEE', route: 'DELETE /api/employees/901', code: '403 FORBIDDEN (RBAC Blocked)', status: 'GUARDED', color: '#9E3B24' }
-    ];
-
-    // Project 4: Nova BLIP State
-    let novaSceneIdx = 0;
-    const NOVA_SCENES = [
-      { label: 'Urban Drone Orthophoto', tokens: ['an', 'aerial', 'view', 'of', 'urban', 'buildings', 'and', 'solar', 'roofs'] },
-      { label: 'Server Rack Topology', tokens: ['a', 'network', 'switch', 'rack', 'with', 'ethernet', 'patch', 'cables'] },
-      { label: 'Campus Courtyard', tokens: ['students', 'walking', 'across', 'a', 'sunny', 'engineering', 'campus'] }
-    ];
-
-    // Project 5: Beyond Words Sign CV State
-    let signGestureIdx = 0;
-    const SIGN_GESTURES = [
-      { name: 'HELLO', conf: '98.4%', spread: 1.0, fold: [0, 0, 0, 0, 0] },
-      { name: 'THANK YOU', conf: '96.8%', spread: 0.65, fold: [0.2, 0.15, 0.15, 0.15, 0.2] },
-      { name: 'AI READY (V)', conf: '99.1%', spread: 0.9, fold: [0.6, 0.0, 0.0, 0.75, 0.75] }
-    ];
-
-    function switchHeroSim(mode) {
-      activeHeroSim = mode;
-      const modes = ['geovista', 'netsage', 'staffsync', 'nova', 'sign'];
-      modes.forEach(m => {
-        const tab = document.getElementById(`hsim-tab-${m}`);
-        if (!tab) return;
-        if (m === mode) {
-          tab.className = 'py-2.5 px-1 text-center font-semibold border-b-2 border-[#1F5E4B] pill-sage transition-all';
-        } else {
-          tab.className = 'py-2.5 px-1 text-center text-sub hover:text-main border-b-2 border-transparent transition-all';
-        }
-      });
-
-      const titleEl = document.getElementById('hsim-title');
-      const subEl = document.getElementById('hsim-subtitle');
-      const btnEl = document.getElementById('hsim-action-btn');
-      const badgeEl = document.getElementById('hsim-badge-overlay');
-      const metricEl = document.getElementById('hsim-metric-overlay');
-      const log1 = document.getElementById('hsim-log-line1');
-      const log2 = document.getElementById('hsim-log-line2');
-
-      if (mode === 'geovista') {
-        const p = GEO_PARCELS[geoParcelIdx];
-        titleEl.textContent = 'GeoVISTA // 3D LiDAR + Shapely ULPIN Scanner';
-        subEl.textContent = 'Drone Point-Cloud Extrusion & Polygon Topology Check';
-        btnEl.textContent = 'Scan Next Parcel';
-        badgeEl.textContent = 'STATE: SHAPELY_POLYGON_VALID';
-        metricEl.textContent = `ULPIN: ${p.id}`;
-        log1.textContent = '> FastAPI POST /api/v1/ulpin/extrude-3d';
-        log2.textContent = `LiDAR DSM points: ${p.pts} | Shapely IoU: ${p.iou} | Three.js Mesh Ready`;
-      } else if (mode === 'netsage') {
-        titleEl.textContent = 'NetSage AI // Cisco IOS CLI + RAG Diagnostics';
-        subEl.textContent = 'Deterministic OSPF/VLAN Rule Engine & Auto-Remediation';
-        btnEl.textContent = netSageFaultActive ? 'Run RAG Auto-Fix' : 'Inject OSPF Fault';
-        badgeEl.textContent = netSageFaultActive ? 'ALERT: OSPF_EXSTART_MTU_1400' : 'STATE: OSPF_FULL_ADJACENCY';
-        metricEl.textContent = 'RTR-CORE-01 -> SW-DIST-02';
-        log1.textContent = '> show ip ospf neighbor | rag-validate --deterministic';
-        log2.textContent = netSageFaultActive ? 'Rule Match: MTU 1400 != 1500 on Gi0/1 -> Suggesting ip mtu 1500' : 'All 3 Cisco IOS nodes converged | 0 packet drops';
-      } else if (mode === 'staffsync') {
-        const st = STAFFSYNC_STATES[staffSyncStateIdx];
-        titleEl.textContent = 'StaffSync // MERN JWT & RBAC State Machine';
-        subEl.textContent = 'Express Role Middleware & Mongoose Leave Workflow';
-        btnEl.textContent = 'Switch JWT Role';
-        badgeEl.textContent = `JWT ROLE: ${st.role}`;
-        metricEl.textContent = st.code;
-        log1.textContent = `> ${st.route}`;
-        log2.textContent = `Middleware verifyToken + requireRole -> Status: ${st.status}`;
-      } else if (mode === 'nova') {
-        const sc = NOVA_SCENES[novaSceneIdx];
-        titleEl.textContent = 'Nova // BLIP Vision-Language Cross-Attention';
-        subEl.textContent = 'ViT 4x4 Patch Embeddings -> Autoregressive Token Stream';
-        btnEl.textContent = 'Next Sample Image';
-        badgeEl.textContent = `SCENE: ${sc.label.toUpperCase()}`;
-        metricEl.textContent = 'BLIP ViT-Base';
-        log1.textContent = '> processor(images=pil_rgb, return_tensors="pt")';
-        log2.textContent = `Decoded: "${sc.tokens.join(' ')}"`;
-      } else if (mode === 'sign') {
-        const sg = SIGN_GESTURES[signGestureIdx];
-        titleEl.textContent = 'Beyond Words // MediaPipe 21-Keypoint Sign CV';
-        subEl.textContent = '3D Skeletal Hand Landmarks & Wrist-Origin Normalization';
-        btnEl.textContent = 'Morph Sign Gesture';
-        badgeEl.textContent = `PREDICTED SIGN: "${sg.name}"`;
-        metricEl.textContent = '21 Nodes (63-D Vector)';
-        log1.textContent = '> hands.process(rgb_frame) -> normalize_wrist_origin()';
-        log2.textContent = `Landmark Tracking Active | Gesture Class: ${sg.name}`;
-      }
-    }
-
-    function triggerHeroSimAction() {
-      if (activeHeroSim === 'geovista') cycleGeoVistaBuilding();
-      else if (activeHeroSim === 'netsage') toggleNetSageFault();
-      else if (activeHeroSim === 'staffsync') cycleStaffSyncRole();
-      else if (activeHeroSim === 'nova') cycleNovaScene();
-      else if (activeHeroSim === 'sign') cycleSignGesture();
-      switchHeroSim(activeHeroSim);
-    }
-
-    function cycleGeoVistaBuilding() {
-      geoParcelIdx = (geoParcelIdx + 1) % GEO_PARCELS.length;
-      const p = GEO_PARCELS[geoParcelIdx];
-      const pill = document.getElementById('geovista-status-pill');
-      if (pill) pill.textContent = `Shapely: Polygon.is_valid = True | ULPIN ${p.id} (IoU ${p.iou})`;
-      if (activeHeroSim === 'geovista') switchHeroSim('geovista');
-    }
-
-    function toggleGeoVistaLidar() {
-      geoShowLidar = !geoShowLidar;
-    }
-
-    function toggleNetSageFault() {
-      netSageFaultActive = !netSageFaultActive;
-      netSageHealingProgress = 0;
-      const btn = document.getElementById('netsage-fault-btn');
-      const pill = document.getElementById('netsage-status-pill');
-      if (btn) {
-        btn.textContent = netSageFaultActive ? 'Run RAG Auto-Remediation' : 'Inject OSPF MTU Fault';
-        btn.className = netSageFaultActive ? 'pill-sage px-2.5 py-0.5 rounded font-semibold transition-colors' : 'pill-rose px-2.5 py-0.5 rounded font-semibold transition-colors';
-      }
-      if (pill) {
-        pill.textContent = netSageFaultActive
-          ? 'FAULT: Gi0/1 OSPF stuck in EXSTART (MTU 1400 != 1500) -> RAG Fix Ready'
-          : 'OSPF FULL/DR | Deterministic Rule Engine: All Links Healthy';
-      }
-      if (activeHeroSim === 'netsage') switchHeroSim('netsage');
-    }
-
-    function cycleStaffSyncRole() {
-      staffSyncStateIdx = (staffSyncStateIdx + 1) % STAFFSYNC_STATES.length;
-      const st = STAFFSYNC_STATES[staffSyncStateIdx];
-      const pill = document.getElementById('staffsync-status-pill');
-      if (pill) pill.textContent = `JWT Role: ${st.role} -> ${st.route} [${st.code}]`;
-      if (activeHeroSim === 'staffsync') switchHeroSim('staffsync');
-    }
-
-    function cycleNovaScene() {
-      novaSceneIdx = (novaSceneIdx + 1) % NOVA_SCENES.length;
-      const sc = NOVA_SCENES[novaSceneIdx];
-      const pill = document.getElementById('nova-status-pill');
-      if (pill) pill.textContent = `Scene: ${sc.label} -> "${sc.tokens.join(' ')}"`;
-      if (activeHeroSim === 'nova') switchHeroSim('nova');
-    }
-
-    function cycleSignGesture() {
-      signGestureIdx = (signGestureIdx + 1) % SIGN_GESTURES.length;
-      const sg = SIGN_GESTURES[signGestureIdx];
-      const pill = document.getElementById('sign-status-pill');
-      if (pill) pill.textContent = `MediaPipe 21 Nodes Locked | Gesture: "${sg.name}"`;
-      if (activeHeroSim === 'sign') switchHeroSim('sign');
-    }
-
-    // Drawing Function 1: GeoVISTA Isometric 3D LiDAR + Shapely Polygon Scanner (Matches Screenshot)
-    function drawGeoVistaSim(ctx, w, h, t) {
-      ctx.clearRect(0, 0, w, h);
-      const cx = w / 2;
-      const cy = h / 2 + 24;
-      const parcel = GEO_PARCELS[geoParcelIdx];
-      const rot = t * 0.012;
-      const rx = 68;
-      const ry = 32;
-      const bh = parcel.h;
-
-      const sides = parcel.sides;
-      const basePts = [];
-      const topPts = [];
-      for (let i = 0; i < sides; i++) {
-        const ang = rot + (i * Math.PI * 2) / sides + 0.35;
-        const bx = cx + Math.cos(ang) * rx;
-        const by = cy + Math.sin(ang) * ry;
-        basePts.push({ x: bx, y: by });
-        topPts.push({ x: bx, y: by - bh });
-      }
-
-      // Outer dashed Shapely Cadastral Verification Boundary
-      ctx.save();
-      ctx.strokeStyle = '#1F5E4B';
-      ctx.lineWidth = 1.3;
-      ctx.setLineDash([4, 4]);
-      ctx.beginPath();
-      for (let i = 0; i < sides; i++) {
-        const ang = rot + (i * Math.PI * 2) / sides + 0.35;
-        const ox = cx + Math.cos(ang) * (rx + 14);
-        const oy = cy + Math.sin(ang) * (ry + 8) + 4;
-        if (i === 0) ctx.moveTo(ox, oy);
-        else ctx.lineTo(ox, oy);
-      }
-      ctx.closePath();
-      ctx.stroke();
-      ctx.restore();
-
-      // Extruded Building Walls
-      ctx.fillStyle = 'rgba(31, 94, 75, 0.10)';
-      ctx.strokeStyle = '#1F5E4B';
-      ctx.lineWidth = 1.6;
-      for (let i = 0; i < sides; i++) {
-        const next = (i + 1) % sides;
-        ctx.beginPath();
-        ctx.moveTo(basePts[i].x, basePts[i].y);
-        ctx.lineTo(basePts[next].x, basePts[next].y);
-        ctx.lineTo(topPts[next].x, topPts[next].y);
-        ctx.lineTo(topPts[i].x, topPts[i].y);
-        ctx.closePath();
-        ctx.fill();
-        ctx.stroke();
-      }
-
-      // Roof Polygon
-      ctx.fillStyle = 'rgba(31, 94, 75, 0.24)';
-      ctx.beginPath();
-      topPts.forEach((p, idx) => (idx === 0 ? ctx.moveTo(p.x, p.y) : ctx.lineTo(p.x, p.y)));
-      ctx.closePath();
-      ctx.fill();
-      ctx.stroke();
-
-      // Corner Vertex Nodes
-      topPts.forEach(p => {
-        ctx.fillStyle = '#1F5E4B';
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, 3, 0, Math.PI * 2);
-        ctx.fill();
-      });
-
-      // Sweeping LiDAR Laser Scanline & Point Cloud
-      const scanOffset = Math.sin(t * 0.04) * (bh * 0.65);
-      const scanY = cy - bh / 2 + scanOffset;
-      ctx.strokeStyle = '#1F5E4B';
-      ctx.lineWidth = 2;
-      ctx.beginPath();
-      ctx.moveTo(cx - 105, scanY);
-      ctx.lineTo(cx + 105, scanY);
-      ctx.stroke();
-
-      if (geoShowLidar) {
-        for (let i = 0; i < 18; i++) {
-          const seed = i * 1.7 + geoParcelIdx;
-          const px = cx + Math.cos(seed + rot * 0.6) * (rx * 0.78);
-          const py = cy - (i % 5) * (bh / 5) + Math.sin(seed) * 6;
-          const nearScan = Math.abs(py - scanY) < 12;
-          ctx.fillStyle = nearScan ? '#D97706' : '#1F5E4B';
-          ctx.beginPath();
-          ctx.arc(px, py, nearScan ? 3.5 : 2, 0, Math.PI * 2);
-          ctx.fill();
-        }
-      }
-    }
-
-    // Drawing Function 2: NetSage AI Cisco Topology + Packet Flow + RAG Fix
-    function drawNetSageSim(ctx, w, h, t) {
-      ctx.clearRect(0, 0, w, h);
-      const yMid = h / 2;
-      const nodes = [
-        { x: w * 0.2, y: yMid, label: 'RTR-CORE-01', sub: 'Gi0/1' },
-        { x: w * 0.5, y: yMid - 12, label: 'SW-DIST-02', sub: 'OSPF Area 0' },
-        { x: w * 0.8, y: yMid, label: 'VLAN-40-GW', sub: '192.168.10.2' }
-      ];
-
-      // Draw Topology Links
-      for (let i = 0; i < 2; i++) {
-        const a = nodes[i];
-        const b = nodes[i + 1];
-        const isFaultLink = i === 0 && netSageFaultActive;
-        ctx.save();
-        ctx.strokeStyle = isFaultLink ? '#9E3B24' : '#1F5E4B';
-        ctx.lineWidth = 2.2;
-        if (isFaultLink) ctx.setLineDash([5, 5]);
-        ctx.beginPath();
-        ctx.moveTo(a.x, a.y);
-        ctx.lineTo(b.x, b.y);
-        ctx.stroke();
-        ctx.restore();
-
-        // Flowing Packets
-        const pProg = ((t * 0.015) + i * 0.4) % 1;
-        const px = a.x + (b.x - a.x) * pProg;
-        const py = a.y + (b.y - a.y) * pProg;
-        ctx.fillStyle = isFaultLink ? '#9E3B24' : '#284B8C';
-        ctx.beginPath();
-        ctx.arc(px, py, 4.5, 0, Math.PI * 2);
-        ctx.fill();
-      }
-
-      // Draw Router/Switch Nodes
-      nodes.forEach((n, idx) => {
-        const isAlert = idx === 0 && netSageFaultActive;
-        ctx.fillStyle = isAlert ? '#F7E6E2' : '#E3EFEA';
-        ctx.strokeStyle = isAlert ? '#9E3B24' : '#1F5E4B';
-        ctx.lineWidth = 2;
-        ctx.beginPath();
-        ctx.roundRect(n.x - 42, n.y - 22, 84, 44, 10);
-        ctx.fill();
-        ctx.stroke();
-
-        ctx.fillStyle = '#1C1917';
-        ctx.font = 'bold 10px "JetBrains Mono", monospace';
-        ctx.textAlign = 'center';
-        ctx.fillText(n.label, n.x, n.y - 3);
-        ctx.fillStyle = isAlert ? '#9E3B24' : '#57534E';
-        ctx.font = '9px "JetBrains Mono", monospace';
-        ctx.fillText(isAlert ? 'MTU 1400 ERR' : n.sub, n.x, n.y + 11);
-      });
-    }
-
-    // Drawing Function 3: StaffSync MERN JWT + RBAC Middleware & State Machine
-    function drawStaffSyncSim(ctx, w, h, t) {
-      ctx.clearRect(0, 0, w, h);
-      const st = STAFFSYNC_STATES[staffSyncStateIdx];
-      const yMid = h / 2;
-      const stages = [
-        { x: w * 0.18, label: 'React Client', sub: `Role: ${st.role}` },
-        { x: w * 0.50, label: 'Express RBAC', sub: 'verifyToken()' },
-        { x: w * 0.82, label: 'MongoDB Atlas', sub: st.status }
-      ];
-
-      const blocked = st.code.startsWith('403');
-
-      for (let i = 0; i < 2; i++) {
-        const a = stages[i];
-        const b = stages[i + 1];
-        const isBlockedSegment = blocked && i === 1;
-        ctx.save();
-        ctx.strokeStyle = isBlockedSegment ? '#9E3B24' : '#1F5E4B';
-        ctx.lineWidth = 2;
-        if (isBlockedSegment) ctx.setLineDash([4, 4]);
-        ctx.beginPath();
-        ctx.moveTo(a.x + 48, yMid);
-        ctx.lineTo(b.x - 48, yMid);
-        ctx.stroke();
-        ctx.restore();
-
-        if (!isBlockedSegment) {
-          const prog = (t * 0.018 + i * 0.3) % 1;
-          const px = (a.x + 48) + ((b.x - 48) - (a.x + 48)) * prog;
-          ctx.fillStyle = st.color;
-          ctx.beginPath();
-          ctx.arc(px, yMid, 4.5, 0, Math.PI * 2);
-          ctx.fill();
-        }
-      }
-
-      stages.forEach((s, idx) => {
-        const isGuard = idx === 1 && blocked;
-        ctx.fillStyle = isGuard ? '#F7E6E2' : '#E3EFEA';
-        ctx.strokeStyle = isGuard ? '#9E3B24' : '#1F5E4B';
-        ctx.lineWidth = 1.8;
-        ctx.beginPath();
-        ctx.roundRect(s.x - 48, yMid - 25, 96, 50, 10);
-        ctx.fill();
-        ctx.stroke();
-
-        ctx.fillStyle = '#1C1917';
-        ctx.font = 'bold 10px "JetBrains Mono", monospace';
-        ctx.textAlign = 'center';
-        ctx.fillText(s.label, s.x, yMid - 4);
-        ctx.fillStyle = isGuard ? '#9E3B24' : '#57534E';
-        ctx.font = '9px "JetBrains Mono", monospace';
-        ctx.fillText(s.sub, s.x, yMid + 11);
-      });
-    }
-
-    // Drawing Function 4: Nova BLIP Vision Transformer 4x4 Patch Cross-Attention
-    function drawNovaSim(ctx, w, h, t) {
-      ctx.clearRect(0, 0, w, h);
-      const sc = NOVA_SCENES[novaSceneIdx];
-      const gridX = w * 0.16;
-      const gridY = h / 2 - 44;
-      const cell = 21;
-      const activePatch = Math.floor(t * 0.08) % 16;
-
-      // 4x4 ViT Image Patch Grid
-      for (let r = 0; r < 4; r++) {
-        for (let c = 0; c < 4; c++) {
-          const idx = r * 4 + c;
-          const x = gridX + c * (cell + 3);
-          const y = gridY + r * (cell + 3);
-          const isHot = idx === activePatch || idx === (activePatch + 5) % 16;
-          ctx.fillStyle = isHot ? 'rgba(217, 119, 6, 0.45)' : 'rgba(31, 94, 75, 0.15)';
-          ctx.strokeStyle = isHot ? '#8A5A10' : '#1F5E4B';
-          ctx.lineWidth = isHot ? 1.8 : 1;
-          ctx.beginPath();
-          ctx.roundRect(x, y, cell, cell, 4);
-          ctx.fill();
-          ctx.stroke();
-
-          if (isHot) {
-            // Bezier Cross-Attention Beam to Decoder
-            ctx.save();
-            ctx.strokeStyle = 'rgba(217, 119, 6, 0.55)';
-            ctx.lineWidth = 1.5;
-            ctx.beginPath();
-            ctx.moveTo(x + cell, y + cell / 2);
-            ctx.bezierCurveTo(w * 0.48, y, w * 0.52, h / 2, w * 0.60, h / 2);
-            ctx.stroke();
-            ctx.restore();
-          }
-        }
-      }
-
-      // BLIP Autoregressive Text Decoder Box
-      const decX = w * 0.60;
-      const decY = h / 2 - 34;
-      ctx.fillStyle = '#FBF0D9';
-      ctx.strokeStyle = '#8A5A10';
-      ctx.lineWidth = 1.8;
-      ctx.beginPath();
-      ctx.roundRect(decX, decY, 155, 68, 10);
-      ctx.fill();
-      ctx.stroke();
-
-      const tokenCount = (Math.floor(t * 0.06) % sc.tokens.length) + 1;
-      const currentCaption = sc.tokens.slice(0, tokenCount).join(' ');
-      ctx.fillStyle = '#8A5A10';
-      ctx.font = 'bold 9px "JetBrains Mono", monospace';
-      ctx.textAlign = 'left';
-      ctx.fillText('BLIP DECODER STREAM:', decX + 10, decY + 20);
-      ctx.fillStyle = '#1C1917';
-      ctx.font = '10px "JetBrains Mono", monospace';
-      ctx.fillText(currentCaption.slice(0, 22), decX + 10, decY + 38);
-      ctx.fillText(currentCaption.slice(22, 44), decX + 10, decY + 53);
-    }
-
-    // Drawing Function 5: Beyond Words MediaPipe 21-Keypoint Hand Skeleton
-    function drawSignSim(ctx, w, h, t) {
-      ctx.clearRect(0, 0, w, h);
-      const sg = SIGN_GESTURES[signGestureIdx];
-      const cx = w / 2;
-      const cy = h / 2 + 42;
-      const sway = Math.sin(t * 0.04) * 5;
-
-      const wrist = { x: cx + sway, y: cy };
-      const fingerAngles = [-0.65, -0.30, 0.0, 0.30, 0.62];
-      const fingerLengths = [46, 68, 76, 66, 52];
-
-      const joints = [wrist];
-      fingerAngles.forEach((baseAng, fIdx) => {
-        const foldFactor = 1 - (sg.fold[fIdx] || 0) * 0.55;
-        const ang = baseAng * sg.spread + Math.sin(t * 0.05 + fIdx) * 0.03;
-        const maxLen = fingerLengths[fIdx] * foldFactor;
-        for (let step = 1; step <= 4; step++) {
-          const r = (maxLen * step) / 4;
-          joints.push({
-            x: wrist.x + Math.sin(ang) * r,
-            y: wrist.y - Math.cos(ang) * r
-          });
-        }
-      });
-
-      // Draw Skeletal Bones
-      ctx.strokeStyle = '#1F5E4B';
-      ctx.lineWidth = 2;
-      for (let f = 0; f < 5; f++) {
-        let prev = wrist;
-        for (let s = 1; s <= 4; s++) {
-          const curr = joints[f * 4 + s];
-          ctx.beginPath();
-          ctx.moveTo(prev.x, prev.y);
-          ctx.lineTo(curr.x, curr.y);
-          ctx.stroke();
-          prev = curr;
-        }
-      }
-
-      // Draw 21 Landmark Nodes
-      joints.forEach((pt, idx) => {
-        const isTip = idx > 0 && idx % 4 === 0;
-        ctx.fillStyle = isTip ? '#9E3B24' : '#1F5E4B';
-        ctx.beginPath();
-        ctx.arc(pt.x, pt.y, isTip ? 4 : 2.8, 0, Math.PI * 2);
-        ctx.fill();
-      });
-    }
-
-    function masterAnimationLoop() {
-      animTick++;
-      const heroCanvas = document.getElementById('hero-sim-canvas');
-      if (heroCanvas) {
-        const hctx = heroCanvas.getContext('2d');
-        if (activeHeroSim === 'geovista') drawGeoVistaSim(hctx, heroCanvas.width, heroCanvas.height, animTick);
-        else if (activeHeroSim === 'netsage') drawNetSageSim(hctx, heroCanvas.width, heroCanvas.height, animTick);
-        else if (activeHeroSim === 'staffsync') drawStaffSyncSim(hctx, heroCanvas.width, heroCanvas.height, animTick);
-        else if (activeHeroSim === 'nova') drawNovaSim(hctx, heroCanvas.width, heroCanvas.height, animTick);
-        else if (activeHeroSim === 'sign') drawSignSim(hctx, heroCanvas.width, heroCanvas.height, animTick);
-      }
-
-      const cGeo = document.getElementById('canvas-geovista');
-      if (cGeo) drawGeoVistaSim(cGeo.getContext('2d'), cGeo.width, cGeo.height, animTick);
-
-      const cNet = document.getElementById('canvas-netsage');
-      if (cNet) drawNetSageSim(cNet.getContext('2d'), cNet.width, cNet.height, animTick);
-
-      const cStaff = document.getElementById('canvas-staffsync');
-      if (cStaff) drawStaffSyncSim(cStaff.getContext('2d'), cStaff.width, cStaff.height, animTick);
-
-      const cNova = document.getElementById('canvas-nova');
-      if (cNova) drawNovaSim(cNova.getContext('2d'), cNova.width, cNova.height, animTick);
-
-      const cSign = document.getElementById('canvas-sign');
-      if (cSign) drawSignSim(cSign.getContext('2d'), cSign.width, cSign.height, animTick);
-
-      requestAnimationFrame(masterAnimationLoop);
-    }
-
-    // =====================================================================
-    // 3. FILTER & 16-POINT CASE STUDY MODAL
-    // =====================================================================
-    function filterCaseStudies(cat) {
-      document.querySelectorAll('.cs-project-card').forEach(card => {
-        const cardCat = card.getAttribute('data-cs-card');
-        if (cat === 'ALL' || cardCat === cat) card.classList.remove('hidden');
-        else card.classList.add('hidden');
-      });
-
-      document.querySelectorAll('.cs-filter-btn').forEach(btn => {
-        if (btn.getAttribute('data-cs-filter') === cat) {
-          btn.className = 'cs-filter-btn pill-sage font-semibold px-3 py-1.5 rounded-lg transition-all';
-        } else {
-          btn.className = 'cs-filter-btn text-sub hover:text-main px-3 py-1.5 rounded-lg transition-all';
-        }
-      });
-    }
-
-    function openCaseStudyModal(projectId) {
-      const p = PORTFOLIO_DATA.projects.find(item => item.id === projectId);
-      if (!p) return;
-
-      document.getElementById('cs-modal-category').textContent = `${p.shortTag} · ${p.statusBadge}`;
-      document.getElementById('cs-modal-title').textContent = p.title;
-
-      document.getElementById('cs-modal-body').innerHTML = `
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div class="p-4 rounded-xl surface-elevated border border-struct">
-            <div class="font-mono text-xs text-[#1F5E4B] dark:text-emerald-400 font-semibold uppercase mb-1">1. Project Overview</div>
-            <p class="text-sub text-xs leading-relaxed">${escapeHtml(p.overview)}</p>
-          </div>
-          <div class="p-4 rounded-xl surface-elevated border border-struct">
-            <div class="font-mono text-xs text-[#8A5A10] dark:text-amber-400 font-semibold uppercase mb-1">2. Problem Statement &amp; 3. Motivation</div>
-            <p class="text-sub text-xs leading-relaxed"><strong>Problem:</strong> ${escapeHtml(p.problemStatement)}</p>
-            <p class="text-sub text-xs leading-relaxed mt-1"><strong>Motivation:</strong> ${escapeHtml(p.motivation)}</p>
-          </div>
-        </div>
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
-          <div class="p-4 rounded-xl surface-elevated border border-struct">
-            <div class="font-mono text-xs text-[#284B8C] dark:text-sky-400 font-semibold uppercase mb-2">4. System Architecture Diagram</div>
-            <pre class="font-mono text-[11px] text-main overflow-x-auto whitespace-pre leading-snug">${escapeHtml(p.architectureDiagram)}</pre>
-          </div>
-          <div class="p-4 rounded-xl surface-elevated border border-struct space-y-3">
-            <div>
-              <div class="font-mono text-xs text-[#284B8C] dark:text-sky-400 font-semibold uppercase mb-1">5. Technology Stack</div>
-              <div class="flex flex-wrap gap-1.5 font-mono text-[11px]">
-                ${p.stack.map(s => `<span class="px-2 py-0.5 rounded surface-card border border-struct text-main">${escapeHtml(s)}</span>`).join('')}
-              </div>
-            </div>
-            <div>
-              <div class="font-mono text-xs text-[#1F5E4B] dark:text-emerald-400 font-semibold uppercase mb-1">6. Data Flow Pipeline</div>
-              <p class="font-mono text-xs text-sub leading-relaxed">${escapeHtml(p.dataFlowDiagram)}</p>
-            </div>
-          </div>
-        </div>
-        <div class="p-4 rounded-xl surface-elevated border border-struct">
-          <div class="font-mono text-xs text-[#1F5E4B] dark:text-emerald-400 font-semibold uppercase mb-1.5">7. Important Engineering Decisions</div>
-          <ul class="list-disc list-inside text-xs text-sub space-y-1">
-            ${p.engineeringDecisions.map(d => `<li>${escapeHtml(d)}</li>`).join('')}
-          </ul>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div class="p-4 rounded-xl surface-elevated border border-struct">
-            <div class="font-mono text-xs font-semibold uppercase mb-1">8. Individual Contributions &amp; 9. Challenges</div>
-            <p class="text-xs text-sub"><strong>Contributions:</strong> ${escapeHtml(p.contributions)}</p>
-            <p class="text-xs text-sub mt-1"><strong>Challenges:</strong> ${escapeHtml(p.challengesAndSolutions)}</p>
-          </div>
-          <div class="p-4 rounded-xl surface-elevated border border-struct">
-            <div class="font-mono text-xs font-semibold uppercase mb-1">10. Testing, 11. Results &amp; 12. Limitations</div>
-            <p class="text-xs text-sub"><strong>Testing:</strong> ${escapeHtml(p.testingMethodology)}</p>
-            <p class="text-xs text-sub mt-1"><strong>Limitations &amp; Roadmap:</strong> ${escapeHtml(p.limitations)} · ${escapeHtml(p.futureImprovements)}</p>
-          </div>
-        </div>
-      `;
-
-      document.getElementById('case-study-modal').classList.remove('hidden');
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closeCaseStudyModal() {
-      document.getElementById('case-study-modal').classList.add('hidden');
-      document.body.style.overflow = '';
-    }
-
-    // =====================================================================
-    // 4. INTERACTIVE PIPELINE EXPLORER
-    // =====================================================================
-    let currentExplorerProjectId = 'netsage';
-    let currentExplorerStageIdx = 0;
-
-    function initArchitectureExplorer() {
-      const tabsContainer = document.getElementById('explorer-project-tabs');
-      if (!tabsContainer) return;
-
-      const projectKeys = [
-        { id: 'netsage', label: '1. NetSage AI' },
-        { id: 'geovista', label: '2. GeoVISTA' },
-        { id: 'staffsync', label: '3. StaffSync (MERN)' },
-        { id: 'nova', label: '4. Nova (BLIP)' },
-        { id: 'beyond-words', label: '5. Beyond Words' }
-      ];
-
-      tabsContainer.innerHTML = projectKeys.map(pk => `
-        <button type="button" id="exp-tab-${pk.id}" onclick="selectExplorerProject('${pk.id}', false)" class="px-3 py-1.5 rounded-lg transition-all">
-          ${escapeHtml(pk.label)}
-        </button>
-      `).join('');
-
-      selectExplorerProject('netsage', false);
-    }
-
-    function selectExplorerProject(projectId, scrollIntoView = false) {
-      currentExplorerProjectId = projectId;
-      currentExplorerStageIdx = 0;
-
-      ['netsage', 'geovista', 'staffsync', 'nova', 'beyond-words'].forEach(id => {
-        const btn = document.getElementById(`exp-tab-${id}`);
-        if (!btn) return;
-        btn.className = id === projectId
-          ? 'px-3 py-1.5 rounded-lg pill-sage font-semibold transition-all'
-          : 'px-3 py-1.5 rounded-lg text-sub hover:text-main transition-all';
-      });
-
-      renderExplorerContent();
-      if (scrollIntoView) {
-        document.getElementById('architecture-explorer')?.scrollIntoView({ behavior: 'smooth' });
-      }
-    }
-
-    function selectExplorerStage(idx) {
-      currentExplorerStageIdx = idx;
-      renderExplorerContent();
-    }
-
-    function renderExplorerContent() {
-      const data = PORTFOLIO_DATA.explorerPipelines[currentExplorerProjectId];
-      if (!data) return;
-
-      document.getElementById('explorer-active-title').textContent = data.title;
-      document.getElementById('explorer-deployment-badge').textContent = data.badge;
-      document.getElementById('explorer-repo-link').href = data.repoUrl;
-
-      const stagesRow = document.getElementById('explorer-stages-row');
-      stagesRow.innerHTML = data.stages.map((st, idx) => {
-        const active = idx === currentExplorerStageIdx;
-        return `
-          <button type="button" onclick="selectExplorerStage(${idx})" class="text-left p-3.5 rounded-xl border transition-all font-mono ${active ? 'pill-sage font-semibold shadow-sm' : 'surface-card border-struct text-sub hover:text-main'}">
-            <div class="text-[10px] opacity-80">${escapeHtml(st.step)}</div>
-            <div class="text-xs font-bold mt-0.5">${escapeHtml(st.name)}</div>
-          </button>
-        `;
-      }).join('');
-
-      const activeStage = data.stages[currentExplorerStageIdx];
-      document.getElementById('explorer-stage-badge').textContent = `Stage ${currentExplorerStageIdx + 1} of ${data.stages.length}`;
-      document.getElementById('explorer-code-input').textContent = activeStage.inputCode;
-      document.getElementById('explorer-stage-heading').textContent = activeStage.heading;
-      document.getElementById('explorer-stage-explanation').textContent = activeStage.explanation;
-      document.getElementById('explorer-code-output').textContent = activeStage.outputCode;
-    }
-
-    // =====================================================================
-    // 5. GITHUB DASHBOARD, CERTIFICATIONS, BLOG & CONTACT
-    // =====================================================================
-    const GH_CACHE_KEY = 'affan_gh_dashboard_cache_v4';
-    const GH_CACHE_TTL_MS = 15 * 60 * 1000;
-
-    const VERIFIED_FALLBACK_REPOS = [
-      {
-        name: 'SIH26011-3D-ULPIN',
-        description: 'GeoVISTA — AI-assisted 3D spatial property identifiers (ULPIN) using drone imagery, LiDAR, GIS, FastAPI, and Shapely.',
-        html_url: 'https://github.com/affanakram1217-star/SIH26011-3D-ULPIN',
-        language: 'Python',
-        stargazers_count: 1,
-        forks_count: 0,
-        fork: false,
-        updated_at: '2026-10-25T10:00:00Z'
-      },
-      {
-        name: 'StaffSync-HR-Management',
-        description: 'MERN-based HR Management System featuring JWT authentication, Role-Based Access Control (RBAC), employee management, attendance, and leave workflows.',
-        html_url: 'https://github.com/affanakram1217-star/StaffSync-HR-Management',
-        language: 'JavaScript',
-        stargazers_count: 1,
-        forks_count: 0,
-        fork: false,
-        updated_at: '2026-10-28T10:00:00Z'
-      },
-      {
-        name: 'ml-mini-projects',
-        description: 'NetSage AI (Cisco Network Troubleshooting Assistant), Nova (BLIP Image Caption Generator), and Beyond Words (Sign Language Detector).',
-        html_url: 'https://github.com/affanakram1217-star/ml-mini-projects',
-        language: 'Jupyter Notebook',
-        stargazers_count: 1,
-        forks_count: 0,
-        fork: false,
-        updated_at: '2026-10-20T10:00:00Z'
-      }
-    ];
-
-    async function fetchGitHubDashboard(forceRefresh = false) {
-      const spinner = document.getElementById('gh-sync-spinner');
-      const errBanner = document.getElementById('gh-error-banner');
-      if (spinner) spinner.classList.add('animate-spin');
-
-      if (!forceRefresh) {
-        try {
-          const cached = JSON.parse(sessionStorage.getItem(GH_CACHE_KEY) || 'null');
-          if (cached && Date.now() - cached.timestamp < GH_CACHE_TTL_MS) {
-            renderGitHubDashboardUI(cached.repos, 'Cached GitHub API');
-            if (spinner) spinner.classList.remove('animate-spin');
-            return;
-          }
-        } catch (e) {}
-      }
-
-      try {
-        const res = await fetch('https://api.github.com/users/affanakram1217-star/repos?sort=updated&per_page=100');
-        if (!res.ok) throw new Error('Rate limit');
-        const repos = await res.json();
-        if (Array.isArray(repos) && repos.length > 0) {
-          if (errBanner) errBanner.classList.add('hidden');
-          try { sessionStorage.setItem(GH_CACHE_KEY, JSON.stringify({ timestamp: Date.now(), repos })); } catch (e) {}
-          renderGitHubDashboardUI(repos, 'Live GitHub API');
-        } else {
-          renderGitHubDashboardUI(VERIFIED_FALLBACK_REPOS, 'Verified Snapshot');
-        }
-      } catch (e) {
-        if (errBanner) errBanner.classList.remove('hidden');
-        renderGitHubDashboardUI(VERIFIED_FALLBACK_REPOS, 'Verified Snapshot');
-      } finally {
-        if (spinner) spinner.classList.remove('animate-spin');
-      }
-    }
-
-    function renderGitHubDashboardUI(repos, statusText) {
-      document.getElementById('gh-cache-status').textContent = statusText;
-      const displayRepos = repos.filter(r => !r.fork);
-      const list = displayRepos.length > 0 ? displayRepos : repos;
-      document.getElementById('gh-stat-repos').textContent = `${repos.length} Public`;
-
-      const langCounts = {};
-      list.forEach(r => {
-        const l = r.language || 'Code';
-        langCounts[l] = (langCounts[l] || 0) + 1;
-      });
-      const sortedLangs = Object.entries(langCounts).sort((a, b) => b[1] - a[1]);
-      document.getElementById('gh-stat-langs').textContent = sortedLangs.slice(0, 3).map(l => l[0]).join(', ');
-
-      if (list[0]?.updated_at) {
-        document.getElementById('gh-stat-updated').textContent = new Date(list[0].updated_at).toLocaleDateString('en-IN', { month: 'short', year: 'numeric' });
-      }
-
-      const colors = { Python: '#1F5E4B', JavaScript: '#D97706', 'Jupyter Notebook': '#284B8C', HTML: '#9E3B24' };
-      const total = list.length || 1;
-      document.getElementById('gh-lang-bar').innerHTML = sortedLangs.map(([l, c]) => {
-        const pct = Math.max(8, Math.round((c / total) * 100));
-        return `<div style="width:${pct}%; background-color:${colors[l] || '#78716C'}"></div>`;
-      }).join('');
-
-      document.getElementById('gh-lang-legend').innerHTML = sortedLangs.map(([l, c]) => `${escapeHtml(l)} (${Math.round((c / total) * 100)}%)`).join(' · ');
-
-      document.getElementById('gh-repos-grid').innerHTML = list.slice(0, 6).map(r => `
-        <article class="surface-card border border-struct rounded-xl p-5 flex flex-col justify-between space-y-3">
-          <div>
-            <div class="flex items-center justify-between font-mono text-[11px]">
-              <span class="px-2 py-0.5 rounded pill-sage font-semibold">${escapeHtml(r.language || 'Repo')}</span>
-              <span class="text-sub">&starf; ${r.stargazers_count || 0}</span>
-            </div>
-            <h3 class="font-mono text-sm font-bold text-main mt-2 truncate">${escapeHtml(r.name)}</h3>
-            <p class="text-xs text-sub mt-1 leading-relaxed">${escapeHtml(r.description || 'Public engineering repository.')}</p>
-          </div>
-          <div class="pt-2.5 border-t border-struct flex items-center justify-between font-mono text-xs">
-            <span class="text-dim text-[11px]">Public Repo</span>
-            <a href="${escapeHtml(r.html_url)}" target="_blank" rel="noopener noreferrer" class="text-[#1F5E4B] dark:text-emerald-400 font-semibold hover:underline">Inspect &nearr;</a>
-          </div>
-        </article>
-      `).join('');
-    }
-
-    async function syncVerifiedLeetCode() {
-      const statusEl = document.getElementById('cp-leetcode-status');
-      if (statusEl) statusEl.textContent = 'Checking live LeetCode profile for AffanCoder...';
-      try {
-        const res = await fetch('https://alfa-leetcode-api.onrender.com/AffanCoder/solved');
-        if (res.ok) {
-          const data = await res.json();
-          if (data && typeof data.solvedProblem === 'number' && data.solvedProblem >= 418) {
-            document.getElementById('cp-leetcode-total').textContent = `${data.solvedProblem} Problems Solved`;
-            document.getElementById('hero-verified-lc').textContent = `${data.solvedProblem} Solved`;
-            statusEl.textContent = `Live Verified: ${data.easySolved} Easy · ${data.mediumSolved} Medium · ${data.hardSolved} Hard`;
-            return;
-          }
-        }
-        throw new Error('Fallback');
-      } catch (e) {
-        if (statusEl) statusEl.textContent = 'Verified Resume Baseline: 418 Problems Solved (AffanCoder)';
-      }
-    }
-
-    function renderCertifications(cat = 'ALL') {
-      const list = cat === 'ALL' ? PORTFOLIO_DATA.certifications : PORTFOLIO_DATA.certifications.filter(c => c.cat === cat);
-      document.getElementById('certifications-grid').innerHTML = list.map(c => `
-        <div class="surface-card border border-struct rounded-xl p-4 flex flex-col justify-between space-y-2.5">
-          <div>
-            <div class="flex items-center justify-between font-mono text-[11px]">
-              <span class="px-2 py-0.5 rounded pill-sage font-semibold">${escapeHtml(c.badge)}</span>
-              <span class="text-sub">${escapeHtml(c.date)}</span>
-            </div>
-            <h4 class="font-sans text-sm font-bold text-main mt-2">${escapeHtml(c.title)}</h4>
-          </div>
-          <div class="pt-2 border-t border-struct flex justify-between font-mono text-[11px] text-sub">
-            <span>${escapeHtml(c.issuer)}</span>
-            <span class="text-[#1F5E4B] dark:text-emerald-400 font-semibold">Verified</span>
-          </div>
-        </div>
-      `).join('');
-    }
-
-    function filterCertifications(cat) {
-      renderCertifications(cat);
-      document.querySelectorAll('.cert-filter-btn').forEach(btn => {
-        btn.className = btn.getAttribute('data-cert-btn') === cat
-          ? 'cert-filter-btn pill-sage font-semibold px-3 py-1 rounded-lg'
-          : 'cert-filter-btn text-sub hover:text-main px-3 py-1 rounded-lg';
-      });
-    }
-
-    function renderTechnicalNotes() {
-      document.getElementById('blog-grid').innerHTML = PORTFOLIO_DATA.technicalNotes.map(n => `
-        <article class="surface-card border border-struct rounded-2xl p-5 flex flex-col justify-between space-y-4">
-          <div class="space-y-2">
-            <div class="flex items-center justify-between font-mono text-[11px]">
-              <span class="px-2.5 py-0.5 rounded pill-sky font-semibold">${escapeHtml(n.status)}</span>
-              <span class="text-dim">${escapeHtml(n.readingTime)}</span>
-            </div>
-            <h3 class="font-serif text-2xl text-main leading-snug">${escapeHtml(n.title)}</h3>
-            <p class="text-xs text-sub leading-relaxed">${escapeHtml(n.summary)}</p>
-          </div>
-          <div class="pt-3 border-t border-struct flex items-center justify-between font-mono text-xs">
-            <span class="text-dim text-[11px]">${escapeHtml(n.relatedProject)}</span>
-            <button type="button" onclick="openBlogModal('${n.id}')" class="text-[#284B8C] dark:text-sky-400 font-semibold hover:underline">Read Note &rarr;</button>
-          </div>
-        </article>
-      `).join('');
-    }
-
-    function openBlogModal(noteId) {
-      const note = PORTFOLIO_DATA.technicalNotes.find(n => n.id === noteId);
-      if (!note) return;
-      document.getElementById('blog-modal-meta').textContent = `${note.status} · ${note.readingTime}`;
-      document.getElementById('blog-modal-title').textContent = note.title;
-      document.getElementById('blog-modal-body').innerHTML = `
-        <p class="text-sub text-sm leading-relaxed">${escapeHtml(note.body)}</p>
-        <div class="p-4 rounded-xl surface-elevated border border-struct">
-          <pre class="font-mono text-xs text-main overflow-x-auto whitespace-pre-wrap">${escapeHtml(note.codeSnippet)}</pre>
-        </div>
-      `;
-      document.getElementById('blog-modal').classList.remove('hidden');
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closeBlogModal() {
-      document.getElementById('blog-modal').classList.add('hidden');
-      document.body.style.overflow = '';
-    }
-
-    async function handleVerifiedContactSubmit(event) {
-      event.preventDefault();
-      if (document.getElementById('contact-honeypot').value) return;
-
-      const name = document.getElementById('contact-name').value.trim();
-      const email = document.getElementById('contact-email').value.trim();
-      const subject = document.getElementById('contact-subject').value.trim();
-      const message = document.getElementById('contact-message').value.trim();
-
-      const errEl = document.getElementById('contact-status-error');
-      const okEl = document.getElementById('contact-status-success');
-      errEl.classList.add('hidden');
-      okEl.classList.add('hidden');
-
-      if (name.length < 2 || !email.includes('@') || subject.length < 4 || message.length < 10) {
-        errEl.textContent = 'Please complete all required fields (Name, valid Email, Subject, and Message).';
-        errEl.classList.remove('hidden');
-        return;
-      }
-
-      try {
-        const res = await fetch('https://formsubmit.co/ajax/affanakram1217@gmail.com', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-          body: JSON.stringify({ Name: name, Email: email, Subject: subject, Message: message })
-        });
-        const data = await res.json();
-        if (res.ok && (data.success === 'true' || data.success === true)) {
-          okEl.textContent = 'Message verified and dispatched to affanakram1217@gmail.com.';
-          okEl.classList.remove('hidden');
-          document.getElementById('contact-form').reset();
-        } else {
-          throw new Error(data.message || 'Endpoint activation required');
-        }
-      } catch (err) {
-        errEl.innerHTML = `Automatic dispatch requires activation (${escapeHtml(err.message)}). <a href="mailto:affanakram1217@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(message)}" class="underline font-bold">Click here to send via your email client</a>.`;
-        errEl.classList.remove('hidden');
-      }
-    }
-
-    function copyEmailAddress() {
-      navigator.clipboard?.writeText('affanakram1217@gmail.com');
-      const btn = document.getElementById('copy-email-btn');
-      if (btn) {
-        btn.textContent = 'Copied ✓';
-        setTimeout(() => { btn.textContent = 'Copy Email'; }, 2000);
-      }
-    }
-
-    function openResumeModal() {
-      document.getElementById('resume-modal').classList.remove('hidden');
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closeResumeModal() {
-      document.getElementById('resume-modal').classList.add('hidden');
-      document.body.style.overflow = '';
-    }
-
-    window.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') {
-        closeCaseStudyModal();
-        closeBlogModal();
-        closeResumeModal();
-      }
-    });
-
-    window.addEventListener('DOMContentLoaded', () => {
-      initArchitectureExplorer();
-      renderCertifications('ALL');
-      renderTechnicalNotes();
-      fetchGitHubDashboard(false);
-      requestAnimationFrame(masterAnimationLoop);
-    });
-  </script>
-</body>
-</html>
+              inputCode: `out = model.generate(**
