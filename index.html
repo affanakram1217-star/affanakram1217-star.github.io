@@ -174,7 +174,12 @@
         padding: 0 !important;
       }
     }
-  </style>
+  
+    .lc-progress-fill { transition: width 700ms cubic-bezier(.22,1,.36,1); }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+    }
+</style>
 </head>
 <body class="antialiased selection:bg-[#E3EFEA] selection:text-[#1F5E4B]">
 
@@ -1429,7 +1434,7 @@
         </div>
 
         <div class="lg:col-span-7 surface-card border border-struct rounded-2xl p-6 sm:p-8 shadow-sm">
-          <form id="contact-form" onsubmit="handleVerifiedContactSubmit(event)" class="space-y-4" novalidate>
+          <form id="contact-form" class="space-y-4" novalidate>
             <input type="text" id="contact-honeypot" name="_honey" class="hidden" tabindex="-1" autocomplete="off" />
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
@@ -1576,319 +1581,575 @@
        PORTFOLIO DATA + 60 FPS KINETIC PROJECT ANIMATIONS + TOPIC SKILL ENGINE
   ====================================================================== -->
   <script>
-    const PORTFOLIO_DATA = {
-      projects: [
-        {
-          id: 'geovista',
-          title: 'GeoVISTA — 3D ULPIN for Urban Property Mapping',
-          shortTag: 'Geospatial AI · SIH 2026 Internal Finalist',
-          filterCat: 'AI_BACKEND',
-          statusBadge: 'SIH 2026 Internal Finalist · Public Repo',
-          repoUrl: 'https://github.com/affanakram1217-star/SIH26011-3D-ULPIN',
-          stack: ['FastAPI', 'Python', 'LiDAR & GIS', 'Deep Learning', 'Shapely', 'Pydantic', 'Three.js'],
-          overview: 'Built for Smart India Hackathon 2026 (SIH26011), GeoVISTA integrates drone orthophotos, LiDAR elevation rasters, and GIS boundaries to extract building footprints, verify polygon topology with Shapely, and generate 3D Unique Land Parcel Identification Numbers (ULPIN).',
-          problemStatement: 'Traditional 2D cadastral maps fail to capture vertical urban density or detect unauthorized multi-story/horizontal encroachments accurately.',
-          motivation: 'Selected as an Internal Finalist at LNCTS Bhopal for SIH 2026 to modernize property registries using deep learning segmentation paired with computational geometry.',
-          architectureDiagram: `[Drone Ortho Imagery + LiDAR DSM/DTM]
-        │
-        ▼
-[Deep Learning Building Footprint Extractor]
-        │
-        ▼
-[Shapely Geometric Validator (is_valid, buffer(0), IoU vs Cadastral GIS)]
-        │
-        ▼
-[FastAPI + Pydantic Spatial Service] ──► [Deterministic 3D ULPIN + Three.js Extrusion]`,
-          dataFlowDiagram: '1. Ingest parcel orthophoto & LiDAR DSM/DTM -> 2. Extract polygon vertices -> 3. Shapely ring closure & topological validation -> 4. Compute vertical height (DSM - DTM) -> 5. Serve 3D ULPIN GeoJSON to Three.js.',
-          engineeringDecisions: [
-            'Combined neural footprint segmentation with mathematical Shapely polygon healing (buffer(0)) so self-intersecting rings never corrupt GIS storage.',
-            'Enforced strict Pydantic coordinate and CRS validation at the FastAPI boundary.',
-            'Rendered interactive 3D extrusions in the browser using Three.js.'
-          ],
-          contributions: 'Developed the FastAPI backend, implemented the Shapely spatial validation pipeline, designed Pydantic schemas, and integrated the 3D visualization data flow.',
-          challengesAndSolutions: 'Challenge: Raster segmentation masks produce jagged edges and occasional bowtie self-intersections. Solution: Applied polygon simplification and Shapely topological healing before IoU scoring.',
-          testingMethodology: 'Tested FastAPI endpoints against valid, self-intersecting, and unclosed GeoJSON polygon fixtures.',
-          resultsAndBenchmarks: 'Selected as an Internal Finalist at LNCTS Bhopal for Smart India Hackathon 2026.',
-          limitations: 'Requires aligned CRS projections between drone imagery and LiDAR rasters.',
-          futureImprovements: 'Add PostGIS spatial indexing and automated roof-type classification.'
-        },
-        {
-          id: 'netsage',
-          title: 'NetSage AI — Cisco Network Troubleshooting Assistant',
-          shortTag: 'AI / RAG & Network Diagnostics',
-          filterCat: 'AI_BACKEND',
-          statusBadge: 'Public GitHub Repository',
-          repoUrl: 'https://github.com/affanakram1217-star/ml-mini-projects',
-          stack: ['Python', 'FastAPI', 'LLM & RAG', 'Deterministic Rule Checking', 'Streamlit / Gradio', 'Cisco Packet Tracer'],
-          overview: 'AI-powered network diagnostics assistant that parses Cisco IOS CLI outputs, runs deterministic rule checks first, and pairs findings with Retrieval-Augmented Generation (RAG) to output verified IOS remediation commands.',
-          problemStatement: 'Pure LLM prompts often hallucinate non-existent Cisco IOS commands or overlook exact MTU/timer mismatches in verbose CLI logs.',
-          motivation: 'Built to combine deterministic Cisco Networking Academy troubleshooting methodology with grounded LLM retrieval.',
-          architectureDiagram: `[Cisco IOS CLI Dump] ──► [Regex State Parser] ──► [Deterministic Rule Validator]
-                                                           │
-                                                           ▼
-[Cisco Docs Vector Store] ──► [RAG Prompt Assembler] ◄─────┘
-                                                           │
-                                                           ▼
-             [Root-Cause Diagnosis + Verified IOS CLI Fix Script]`,
-          dataFlowDiagram: '1. Paste CLI output -> 2. FastAPI parser segments command blocks -> 3. Rule Engine flags MTU/timer/VLAN mismatches -> 4. RAG retrieves Cisco docs -> 5. Outputs root cause + IOS config block.',
-          engineeringDecisions: [
-            'Executed deterministic protocol rule checks prior to LLM inference so hard invariants (MTU=1500, OSPF timers, subnet masks) are verified with 100% accuracy.',
-            'Constrained output generation to valid Cisco IOS configuration mode blocks.'
-          ],
-          contributions: 'Designed the CLI parsers, deterministic rule engine, RAG pipeline, Gradio/Streamlit UI, and verified fixes inside Cisco Packet Tracer.',
-          challengesAndSolutions: 'Challenge: Mixed multi-command CLI pastes. Solution: Built command-prompt boundary splitters before rule evaluation.',
-          testingMethodology: 'Injected OSPF MTU, timer, and VLAN trunk faults inside Cisco Packet Tracer topologies and verified remediation scripts.',
-          resultsAndBenchmarks: 'Accurately diagnoses core L2/L3 lab faults with deterministic rule verification.',
-          limitations: 'Focused on Cisco IOS IPv4 CLI syntax.',
-          futureImprovements: 'Add read-only Netmiko SSH sandbox polling and BGP attribute rules.'
-        },
-        {
-          id: 'staffsync',
-          title: 'StaffSync — MERN Role-Based HR Management System',
-          shortTag: 'Full-Stack MERN · JWT Auth & RBAC',
-          filterCat: 'MERN',
-          statusBadge: 'Public GitHub Repository',
-          repoUrl: 'https://github.com/affanakram1217-star/StaffSync-HR-Management',
-          stack: ['MongoDB', 'Express.js', 'React', 'Node.js', 'JWT Auth', 'RBAC', 'REST API'],
-          overview: 'Full-stack MERN HR management platform featuring JWT authentication, Role-Based Access Control (HR_ADMIN vs. EMPLOYEE), employee directory management, daily attendance tracking, and leave approval workflows.',
-          problemStatement: 'Manual spreadsheet HR tracking leads to unauthorized edits, missing attendance logs, and inconsistent leave approval audit trails.',
-          motivation: 'Engineered to demonstrate end-to-end full-stack architecture across React, Express REST controllers, MongoDB schemas, and JWT security.',
-          architectureDiagram: `[React SPA] ──(Bearer JWT)──► [Express Router + requireRole('HR_ADMIN'|'EMPLOYEE')]
-                                       │
-        ┌──────────────────────────────┼──────────────────────────────┐
-        ▼                              ▼                              ▼
-[/api/employees]               [/api/attendance]              [/api/leaves]
-        └──────────────────────────────┼──────────────────────────────┘
-                                       ▼
-                        [MongoDB / Mongoose Collections]`,
-          dataFlowDiagram: '1. User logs in -> 2. Server verifies bcrypt hash & issues JWT with role claim -> 3. RBAC middleware guards routes -> 4. Mongoose updates Employee/Attendance/Leave state -> 5. React UI updates.',
-          engineeringDecisions: [
-            'Enforced RBAC in Express middleware rather than relying only on client-side route hiding.',
-            'Modeled Leave Requests as a strict state machine (PENDING -> APPROVED | REJECTED) with reviewer audit metadata.'
-          ],
-          contributions: 'Built the Mongoose schemas, Express REST controllers, JWT/RBAC middleware, and React dashboard views.',
-          challengesAndSolutions: 'Challenge: Preventing duplicate daily check-ins. Solution: Enforced compound employee+date uniqueness checks.',
-          testingMethodology: 'Tested API routes across unauthenticated, Employee, and HR_ADMIN JWT tokens to verify HTTP 401/403 enforcement.',
-          resultsAndBenchmarks: 'Complete full-stack MERN CRUD and workflow application hosted on GitHub.',
-          limitations: 'Notifications are currently in-app only.',
-          futureImprovements: 'Add automated PDF payslip generation and email webhooks.'
-        },
-        {
-          id: 'nova',
-          title: 'Nova — BLIP Vision-Language Image Caption Generator',
-          shortTag: 'Multimodal AI · Vision-Language',
-          filterCat: 'CV_VLM',
-          statusBadge: 'Public GitHub Repository',
-          repoUrl: 'https://github.com/affanakram1217-star/ml-mini-projects',
-          stack: ['Python', 'BLIP', 'Hugging Face Transformers', 'Gradio', 'PIL', 'PyTorch'],
-          overview: 'Interactive image captioning application using Salesforce BLIP via Hugging Face Transformers and a Gradio interface.',
-          problemStatement: 'Generating accurate natural-language scene descriptions requires aligning Vision Transformer patch embeddings with an autoregressive language decoder.',
-          motivation: 'Built to explore practical vision-language Transformer inference and interactive Gradio deployment.',
-          architectureDiagram: `[Image Upload] ──► [PIL RGB Conversion] ──► [BlipProcessor] ──► [BLIP ViT + Text Decoder] ──► [Gradio UI]`,
-          dataFlowDiagram: '1. Upload image in Gradio -> 2. PIL normalizes to 3-channel RGB -> 3. BlipProcessor creates tensors -> 4. BLIP generates caption -> 5. UI renders text.',
-          engineeringDecisions: [
-            'Cached BLIP model weights on startup and sanitized RGBA/grayscale uploads to 3-channel RGB via PIL.'
-          ],
-          contributions: 'Implemented the BLIP inference pipeline, PIL image sanitization, and Gradio web interface.',
-          challengesAndSolutions: 'Challenge: CPU beam-search latency. Solution: Tuned max_new_tokens and beam parameters for responsive interactive use.',
-          testingMethodology: 'Tested across diverse indoor/outdoor photographs and transparent PNG edge cases.',
-          resultsAndBenchmarks: 'Produces fluent natural-language captions through a clean web interface.',
-          limitations: 'Pre-trained BLIP-base is not specialized for dense document OCR.',
-          futureImprovements: 'Add Visual Question Answering (VQA) mode.'
-        },
-        {
-          id: 'beyond-words',
-          title: 'Beyond Words — Real-Time Sign Language Detector',
-          shortTag: 'Computer Vision · MediaPipe & OpenCV',
-          filterCat: 'CV_VLM',
-          statusBadge: 'Public GitHub Repository',
-          repoUrl: 'https://github.com/affanakram1217-star/ml-mini-projects',
-          stack: ['Python', 'OpenCV', 'MediaPipe', 'Deep Learning', 'NumPy', 'Gradio'],
-          overview: 'Real-time sign language detection and gesture classification pipeline using OpenCV, MediaPipe 21-keypoint 3D hand skeleton extraction, and deep learning.',
-          problemStatement: 'Raw pixel CNNs degrade rapidly under background clutter and lighting changes.',
-          motivation: 'Built to create an accessible assistive tool using low-latency 21-point skeletal geometry.',
-          architectureDiagram: `[OpenCV Frame] ──► [MediaPipe 21 3D Landmarks] ──► [Wrist-Relative Normalization] ──► [Gesture Classifier]`,
-          dataFlowDiagram: '1. Capture webcam frame -> 2. Extract 21 (x,y,z) hand landmarks -> 3. Center at wrist (node 0) & scale normalize -> 4. Classify 63-D vector -> 5. Render HUD overlay.',
-          engineeringDecisions: [
-            'Used 63-dimensional wrist-relative skeletal coordinates instead of raw pixel tensors for background and scale invariance.'
-          ],
-          contributions: 'Implemented the OpenCV stream loop, MediaPipe landmark extractor, NumPy coordinate normalizer, classifier inference, and Gradio UI.',
-          challengesAndSolutions: 'Challenge: Motion blur landmark flicker. Solution: Added confidence thresholding across consecutive frames.',
-          testingMethodology: 'Tested across varying hand distances, lighting conditions, and left/right hand orientations.',
-          resultsAndBenchmarks: 'Real-time 21-node hand tracking and sign classification on standard CPU webcams.',
-          limitations: 'Focused on static and short-window signs.',
-          futureImprovements: 'Add temporal sequence modeling for continuous sentence-level signing.'
+(() => {
+  'use strict';
+
+  const LC_USER = 'AffanCoder';
+  const CONTACT_EMAIL = 'affanakram1217@gmail.com';
+  const LC_CACHE_KEY = 'affancoder-leetcode-v2';
+  const LC_CACHE_TTL = 15 * 60 * 1000;
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const $ = (id) => document.getElementById(id);
+  const setText = (id, value) => { const el = $(id); if (el) el.textContent = value; };
+  const safeNumber = (value) => Number.isFinite(Number(value)) ? Number(value) : 0;
+
+  // ------------------------- THEME ---------------------------------------
+  window.toggleTheme = function () {
+    document.documentElement.classList.toggle('dark');
+    const dark = document.documentElement.classList.contains('dark');
+    setText('theme-toggle-label', dark ? 'Warm Studio' : 'Terminal Dark');
+    try { localStorage.setItem('affan-theme', dark ? 'dark' : 'light'); } catch (_) {}
+    drawAllCanvases(performance.now());
+  };
+  try {
+    if (localStorage.getItem('affan-theme') === 'dark') {
+      document.documentElement.classList.add('dark');
+      setText('theme-toggle-label', 'Warm Studio');
+    }
+  } catch (_) {}
+
+  // ------------------------- LEETCODE API --------------------------------
+  const LEETCODE_QUERY = `
+    query userProfile($username: String!) {
+      matchedUser(username: $username) {
+        username
+        submitStatsGlobal {
+          acSubmissionNum { difficulty count submissions }
         }
-      ],
+        tagProblemCounts {
+          fundamental { tagName tagSlug problemsSolved }
+          intermediate { tagName tagSlug problemsSolved }
+          advanced { tagName tagSlug problemsSolved }
+        }
+      }
+    }`;
 
-      explorerPipelines: {
-        netsage: {
-          title: 'NetSage AI — Deterministic CLI + RAG Diagnostic Pipeline',
-          badge: 'FastAPI · Rule Engine · RAG',
-          repoUrl: 'https://github.com/affanakram1217-star/ml-mini-projects',
-          stages: [
-            {
-              step: '01. CLI Ingestion',
-              name: 'Raw Cisco IOS CLI Capture',
-              heading: 'Stage 1: Ingesting Unstructured Router CLI Output',
-              explanation: 'The user pastes raw output from Cisco IOS diagnostic commands (show ip ospf neighbor, show ip interface) into the interface.',
-              inputCode: `RTR-CORE-01# show ip ospf neighbor
-Neighbor ID     Pri   State           Dead Time   Address         Interface
-10.0.0.2          1   EXSTART/DR      00:00:33    192.168.10.2    GigabitEthernet0/1
+  const DATA_STRUCTURE_TAGS = new Set([
+    'array','string','hash-table','linked-list','stack','queue','deque',
+    'tree','binary-tree','binary-search-tree','trie','heap-priority-queue',
+    'graph','matrix','bitmask','union-find','segment-tree','fenwick-tree',
+    'ordered-set','design','database','prefix-tree'
+  ]);
 
-RTR-CORE-01# show ip interface GigabitEthernet0/1
-  MTU is 1400 bytes`,
-              outputCode: `{
-  "interface": "GigabitEthernet0/1",
-  "ospf_neighbor_state": "EXSTART/DR",
-  "detected_mtu_bytes": 1400
-}`
-            },
-            {
-              step: '02. Rule Engine',
-              name: 'Deterministic Rule Check',
-              heading: 'Stage 2: Deterministic Protocol Rule Evaluation',
-              explanation: 'Before invoking any LLM, deterministic Python rules check protocol invariants (EXSTART + MTU 1400 != 1500).',
-              inputCode: `if "EXSTART" in state["ospf_neighbor_state"] and state["detected_mtu_bytes"] != 1500:
-    return {"rule_id": "OSPF_MTU_MISMATCH_01", "deterministic_match": True}`,
-              outputCode: `{
-  "rule_id": "OSPF_MTU_MISMATCH_01",
-  "deterministic_match": true,
-  "verified_fact": "OSPF DBD packets rejected due to MTU mismatch on Gi0/1."
-}`
-            },
-            {
-              step: '03. RAG Retrieval',
-              name: 'Cisco Doc Vector Retrieval',
-              heading: 'Stage 3: Grounded Retrieval-Augmented Generation',
-              explanation: 'The deterministic anomaly JSON is combined with retrieved Cisco IOS documentation chunks.',
-              inputCode: `QUERY: "Cisco IOS OSPF EXSTART state MTU mismatch remediation command"`,
-              outputCode: `RETRIEVED: Cisco IOS OSPF Command Reference -> configure matching 'ip mtu 1500'`
-            },
-            {
-              step: '04. IOS Fix',
-              name: 'Verified CLI Fix Script',
-              heading: 'Stage 4: Actionable IOS Remediation Script',
-              explanation: 'Outputs the exact Cisco IOS configuration commands verified in Packet Tracer.',
-              inputCode: `GENERATE_IOS_FIX(interface="GigabitEthernet0/1", mtu=1500)`,
-              outputCode: `configure terminal
- interface GigabitEthernet0/1
-  ip mtu 1500
-  end
-clear ip ospf process`
-            }
-          ]
-        },
-        geovista: {
-          title: 'GeoVISTA — 3D ULPIN Spatial Verification Pipeline',
-          badge: 'FastAPI · Shapely · LiDAR · SIH 2026',
-          repoUrl: 'https://github.com/affanakram1217-star/SIH26011-3D-ULPIN',
-          stages: [
-            {
-              step: '01. Spatial Input',
-              name: 'Drone + LiDAR Ingestion',
-              heading: 'Stage 1: Parcel Footprint & Elevation Payload',
-              explanation: 'FastAPI receives candidate building polygon coordinates along with LiDAR DSM/DTM heights.',
-              inputCode: `POST /api/v1/ulpin/verify-parcel
-{
-  "parcel_id": "BPL-WARD12-0418",
-  "dsm_mean_m": 546.8,
-  "dtm_ground_m": 534.2
-}`,
-              outputCode: `Pydantic Validation: PASSED | Computed Extrusion Height: 12.6m`
-            },
-            {
-              step: '02. Shapely Check',
-              name: 'Polygon Topology Check',
-              heading: 'Stage 2: Mathematical Polygon Validation with Shapely',
-              explanation: 'Verifies ring closure, heals self-intersections with buffer(0), and computes cadastral IoU.',
-              inputCode: `poly = Polygon(payload.footprint_coords)
-if not poly.is_valid:
-    poly = poly.buffer(0)`,
-              outputCode: `{ "is_valid_topology": true, "cadastral_iou": 0.942 }`
-            },
-            {
-              step: '03. 3D ULPIN Hash',
-              name: '3D Identifier Minting',
-              heading: 'Stage 3: Deterministic 3D ULPIN Generation',
-              explanation: 'Combines 2D geodetic centroid with LiDAR height delta to mint a 3D property identifier.',
-              inputCode: `ulpin_3d = mint_ulpin_3d(centroid=poly.centroid, height_m=12.6)`,
-              outputCode: `{ "ulpin_3d_id": "ULPIN-MP-232600-774127-H126" }`
-            },
-            {
-              step: '04. Three.js Mesh',
-              name: '3D WebGL Extrusion',
-              heading: 'Stage 4: Three.js 3D Scene Serialization',
-              explanation: 'Serializes GeoJSON + extrusion depth for interactive 3D inspection.',
-              inputCode: `new THREE.ExtrudeGeometry(footprintShape, { depth: 12.6 })`,
-              outputCode: `Three.js Scene Updated -> 3D Parcel Mesh Rendered`
-            }
-          ]
-        },
-        staffsync: {
-          title: 'StaffSync — MERN Authentication, RBAC & Leave State Machine',
-          badge: 'MongoDB · Express · React · Node.js',
-          repoUrl: 'https://github.com/affanakram1217-star/StaffSync-HR-Management',
-          stages: [
-            {
-              step: '01. JWT Auth',
-              name: 'Login & Signed JWT',
-              heading: 'Stage 1: bcrypt Verification & Signed JWT Claims',
-              explanation: 'Users authenticate via Express; signed JWT embeds userId and role.',
-              inputCode: `POST /api/auth/login { "email": "hr.admin@staffsync.io" }`,
-              outputCode: `{ "token": "eyJhbG...", "role": "HR_ADMIN" }`
-            },
-            {
-              step: '02. RBAC Guard',
-              name: 'Role Middleware',
-              heading: 'Stage 2: Middleware-Enforced Role Access Control',
-              explanation: 'Protected routes verify required role privileges before controller execution.',
-              inputCode: `const requireRole = (...roles) => (req, res, next) =>
-  roles.includes(req.user.role) ? next() : res.status(403).json({ error: "Forbidden" });`,
-              outputCode: `PATCH /api/leaves/:id/decision -> Role HR_ADMIN Verified`
-            },
-            {
-              step: '03. Mongo Schema',
-              name: 'Mongoose Models',
-              heading: 'Stage 3: Structured MongoDB Schemas',
-              explanation: 'Enforces enum states (PENDING, APPROVED, REJECTED) and ObjectId references.',
-              inputCode: `status: { type: String, enum: ['PENDING', 'APPROVED', 'REJECTED'], default: 'PENDING' }`,
-              outputCode: `Compound Index Verified: { employee: 1, startDate: -1 }`
-            },
-            {
-              step: '04. Leave State',
-              name: 'Atomic Approval',
-              heading: 'Stage 4: Leave State Transition & Audit Timestamp',
-              explanation: 'Updates leave status atomically and records reviewer audit metadata.',
-              inputCode: `PATCH /api/leaves/671b02f19c/decision { "status": "APPROVED" }`,
-              outputCode: `{ "leaveId": "671b02f19c", "status": "APPROVED" }`
-            }
-          ]
-        },
-        nova: {
-          title: 'Nova — BLIP Vision-Language Inference Workflow',
-          badge: 'Python · BLIP · Hugging Face · Gradio',
-          repoUrl: 'https://github.com/affanakram1217-star/ml-mini-projects',
-          stages: [
-            {
-              step: '01. PIL Input',
-              name: 'RGB Normalization',
-              heading: 'Stage 1: PIL Image Sanitization',
-              explanation: 'Converts uploaded images to 3-channel RGB.',
-              inputCode: `rgb_image = Image.open(uploaded_file).convert("RGB")`,
-              outputCode: `PIL.Image(mode="RGB", size=(1280, 720))`
-            },
-            {
-              step: '02. ViT Encoding',
-              name: 'BlipProcessor Tensors',
-              heading: 'Stage 2: Vision Transformer Patch Encoding',
-              explanation: 'Normalizes image into PyTorch pixel tensors.',
-              inputCode: `inputs = processor(images=rgb_image, return_tensors="pt")`,
-              outputCode: `pixel_values: torch.Size([1, 3, 384, 384])`
-            },
-            {
-              step: '03. Decoding',
-              name: 'Cross-Attention Beam',
-              heading: 'Stage 3: Conditional Text Generation',
-              explanation: 'Decodes natural-language description from visual features.',
-              inputCode: `out = model.generate(**
+  const TOPIC_META = {
+    'array':['Arrays','Core indexing, traversal and prefix operations.'],
+    'string':['Strings','Pattern matching, parsing and character processing.'],
+    'hash-table':['Hash Tables','Fast lookup, counting and frequency maps.'],
+    'two-pointers':['Two Pointers','Linear scans with coordinated pointer movement.'],
+    'sliding-window':['Sliding Window','Contiguous range optimisation.'],
+    'binary-search':['Binary Search','Monotonic search spaces and boundary finding.'],
+    'dynamic-programming':['Dynamic Programming','State design, transitions and optimisation.'],
+    'depth-first-search':['Depth-First Search','Recursive and iterative graph/tree exploration.'],
+    'breadth-first-search':['Breadth-First Search','Level-order traversal and shortest unweighted paths.'],
+    'graph':['Graphs','Connectivity, paths and graph modelling.'],
+    'greedy':['Greedy','Locally optimal choices with correctness arguments.'],
+    'backtracking':['Backtracking','Constraint search and state-space pruning.'],
+    'heap-priority-queue':['Heap / Priority Queue','Efficient top-k and scheduling operations.'],
+    'union-find':['Union-Find','Disjoint set connectivity and component merging.'],
+    'monotonic-stack':['Monotonic Stack','Maintaining ordered candidates for range queries.'],
+    'bit-manipulation':['Bit Manipulation','Bitwise state representation and tricks.'],
+    'sorting':['Sorting','Ordering, comparator design and sweep techniques.'],
+    'tree':['Trees','Hierarchical traversal and recursive structure.'],
+    'binary-tree':['Binary Trees','Tree traversal, height and subtree reasoning.'],
+    'linked-list':['Linked Lists','Pointer manipulation and in-place rewiring.'],
+    'stack':['Stacks','LIFO state and monotonic processing.'],
+    'queue':['Queues','FIFO processing and breadth-first traversal.'],
+    'matrix':['Matrices','Grid traversal and 2D state modelling.'],
+    'recursion':['Recursion','Divide problems into smaller subproblems.'],
+    'memoization':['Memoization','Caching repeated subproblem results.'],
+    'topological-sort':['Topological Sort','Dependency ordering in directed acyclic graphs.'],
+    'shortest-path':['Shortest Path','Distance optimisation across weighted graphs.'],
+    'minimum-spanning-tree':['Minimum Spanning Tree','Minimum-cost connectivity.'],
+    'segment-tree':['Segment Trees','Range queries and point/range updates.'],
+    'bitmask':['Bitmask DP','Compact subset and state representation.'],
+    'divide-and-conquer':['Divide & Conquer','Partition, solve and combine.'],
+    'prefix-sum':['Prefix Sums','Constant-time range aggregate queries.'],
+    'quickselect':['Quickselect','Selection in expected linear time.'],
+    'reservoir-sampling':['Reservoir Sampling','Uniform sampling from streaming data.']
+  };
+
+  let lcTopics = [];
+  let lcActiveTab = 'ALL';
+  let lcLastSynced = null;
+
+  function topicCategory(slug) {
+    return DATA_STRUCTURE_TAGS.has(slug) ? 'DS' : 'ALGO';
+  }
+  function topicLabel(topic) {
+    return TOPIC_META[topic.tagSlug]?.[0] ||
+      topic.tagName.replace(/([a-z])([A-Z])/g, '$1 $2').replace(/-/g, ' ');
+  }
+  function proficiency(count) {
+    if (count === 0) return ['Not started','pill-rose'];
+    if (count < 5) return ['Exploring','pill-ochre'];
+    if (count < 15) return ['Building','pill-sky'];
+    if (count < 40) return ['Proficient','pill-sage'];
+    return ['Strong practice','pill-sage'];
+  }
+  function escapeHTML(value) {
+    return String(value).replace(/[&<>"']/g, c => ({
+      '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'
+    })[c]);
+  }
+  function getVisibleTopics() {
+    if (lcActiveTab === 'DS') return lcTopics.filter(t => t.category === 'DS');
+    if (lcActiveTab === 'ALGO') return lcTopics.filter(t => t.category === 'ALGO');
+    if (lcActiveTab === 'TIER') return [...lcTopics].sort((a,b) =>
+      ['fundamental','intermediate','advanced'].indexOf(a.tier) -
+      ['fundamental','intermediate','advanced'].indexOf(b.tier) || b.solved-a.solved);
+    return [...lcTopics].sort((a,b) => b.solved-a.solved);
+  }
+
+  function renderLeetCodeTopicMatrix() {
+    const grid = $('lc-topic-cards-grid');
+    if (!grid) return;
+    const visible = getVisibleTopics();
+    const maxSolved = Math.max(1, ...visible.map(t => t.solved));
+    const tierRank = { fundamental: 0, intermediate: 1, advanced: 2 };
+    const ordered = lcActiveTab === 'TIER' ? visible : [...visible].sort((a,b) => b.solved-a.solved);
+    grid.innerHTML = ordered.map(topic => {
+      const [level, badge] = proficiency(topic.solved);
+      const width = Math.max(0, Math.min(100, topic.solved / maxSolved * 100));
+      const tier = topic.tier.charAt(0).toUpperCase() + topic.tier.slice(1);
+      const detail = TOPIC_META[topic.tagSlug]?.[1] || 'Practice count reported by LeetCode topic telemetry.';
+      return `<article class="surface-card border border-struct rounded-xl p-4 space-y-3 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md">
+        <div class="flex items-start justify-between gap-2">
+          <div class="min-w-0">
+            <h4 class="font-mono text-sm font-bold text-main truncate">${escapeHTML(topicLabel(topic))}</h4>
+            <p class="font-sans text-[11px] text-sub mt-1">${escapeHTML(detail)}</p>
+          </div>
+          <span class="font-mono text-[10px] ${badge} rounded-md px-2 py-1 whitespace-nowrap">${level}</span>
+        </div>
+        <div class="flex items-end justify-between gap-3">
+          <div><strong class="font-mono text-2xl text-main tabular-nums">${topic.solved.toLocaleString('en-IN')}</strong>
+            <span class="font-mono text-[10px] text-dim ml-1">solved</span></div>
+          <span class="font-mono text-[10px] text-sub">${escapeHTML(tier)} · ${topic.category === 'DS' ? 'Data Structure' : 'Technique'}</span>
+        </div>
+        <div class="h-2 rounded-full surface-elevated overflow-hidden border border-struct" role="progressbar" aria-label="${escapeHTML(topicLabel(topic))} solved volume relative to this view" aria-valuemin="0" aria-valuemax="${maxSolved}" aria-valuenow="${topic.solved}">
+          <div class="h-full rounded-full lc-progress-fill" style="width:${width.toFixed(1)}%;background:${topic.tier === 'advanced' ? '#D97706' : topic.tier === 'intermediate' ? '#3B82F6' : '#1F8A63'}"></div>
+        </div>
+        <div class="flex justify-between font-mono text-[10px] text-dim"><span>${topic.tagSlug}</span><span>${width.toFixed(0)}% of top topic in this view</span></div>
+      </article>`;
+    }).join('');
+    if (!ordered.length) grid.innerHTML = '<p class="text-sm text-sub col-span-full">No topic data is available yet. Use Sync Live to retry.</p>';
+    const heading = $('lc-topic-grid-heading');
+    if (heading) heading.textContent = `Topic-Wise Problems Solved & Mapped Engineering Skills (${ordered.length} topics)`;
+  }
+
+  window.switchLeetCodeTopicTab = function (tab) {
+    lcActiveTab = tab;
+    ['ALL','DS','ALGO','TIER'].forEach(key => {
+      const el = $('lc-tab-' + key);
+      if (!el) return;
+      el.classList.toggle('pill-sage', key === tab);
+      el.classList.toggle('font-semibold', key === tab);
+      el.classList.toggle('text-sub', key !== tab);
+    });
+    renderLeetCodeTopicMatrix();
+  };
+
+  function updateDifficulty(stats) {
+    const byDifficulty = Object.fromEntries((stats || []).map(x => [x.difficulty, safeNumber(x.count)]));
+    const easy = byDifficulty.Easy || 0, medium = byDifficulty.Medium || 0, hard = byDifficulty.Hard || 0;
+    const total = byDifficulty.All || easy + medium + hard;
+    setText('cp-leetcode-total', `${total.toLocaleString('en-IN')} Solved`);
+    setText('hero-verified-lc', `${total.toLocaleString('en-IN')} Solved`);
+    setText('lc-easy-val', easy.toLocaleString('en-IN'));
+    setText('lc-med-val', medium.toLocaleString('en-IN'));
+    setText('lc-hard-val', hard.toLocaleString('en-IN'));
+    setText('lc-easy-pct', `${total ? (easy/total*100).toFixed(1) : '0.0'}%`);
+    setText('lc-med-pct', `${total ? (medium/total*100).toFixed(1) : '0.0'}%`);
+    setText('lc-hard-pct', `${total ? (hard/total*100).toFixed(1) : '0.0'}%`);
+    setText('lc-diff-ratio-label', `${easy} Easy · ${medium} Medium · ${hard} Hard`);
+    [['lc-bar-easy',easy],['lc-bar-med',medium],['lc-bar-hard',hard]].forEach(([id,n]) => {
+      const el = $(id); if (el) el.style.width = `${total ? n/total*100 : 0}%`;
+    });
+  }
+
+  function normaliseLeetCodeProfile(profile) {
+    const counts = profile.tagProblemCounts || {};
+    const tiers = ['fundamental','intermediate','advanced'];
+    const topics = [];
+    tiers.forEach(tier => (counts[tier] || []).forEach(item => {
+      topics.push({
+        tagName: item.tagName || item.tagSlug || 'Unknown',
+        tagSlug: item.tagSlug || String(item.tagName || 'unknown').toLowerCase().replace(/\s+/g,'-'),
+        solved: safeNumber(item.problemsSolved),
+        tier,
+        category: topicCategory(item.tagSlug || '')
+      });
+    }));
+    const unique = new Map();
+    topics.forEach(t => {
+      const old = unique.get(t.tagSlug);
+      if (!old || t.solved > old.solved) unique.set(t.tagSlug, t);
+    });
+    return {
+      topics: [...unique.values()],
+      stats: profile.submitStatsGlobal?.acSubmissionNum || [],
+      username: profile.username || LC_USER
+    };
+  }
+
+  async function fetchLeetCodeProfile() {
+    const response = await fetch('https://leetcode.com/graphql/', {
+      method: 'POST',
+      headers: { 'Content-Type':'application/json', 'Accept':'application/json' },
+      body: JSON.stringify({ query: LEETCODE_QUERY, variables: { username: LC_USER } }),
+      credentials: 'omit',
+      cache: 'no-store'
+    });
+    if (!response.ok) throw new Error(`LeetCode returned HTTP ${response.status}`);
+    const json = await response.json();
+    if (json.errors?.length) throw new Error(json.errors[0].message || 'LeetCode GraphQL error');
+    const profile = json.data?.matchedUser;
+    if (!profile) throw new Error('LeetCode profile was not found or is private.');
+    return normaliseLeetCodeProfile(profile);
+  }
+
+  function applyLeetCodeData(data, sourceLabel) {
+    lcTopics = data.topics || [];
+    updateDifficulty(data.stats || []);
+    renderLeetCodeTopicMatrix();
+    const tierCounts = { fundamental:0, intermediate:0, advanced:0 };
+    lcTopics.forEach(t => tierCounts[t.tier] += t.solved);
+    setText('lc-tier-fund-count', `${tierCounts.fundamental.toLocaleString('en-IN')} Solved`);
+    setText('lc-tier-inter-count', `${tierCounts.intermediate.toLocaleString('en-IN')} Solved`);
+    setText('lc-tier-adv-count', `${tierCounts.advanced.toLocaleString('en-IN')} Solved`);
+    setText('lc-total-tag-hits', `${lcTopics.length} Topics · ${lcTopics.reduce((n,t)=>n+t.solved,0).toLocaleString('en-IN')} Tag Solves`);
+    setText('hero-verified-lc-sub', 'Live LeetCode profile &darr;');
+    setText('cp-leetcode-status', `${sourceLabel} · ${new Date().toLocaleString()} · Topic counts can overlap because one problem can have multiple tags.`);
+    setText('lc-sync-badge', sourceLabel.includes('Live') ? 'Live Profile' : 'Cached Profile');
+    lcLastSynced = Date.now();
+  }
+
+  window.syncVerifiedLeetCode = async function (force = false) {
+    const btn = $('lc-sync-btn'), spinner = $('lc-sync-spinner');
+    if (btn?.dataset.busy === 'true') return;
+    if (btn) { btn.dataset.busy = 'true'; btn.disabled = true; btn.classList.add('opacity-60'); }
+    if (spinner) spinner.classList.add('animate-spin');
+    setText('cp-leetcode-status', 'Querying LeetCode public GraphQL profile…');
+    try {
+      if (!force) {
+        try {
+          const cached = JSON.parse(localStorage.getItem(LC_CACHE_KEY) || 'null');
+          if (cached && Date.now() - cached.savedAt < LC_CACHE_TTL) {
+            applyLeetCodeData(cached.data, 'Cached profile');
+            return;
+          }
+        } catch (_) {}
+      }
+      const data = await fetchLeetCodeProfile();
+      applyLeetCodeData(data, 'Live LeetCode sync');
+      try { localStorage.setItem(LC_CACHE_KEY, JSON.stringify({ savedAt:Date.now(), data })); } catch (_) {}
+    } catch (error) {
+      let cached = null;
+      try { cached = JSON.parse(localStorage.getItem(LC_CACHE_KEY) || 'null'); } catch (_) {}
+      if (cached?.data) {
+        applyLeetCodeData(cached.data, 'Cached profile · live sync unavailable');
+        setText('cp-leetcode-status', `Live sync unavailable (${error.message}). Showing last successful cached data.`);
+      } else {
+        setText('cp-leetcode-status', `Unable to load live LeetCode data: ${error.message}. Open the public profile or retry Sync Live.`);
+        setText('lc-sync-badge', 'Sync unavailable');
+      }
+    } finally {
+      if (btn) { btn.dataset.busy = 'false'; btn.disabled = false; btn.classList.remove('opacity-60'); }
+      if (spinner) spinner.classList.remove('animate-spin');
+    }
+  };
+
+  // ------------------------- CONTACT FORM --------------------------------
+  window.copyEmailAddress = async function () {
+    try {
+      await navigator.clipboard.writeText(CONTACT_EMAIL);
+      setText('copy-email-btn', 'Copied!');
+    } catch (_) {
+      const temp = document.createElement('textarea');
+      temp.value = CONTACT_EMAIL; document.body.appendChild(temp); temp.select();
+      document.execCommand('copy'); temp.remove(); setText('copy-email-btn', 'Copied!');
+    }
+    window.setTimeout(() => setText('copy-email-btn', 'Copy Email'), 1800);
+  };
+
+  window.handleVerifiedContactSubmit = async function (event) {
+    event.preventDefault();
+    const form = $('contact-form');
+    if (!form) return;
+    const errorBox = $('contact-status-error'), successBox = $('contact-status-success');
+    const submit = $('contact-submit-btn'), submitText = $('contact-submit-text');
+    errorBox?.classList.add('hidden'); successBox?.classList.add('hidden');
+    if (!form.reportValidity()) return;
+    if ($('contact-honeypot')?.value) return;
+
+    const name = $('contact-name').value.trim();
+    const email = $('contact-email').value.trim();
+    const subject = $('contact-subject').value.trim();
+    const message = $('contact-message').value.trim();
+    if (name.length < 2 || subject.length < 4 || message.length < 10) {
+      if (errorBox) { errorBox.textContent = 'Please complete all fields with the minimum required detail.'; errorBox.classList.remove('hidden'); }
+      return;
+    }
+
+    if (submit) { submit.disabled = true; submit.classList.add('opacity-60'); }
+    if (submitText) submitText.textContent = 'Sending securely…';
+    try {
+      const payload = new FormData();
+      payload.append('name', name);
+      payload.append('email', email);
+      payload.append('subject', subject);
+      payload.append('message', message);
+      payload.append('_subject', `[Portfolio] ${subject}`);
+      payload.append('_template', 'table');
+      payload.append('_captcha', 'false');
+      const response = await fetch(`https://formsubmit.co/ajax/${encodeURIComponent(CONTACT_EMAIL)}`, {
+        method: 'POST',
+        headers: { 'Accept':'application/json' },
+        body: payload
+      });
+      const result = await response.json().catch(() => ({}));
+      if (!response.ok || result.success === false) {
+        throw new Error(result.message || `Email service returned HTTP ${response.status}`);
+      }
+      if (successBox) {
+        successBox.textContent = 'Message submitted successfully. Thank you — I will get back to you soon.';
+        successBox.classList.remove('hidden');
+      }
+      form.reset();
+    } catch (error) {
+      if (errorBox) {
+        errorBox.textContent = `The message could not be submitted automatically (${error.message}). Please use the direct email link below; your message has not been confirmed as sent.`;
+        errorBox.classList.remove('hidden');
+      }
+    } finally {
+      if (submit) { submit.disabled = false; submit.classList.remove('opacity-60'); }
+      if (submitText) submitText.textContent = 'Send Verified Message →';
+    }
+  };
+
+  // ------------------------- ANIMATED CANVAS ENGINES ----------------------
+  const canvasIds = ['hero-sim-canvas','canvas-geovista','canvas-netsage','canvas-staffsync','canvas-nova','canvas-sign'];
+  const canvasState = new Map();
+  const palette = () => {
+    const dark = document.documentElement.classList.contains('dark');
+    return {
+      grid: dark ? 'rgba(148,163,184,.13)' : 'rgba(120,113,108,.17)',
+      line: dark ? '#34D399' : '#1F5E4B',
+      alt: dark ? '#38BDF8' : '#284B8C',
+      warm: dark ? '#FBBF24' : '#B7791F',
+      text: dark ? '#CBD5E1' : '#57534E'
+    };
+  };
+
+  function sizeCanvas(canvas) {
+    const rect = canvas.getBoundingClientRect();
+    if (!rect.width || !rect.height) return null;
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    const w = Math.round(rect.width * dpr), h = Math.round(rect.height * dpr);
+    if (canvas.width !== w || canvas.height !== h) {
+      canvas.width = w; canvas.height = h;
+    }
+    const ctx = canvas.getContext('2d');
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    return { ctx, w:rect.width, h:rect.height };
+  }
+
+  function drawCanvas(canvas, time) {
+    const sized = sizeCanvas(canvas); if (!sized) return;
+    const {ctx,w,h} = sized, colors = palette();
+    const t = reducedMotion ? 0.35 : time * 0.00045;
+    ctx.clearRect(0,0,w,h);
+    ctx.strokeStyle = colors.grid; ctx.lineWidth = 1;
+    for (let x=12; x<w; x+=24) { ctx.beginPath(); ctx.moveTo(x,0); ctx.lineTo(x,h); ctx.stroke(); }
+    for (let y=12; y<h; y+=24) { ctx.beginPath(); ctx.moveTo(0,y); ctx.lineTo(w,y); ctx.stroke(); }
+
+    const id = canvas.id;
+    if (id.includes('sign')) {
+      const cx=w*.5, cy=h*.48, scale=Math.min(w,h)*.0035;
+      const points=[];
+      for(let i=0;i<21;i++){
+        const finger=Math.floor(i/4), joint=i%4;
+        let x= finger===0 ? -24 : (finger-2)*15;
+        let y= finger===0 ? 20+joint*8 : -10-joint*18;
+        x += Math.sin(t*2+i*.7)*2;
+        points.push([cx+x*scale*2,cy+y*scale*2]);
+      }
+      const links=[[0,1],[1,2],[2,3],[3,4],[0,5],[5,6],[6,7],[7,8],[5,9],[9,10],[10,11],[11,12],[9,13],[13,14],[14,15],[15,16],[13,17],[17,18],[18,19],[19,20],[0,17]];
+      ctx.strokeStyle=colors.line;ctx.lineWidth=2;
+      links.forEach(([a,b])=>{ctx.beginPath();ctx.moveTo(...points[a]);ctx.lineTo(...points[b]);ctx.stroke();});
+      points.forEach(([x,y],i)=>{ctx.beginPath();ctx.arc(x,y,i%4===0?3.2:2.2,0,Math.PI*2);ctx.fillStyle=i===0?colors.warm:colors.alt;ctx.fill();});
+      ctx.fillStyle=colors.text;ctx.font='10px monospace';ctx.fillText('21 LANDMARKS · 63-D NORMALIZED VECTOR',12,16);
+      return;
+    }
+
+    if (id.includes('nova')) {
+      const cols=8, rows=4, gap=Math.min((w-40)/cols,(h-45)/rows);
+      for(let r=0;r<rows;r++)for(let c=0;c<cols;c++){
+        const pulse=(Math.sin(t*3+c*.7+r*.9)+1)/2;
+        ctx.fillStyle=`rgba(217,119,6,${.08+pulse*.35})`;
+        ctx.fillRect(18+c*gap,28+r*gap,gap-4,gap-4);
+      }
+      ctx.strokeStyle=colors.warm;ctx.lineWidth=1.5;
+      ctx.beginPath();ctx.moveTo(w*.68,30);ctx.quadraticCurveTo(w*.8,h*.5,w*.92,h*.72);ctx.stroke();
+      ctx.fillStyle=colors.text;ctx.font='10px monospace';ctx.fillText('ViT PATCH ATTENTION → TOKEN DECODING',12,16);
+      return;
+    }
+
+    if (id.includes('staffsync')) {
+      const nodes=[[.15,.5],[.39,.25],[.39,.75],[.68,.25],[.68,.75],[.88,.5]];
+      const edges=[[0,1],[0,2],[1,3],[2,4],[3,5],[4,5]];
+      ctx.strokeStyle=colors.grid;ctx.lineWidth=2;
+      edges.forEach(([a,b])=>{ctx.beginPath();ctx.moveTo(nodes[a][0]*w,nodes[a][1]*h);ctx.lineTo(nodes[b][0]*w,nodes[b][1]*h);ctx.stroke();});
+      edges.forEach(([a,b],i)=>{const p=(t*2+i*.17)%1;const x=nodes[a][0]*w+(nodes[b][0]-nodes[a][0])*w*p;const y=nodes[a][1]*h+(nodes[b][1]-nodes[a][1])*h*p;ctx.beginPath();ctx.arc(x,y,3,0,Math.PI*2);ctx.fillStyle=colors.alt;ctx.fill();});
+      nodes.forEach((p,i)=>{ctx.beginPath();ctx.arc(p[0]*w,p[1]*h,9,0,Math.PI*2);ctx.fillStyle=i===5?colors.warm:colors.line;ctx.fill();});
+      ctx.fillStyle=colors.text;ctx.font='10px monospace';ctx.fillText('JWT → RBAC GUARD → LEAVE STATE TRANSITION',12,16);
+      return;
+    }
+
+    if (id.includes('netsage')) {
+      const nodes=[[.12,.5],[.34,.25],[.34,.75],[.65,.25],[.65,.75],[.88,.5]];
+      const edges=[[0,1],[0,2],[1,3],[2,4],[3,5],[4,5],[1,4]];
+      edges.forEach(([a,b],i)=>{
+        ctx.beginPath();ctx.moveTo(nodes[a][0]*w,nodes[a][1]*h);ctx.lineTo(nodes[b][0]*w,nodes[b][1]*h);
+        ctx.strokeStyle=colors.line;ctx.lineWidth=1.5;ctx.stroke();
+        const p=(t*1.4+i*.13)%1,x=nodes[a][0]*w+(nodes[b][0]-nodes[a][0])*w*p,y=nodes[a][1]*h+(nodes[b][1]-nodes[a][1])*h*p;
+        ctx.beginPath();ctx.arc(x,y,3,0,Math.PI*2);ctx.fillStyle=colors.alt;ctx.fill();
+      });
+      nodes.forEach((p,i)=>{ctx.beginPath();ctx.arc(p[0]*w,p[1]*h,7,0,Math.PI*2);ctx.fillStyle=i===3?colors.warm:colors.line;ctx.fill();});
+      ctx.fillStyle=colors.text;ctx.font='10px monospace';ctx.fillText('CLI PARSER · DETERMINISTIC RULES · RAG',12,16);
+      return;
+    }
+
+    // GeoVISTA / hero default: rotating parcel wireframe and lidar points.
+    const cx=w*.52,cy=h*.54,rx=Math.min(w*.3,125),ry=Math.min(h*.34,58);
+    const rotation=t*.7;
+    const poly=[];
+    for(let i=0;i<6;i++){
+      const a=i*Math.PI/3+rotation;
+      poly.push([cx+Math.cos(a)*rx*(i%2?.82:1),cy+Math.sin(a)*ry*(i%2?.82:1)]);
+    }
+    ctx.beginPath();poly.forEach((p,i)=>i?ctx.lineTo(...p):ctx.moveTo(...p));ctx.closePath();
+    ctx.strokeStyle=colors.line;ctx.lineWidth=2;ctx.stroke();
+    ctx.fillStyle='rgba(31,94,75,.08)';ctx.fill();
+    for(let i=0;i<72;i++){
+      const a=i*2.399, r= Math.sqrt((i+.5)/72);
+      const x=cx+Math.cos(a+rotation)*rx*r, y=cy+Math.sin(a+rotation)*ry*r;
+      ctx.beginPath();ctx.arc(x,y,1.2+(i%4)*.25,0,Math.PI*2);ctx.fillStyle=i%7===0?colors.warm:colors.alt;ctx.fill();
+    }
+    ctx.fillStyle=colors.text;ctx.font='10px monospace';ctx.fillText('LiDAR POINT CLOUD · POLYGON TOPOLOGY VALIDATION',12,16);
+  }
+
+  function drawAllCanvases(time=performance.now()) {
+    canvasIds.forEach(id => { const canvas=$(id); if(canvas) drawCanvas(canvas,time); });
+  }
+
+  let animationFrame = null;
+  function animationLoop(time) {
+    canvasIds.forEach(id => {
+      const canvas=$(id); if(!canvas) return;
+      const rect=canvas.getBoundingClientRect();
+      if(rect.bottom >= 0 && rect.top <= window.innerHeight) drawCanvas(canvas,time);
+    });
+    if (!reducedMotion) animationFrame = requestAnimationFrame(animationLoop);
+  }
+
+  function startAnimations() {
+    if (animationFrame) cancelAnimationFrame(animationFrame);
+    drawAllCanvases(performance.now());
+    if (!reducedMotion) animationFrame = requestAnimationFrame(animationLoop);
+  }
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) { if(animationFrame) cancelAnimationFrame(animationFrame); animationFrame=null; }
+    else startAnimations();
+  });
+  window.addEventListener('resize', () => {
+    if (reducedMotion) drawAllCanvases(performance.now());
+  }, { passive:true });
+
+  // ------------------------- PAGE INTERACTIONS ---------------------------
+  window.switchHeroSim = function (project) {
+    const labels = {
+      geovista:['GeoVISTA // 3D LiDAR + Shapely ULPIN Scanner','Drone Point-Cloud Extrusion & Polygon Topology Check','Scan Next Parcel'],
+      netsage:['NetSage // Deterministic CLI + RAG Diagnostics','Packet Topology, Rule Validation & Remediation','Inject Network Fault'],
+      staffsync:['StaffSync // JWT + Role-Based Access Control','Express Middleware & Leave Approval State Machine','Switch Role / Action'],
+      nova:['Nova // BLIP Vision-Language Inference','ViT Patch Attention & Caption Token Decoding','Sample Next Image'],
+      sign:['Beyond Words // MediaPipe Hand Landmark Engine','21-Keypoint Skeletal Tracking & Gesture Classification','Morph Next Gesture']
+    };
+    const item=labels[project]||labels.geovista;
+    setText('hsim-title',item[0]);setText('hsim-subtitle',item[1]);setText('hsim-action-btn',item[2]);
+    ['geovista','netsage','staffsync','nova','sign'].forEach(key=>{
+      const tab=$('hsim-tab-'+key);if(!tab)return;
+      tab.classList.toggle('pill-sage',key===project);
+      tab.classList.toggle('border-[#1F5E4B]',key===project);
+      tab.classList.toggle('border-transparent',key!==project);
+    });
+    drawAllCanvases(performance.now());
+  };
+  window.triggerHeroSimAction = () => { setText('hsim-badge-overlay','STATE: SIMULATION_UPDATED'); setText('hsim-metric-overlay',`FRAME: ${Math.floor(performance.now()/16)}`); drawAllCanvases(performance.now()); };
+  window.cycleGeoVistaBuilding = () => { setText('geovista-status-pill','Shapely: Parcel geometry refreshed · Topology valid'); drawAllCanvases(performance.now()); };
+  window.toggleGeoVistaLidar = () => { const el=$('geovista-status-pill'); if(el) el.textContent=el.textContent.includes('LiDAR hidden')?'Shapely: Polygon.is_valid = True | LiDAR visible':'LiDAR hidden · Polygon topology retained'; };
+  window.toggleNetSageFault = () => { const el=$('netsage-status-pill'); if(el) el.textContent=el.textContent.includes('FAULT')?'OSPF FULL/DR | All Links Healthy':'FAULT: OSPF EXSTART · MTU mismatch detected'; };
+  window.cycleStaffSyncRole = () => { const el=$('staffsync-status-pill'); if(el) el.textContent=el.textContent.includes('EMPLOYEE')?'JWT Role: HR_ADMIN → PATCH /api/leaves/approve [200 OK]':'JWT Role: EMPLOYEE → PATCH /api/leaves/approve [403 FORBIDDEN]'; };
+  window.cycleNovaScene = () => { setText('nova-status-pill','BLIP ViT-Base | New image patches encoded · Caption decoded'); drawAllCanvases(performance.now()); };
+  window.cycleSignGesture = () => { const el=$('sign-status-pill'); if(el) el.textContent=el.textContent.includes('HELLO')?'MediaPipe 21 Nodes Locked | Gesture: "THANK YOU"':'MediaPipe 21 Nodes Locked | Gesture: "HELLO"'; drawAllCanvases(performance.now()); };
+
+  window.filterCaseStudies = function (category) {
+    document.querySelectorAll('[data-cs-card]').forEach(card => {
+      card.classList.toggle('hidden',category!=='ALL' && card.dataset.csCard!==category);
+    });
+    document.querySelectorAll('[data-cs-filter]').forEach(btn=>{
+      const active=btn.dataset.csFilter===category;btn.classList.toggle('pill-sage',active);btn.classList.toggle('font-semibold',active);
+    });
+  };
+  window.filterCertifications = function (category) {
+    document.querySelectorAll('[data-cert-card]').forEach(card=>{
+      card.classList.toggle('hidden',category!=='ALL' && card.dataset.certCategory!==category);
+    });
+    document.querySelectorAll('[data-cert-btn]').forEach(btn=>{
+      const active=btn.dataset.certBtn===category;btn.classList.toggle('pill-sage',active);btn.classList.toggle('font-semibold',active);
+    });
+  };
+  window.openResumeModal = () => {
+    const modal=$('resume-modal'); if(modal){modal.classList.remove('hidden');document.body.classList.add('overflow-hidden');}
+    else window.print();
+  };
+  window.closeResumeModal = () => { $('resume-modal')?.classList.add('hidden');document.body.classList.remove('overflow-hidden'); };
+  window.openCaseStudyModal = (id) => {
+    const modal=$('case-study-modal'); if(!modal)return;
+    const project=(window.PORTFOLIO_DATA?.projects||[]).find(p=>p.id===id);
+    setText('cs-modal-title',project?.title||'Engineering Case Study');
+    setText('cs-modal-category',project?.shortTag||'Project dossier');
+    modal.classList.remove('hidden');document.body.classList.add('overflow-hidden');
+  };
+  window.closeCaseStudyModal = () => { $('case-study-modal')?.classList.add('hidden');document.body.classList.remove('overflow-hidden'); };
+  window.closeBlogModal = () => { $('blog-modal')?.classList.add('hidden');document.body.classList.remove('overflow-hidden'); };
+  window.selectExplorerProject = (id) => {
+    setText('explorer-active-title',`${id.toUpperCase()} — Pipeline Explorer`);
+    document.querySelectorAll('#explorer-project-tabs button').forEach(b=>b.classList.toggle('pill-sage',b.dataset.project===id));
+  };
+  window.fetchGitHubDashboard = async function () {
+    setText('gh-cache-status','Refreshing GitHub API…');
+    try {
+      const r=await fetch('https://api.github.com/users/affanakram1217-star',{headers:{'Accept':'application/vnd.github+json'}});
+      if(!r.ok)throw new Error(`GitHub HTTP ${r.status}`);
+      const d=await r.json();setText('gh-stat-repos',d.public_repos);setText('gh-cache-status','GitHub profile synced');
+      setText('gh-stat-langs','Python · JavaScript · C++');
+    } catch(e) { setText('gh-cache-status','GitHub API temporarily unavailable'); }
+  };
+
+  // Avoid dead controls for modal close buttons and initialise the page.
+  document.addEventListener('keydown', e => {
+    if(e.key==='Escape'){window.closeCaseStudyModal();window.closeResumeModal();window.closeBlogModal();}
+  });
+
+  document.addEventListener('DOMContentLoaded', () => {
+    startAnimations();
+    window.syncVerifiedLeetCode(false);
+    window.fetchGitHubDashboard();
+    const contactForm=$('contact-form');
+    if(contactForm) contactForm.addEventListener('submit',window.handleVerifiedContactSubmit);
+  });
+})();
+</script>
+</body>
+</html>
